@@ -14,7 +14,6 @@
   <div id="create_page">
     <a href="{% url 'pages:edit' slug=page.pretty_slug region=page.region.slug %}" class="button">{% trans "Create this page" %}</a>
   </div>
-  {% comment %}
   {% if page_templates %}
     <div class="templates">
       <p>{% trans "Or use one of these templates:" %}</p>
@@ -25,5 +24,4 @@
       </ul>
     </div>
   {% endif %}
-  {% endcomment %}
 {% endblock %}

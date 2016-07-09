@@ -464,7 +464,7 @@ class PageCreateView(RegionMixin, RedirectView):
         if Page.objects.filter(slug=slug, region=region).exists():
             return Page.objects.get(slug=slug, region=region).get_absolute_url()
         else:
-            if int(self.request.GET.get('show_templates', 0)):
+            if self.request.GET.get('show_templates'):
                 # Show them the 'empty page' page, which displays the list of
                 # templates to create a page with.
                 return reverse('pages:show', kwargs={'region': region.slug, 'slug': pagename})
