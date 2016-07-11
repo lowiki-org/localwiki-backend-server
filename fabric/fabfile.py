@@ -97,7 +97,9 @@ from copy import copy
 import string
 from collections import defaultdict
 from contextlib import contextmanager as _contextmanager
+from StringIO import StringIO
 from fabric.api import *
+from fabric.api import get
 from fabric.contrib.files import upload_template, exists
 from fabric.network import disconnect_all
 from fabric.api import settings
@@ -600,12 +602,9 @@ def setup_mapserver():
 
 def setup_varnish():
     if not config_secrets['varnish_secret']:
-        config_secrets['varnish_secret'] = ''.join([
-            random.choice('abcdefghijklmnopqrstuvwxyz0123456789')
-            for i in range(50)
-        ])
-        # Now, write the varnish secret file
-        sudo('echo %s > /etc/varnish/secret' % config_secrets['varnish_secret'])
+        fd = StringIO()
+        get('/etc/varnish/secret', use_sudo=True, local_path=fd)
+        config_secrets['varnish_secret'] = fd.getvalue().rstrip()
         update_django_settings()
     sudo('mkdir -p /mnt/varnish/')
     update_varnish_settings()
