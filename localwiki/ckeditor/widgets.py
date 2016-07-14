@@ -14,38 +14,38 @@ from django.utils.safestring import mark_safe
 from utils.static_helpers import static_url
 
 ckeditor_path = 'js/ckeditor/ckeditor.js'
-if settings.DEBUG:
-    ckeditor_path = 'js/ckeditor/ckeditor_source.js'
+# if settings.DEBUG:
+# ckeditor_path = 'js/ckeditor/ckeditor_source.js'
 
 
 class CKEditor(forms.Textarea):
     _auto_button_map = (('Form', 'form'),
-                       ('Checkbox', 'input'),
-                       ('Radio', 'input'),
-                       ('TextField', 'input'),
-                       ('Textarea', 'textarea'),
-                       ('Select', 'select'),
-                       ('Button', 'input'),
-                       ('ImageButton', 'input'),
-                       ('Hidden', 'input'),
-                       ('Bold', 'strong'),
-                       ('Italic', 'em'),
-                       ('Underline', 'u'),
-                       ('Strike', 'strike'),
-                       ('Subscript', 'sub'),
-                       ('Superscript', 'sup'),
-                       ('NumberedList', 'ol'),
-                       ('BulletedList', 'ul'),
-                       ('Blockquote', 'blockquote'),
-                       ('CreateDiv', 'div'),
-                       ('Link', 'a'),
-                       ('Unlink', 'a'),
-                       ('Anchor', 'a'),
-                       ('Image', 'img'),
-                       ('Flash', 'object'),
-                       ('Table', 'table'),
-                       ('HorizontalRule', 'hr'),
-                       )
+                        ('Checkbox', 'input'),
+                        ('Radio', 'input'),
+                        ('TextField', 'input'),
+                        ('Textarea', 'textarea'),
+                        ('Select', 'select'),
+                        ('Button', 'input'),
+                        ('ImageButton', 'input'),
+                        ('Hidden', 'input'),
+                        ('Bold', 'strong'),
+                        ('Italic', 'em'),
+                        ('Underline', 'u'),
+                        ('Strike', 'strike'),
+                        ('Subscript', 'sub'),
+                        ('Superscript', 'sup'),
+                        ('NumberedList', 'ol'),
+                        ('BulletedList', 'ul'),
+                        ('Blockquote', 'blockquote'),
+                        ('CreateDiv', 'div'),
+                        ('Link', 'a'),
+                        ('Unlink', 'a'),
+                        ('Anchor', 'a'),
+                        ('Image', 'img'),
+                        ('Flash', 'object'),
+                        ('Table', 'table'),
+                        ('HorizontalRule', 'hr'),
+                        )
 
     def __init__(self, *args, **kwargs):
         self.allowed_tags = kwargs.pop('allowed_tags', None)
@@ -123,5 +123,5 @@ class CKEditor(forms.Textarea):
 
     class Media:
         js = (
-                static_url(ckeditor_path),
+            static_url(ckeditor_path),
         )
