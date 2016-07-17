@@ -93,7 +93,7 @@ exports.setup = function(parsoidConfig) {
 	//parsoidConfig.heapUsageSampleInterval = 5 * 60 * 1000;
 
 	// Allow override of port/interface:
-	//parsoidConfig.serverPort = 8000;
+	parsoidConfig.serverPort = 8090;
 	//parsoidConfig.serverInterface = '127.0.0.1';
 
 	// The URL of your LintBridge API endpoint
