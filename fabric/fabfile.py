@@ -213,6 +213,9 @@ env.data_root = os.path.join(env.virtualenv, 'share', 'localwiki')
 env.branch = 'master'
 env.git_hash = None
 env.keepalive = 300
+env.nvm_root = os.path.join(env.localwiki_root, 'nvm')
+env.node_version = 'v0.10'
+env.parsoid_root = os.path.join(env.localwiki_root, 'parsoid')
 
 def production():
     # Use the global roledefs
@@ -282,6 +285,16 @@ def get_context(env):
 def virtualenv():
     with prefix('source %s/bin/activate' % env.virtualenv):
         yield
+
+@_contextmanager
+def nvm(version=None):
+    nvm_path = os.path.join(env.nvm_root, 'nvm.sh')
+    with shell_env(NVM_DIR=env.nvm_root), prefix('source %s' % nvm_path):
+        if version:
+            with prefix('nvm exec %s' % version):
+                yield
+        else:
+                yield
 
 def setup_postgres(test_server=False):
     sudo('service postgresql stop')
@@ -383,6 +396,29 @@ def install_system_requirements():
         monitoring
     )
     sudo('DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y --force-yes install %s' % ' '.join(packages))
+
+def install_nvm():
+    # Install NVM
+    if not exists(env.nvm_root):
+        sudo('mkdir -p %s' % env.nvm_root)
+        sudo('chown -R %s:%s %s' % (env.user, env.user, env.nvm_root))
+        run('git clone https://github.com/creationix/nvm.git %s' % env.nvm_root)
+        with cd(env.nvm_root):
+            run('git checkout `git describe --abbrev=0 --tags`')
+    # Install node
+    with nvm():
+        run("nvm install %s" % env.node_version)
+
+def install_parsoid():
+    install_nvm()
+    if not exists(env.parsoid_root):
+        sudo('mkdir -p %s' % env.parsoid_root)
+        sudo('chown -R %s:%s %s' % (env.user, env.user, env.parsoid_root))
+        run('git clone https://gerrit.wikimedia.org/r/p/mediawiki/services/parsoid %s' % env.parsoid_root)
+    with cd(env.parsoid_root):
+        run('git checkout `git tag | tail -1`')
+        with nvm(env.node_version):
+            run('npm install')
 
 def init_postgres_db():
     # Generate a random password, for now.
@@ -609,6 +645,13 @@ def setup_varnish():
     sudo('mkdir -p /mnt/varnish/')
     update_varnish_settings()
 
+def setup_parsoid():
+    settings = os.path.join(env.parsoid_root, 'localsettings.js')
+    if not os.path.exists(settings):
+        cp(settings.join('.example'), settings)
+    with nvm(env.node_version):
+        run("node %s" % os.path.join(env.parsoid_root, "bin/server.js"))
+
 def update_varnish_settings():
     # Add our custom configuration
     if env.host_type == 'test_server' or env.host_type == 'varnish':
@@ -786,6 +829,7 @@ def provision():
 
     add_ssh_keys()
     install_system_requirements()
+    install_parsoid()
     setup_unattended_upgrades()
     setup_hostname()
     setup_mailserver()
