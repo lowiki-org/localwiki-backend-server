@@ -648,7 +648,7 @@ def setup_varnish():
 def setup_parsoid():
     settings = os.path.join(env.parsoid_root, 'localsettings.js')
     if not os.path.exists(settings):
-        cp(settings.join('.example'), settings)
+        put('config/parsoid/localsettings.js.example', settings)
     with nvm(env.node_version):
         run("node %s" % os.path.join(env.parsoid_root, "bin/server.js"))
 
