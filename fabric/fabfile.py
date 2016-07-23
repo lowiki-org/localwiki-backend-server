@@ -1087,7 +1087,7 @@ def pull_translations():
                     run('tx pull -a')
                     sudo('localwiki-manage compilemessages', user='www-data')
 
-def push_translations():
+def push_translations(lang='en'):
     with settings(warn_only=True):
         with virtualenv():
             r = run('which tx')
@@ -1096,8 +1096,8 @@ def push_translations():
 
             with cd(os.path.join(env.src_root, 'localwiki')):
                 with virtualenv():
-                    sudo('localwiki-manage makemessages -l en', user='www-data')
-                    sudo('localwiki-manage makemessages -d djangojs -l en', user='www-data')
+                    sudo('localwiki-manage makemessages -l %s' % lang, user='www-data')
+                    sudo('localwiki-manage makemessages -d djangojs -l %s' % lang, user='www-data')
                     run('tx push -s -t')
 
 def populate_page_cards():
