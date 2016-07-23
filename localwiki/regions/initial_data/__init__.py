@@ -1,3 +1,4 @@
+# encoding=utf-8
 """
 We don't use a fixture here because:
 
@@ -16,8 +17,8 @@ def populate_region(region):
     Page(
         name="Templates",
         slug="templates",
-        # Translators: Please fix the links here to point to "Place," "Business", "Disambiguation", "Restaurant" as translated in your language.  But leave the "Templates/" part of the page link.  "Templates/" in a URL is currently hard-coded and must remain in English for now.
-        content=_("""<p>
+        # Translators: Please fix the links here to point to "社區," "避難收容處所", "設備物資集結點", "Restaurant" as translated in your language.  But leave the "Templates/" part of the page link.  "Templates/" in a URL is currently hard-coded and must remain in English for now.
+        content=_(u"""<p>
     	Templates are special pages that serve as a starting point when creating a new page. &nbsp;Using a common template for related topics gives those pages a common structure. &nbsp;To use one of the templates, simply select the template when creating a new page. &nbsp;</p>
     <p>
     	Below is a list of the available templates. To add a new template, create a page whose title starts with &quot;Templates/&quot;, as in <a href="Templates%2FBusiness">Templates/Business</a>. &nbsp;When you create a new template, add it to this list so it&#39;s easier to find.</p>
@@ -25,242 +26,438 @@ def populate_region(region):
     	<span>List of templates</span></h3>
     <ul>
     	<li>
-    		<a href="Templates%2FPlace">Templates/Place</a></li>
+    		<a href="Templates%2F社區">Templates/社區</a></li>
     	<li>
-    		<a href="Templates%2FBusiness">Templates/Business</a></li>
+    		<a href="Templates%2F避難收容處所">Templates/避難收容處所</a></li>
+    	<li>
+    		<a href="Templates%2F設備物資集結點">Templates/設備物資集結點</a></li>
+    	<li>
+    		<a href="Templates%2F保全對象">Templates/保全對象</a></li>
+    	<li>
+    		<a href="Templates%2F特殊需求機構">Templates/特殊需求機構</a></li>
+    	<li>
+    		<a href="Templates%2F重要維生設施">Templates/重要維生設施</a></li>
+    	<li>
+    		<a href="Templates%2F緊急聯絡網">Templates/緊急聯絡網</a></li>
+    	<li>
+    		<a href="Templates%2F環境不安全點">Templates/環境不安全點</a></li>
     	<li>
     		<a href="Templates%2FDisambiguation">Templates/Disambiguation</a></li>
-    	<li>
-    		<a href="Templates%2FRestaurant">Templates/Restaurant</a></li>
     </ul>"""),
         region=region
     ).save()
-  
+
     # Translators: This is for "Templates/Page" - a template page
-    template_type = _("Place")
+    template_type = u"社區"
     Page(
         name="Templates/%s" % template_type,
         slug="templates/%s" % slugify(template_type),
-        content=_("""<table>
+        content=_(u"""<table>
     	<tbody>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Location</strong></td>
+    				<strong>人口數</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				address</td>
+    			</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Contact</strong></td>
+    				<strong>鄰近地形</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				(555) 555 5555</td>
+    			（溪流、山脈等）</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Website</strong></td>
+    				<strong>歷史災害</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				Add link here</td>
+    			</td>
     		</tr>
     	</tbody>
     </table>
-    <p>
-    	The <strong>Thing I&#39;m Talking About</strong> should have a blurb here with links to relevant things, like the <a href="Front%20Page">Front Page</a>.</p>
     <h2>
-    	Section Title</h2>
+    	介紹</h2>
     <p>
-    	Text goes here.</p>"""),
+    	（內文）</p>
+    <h2>
+    	災害潛勢</h2>
+    <p>
+    	（內文）</p>"""),
         region=region
     ).save()
-   
-    # Translators: This is for "Templates/Restaurant" - a template page
-    template_type = _("Restaurant")
+
+    # Translators: This is for "Templates/避難收容處所" - a template page
+    template_type = u"避難收容處所"
     Page(
         name="Templates/%s" % template_type,
         slug="templates/%s" % slugify(template_type),
-        content=_("""<table>
-    	<tbody>
-    		<tr>
-    			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Location</strong></td>
-    		</tr>
-    		<tr>
-    			<td>
-    				Please fill in address</td>
-    		</tr>
-    		<tr>
-    			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Hours</strong></td>
-    		</tr>
-    		<tr>
-    			<td>
-    				(Please fill in hours)</td>
-    		</tr>
-    		<tr>
-    			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Phone</strong></td>
-    		</tr>
-    		<tr>
-    			<td>
-    				(415) 555-5555</td>
-    		</tr>
-    		<tr>
-    			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Website</strong></td>
-    		</tr>
-    		<tr>
-    			<td>
-    				Add link here</td>
-    		</tr>
-    		<tr>
-    			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Established</strong></td>
-    		</tr>
-    		<tr>
-    			<td>
-    				(Date, i.e. YYYY-MM-DD)</td>
-    		</tr>
-    		<tr>
-    			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Price range</strong></td>
-    		</tr>
-    		<tr>
-    			<td>
-    				(Prices for &quot;average&quot; entrees)</td>
-    		</tr>
-    		<tr>
-    			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Payment Methods</strong></td>
-    		</tr>
-    		<tr>
-    			<td>
-    				(Cash, check, credit cards, other?)</td>
-    		</tr>
-    		<tr>
-    			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Wheelchair accessibility</strong></td>
-    		</tr>
-    		<tr>
-    			<td>
-    				(notes on stairs, bathroom access, handrails, aisle width)</td>
-    		</tr>
-    	</tbody>
-    </table>
-    <p>
-    	Then, put&nbsp;<em>whatever</em>&nbsp;you want down here! Note that&nbsp;<a href="http://local.google.com">http://local.google.com</a>&nbsp;is sometimes a good and easy place to find times/phone. Better yet, look them up in the phone book, and ask them.</p>
-    <p>
-    	Remember to add this restaurant to the neighborhood&nbsp;<a href="restaurants">restaurants</a>&nbsp;page.</p>
-    <h3>
-    	Related Links</h3>
-    <ul>
-    	<li>
-    		<a href="Restaurants">Restaurants</a></li>
-    </ul>
-    <p>
-    	&nbsp;</p>"""),
-        region=region
-    ).save()
-    
-    # Translators: This is for "Templates/Business" - a template page
-    template_type = _("Business")
-    Page(
-        name="Templates/%s" % template_type,
-        slug="templates/%s" % slugify(template_type),
-        content=_("""
+        content=_(u"""
     <table>
     	<tbody>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Location</strong></td>
+    				<strong>名稱</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				Please fill in address</td>
+    				</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Hours</strong></td>
+    				<strong>地址</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				Please fill in hours</td>
+    				</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Phone</strong></td>
+    				<strong>適用災別</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				(415) 555-5555</td>
+    				</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Website</strong></td>
+    				<strong>容納人數</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				Add link here</td>
+    				</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>E-mail</strong></td>
+    				<strong>面積</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				Email address</td>
+    				</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Owner(s)</strong></td>
+    				<strong>聯絡人</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				Names of owners/proprietors here</td>
+    				</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Established</strong></td>
+    				<strong>電話</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				Date, i.e. YYYY-MM-DD</td>
+    				</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Payment Method</strong></td>
+    				<strong>設備</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				Type of payment</td>
+    				</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
-    				<strong>Wheelchair accessibility</strong></td>
+    				<strong>官方／非官方</strong></td>
     		</tr>
     		<tr>
     			<td>
-    				stairs, bathrooms, handrails, aisle width?</td>
+    				</td>
     		</tr>
     	</tbody>
     </table>
-    <p>
-    	Then, put&nbsp;<em>whatever</em>&nbsp;you want down here! Note that&nbsp;<a href="http://local.google.com">http://local.google.com</a>&nbsp;is sometimes a good and easy place to find times/phone. Better yet, look them up in the phone book, and ask them. Remove the fields you don&#39;t fill out &mdash; or even better, look up or call them for the missing information!</p>
-    <h3>
-    	Related Links</h3>
-    <ul>
-    	<li>
-    		<a href="Shopping">Shopping</a></li>
-    </ul>
+    <h2>
+    	說明</h2>
     <p>
     	&nbsp;</p>"""),
         region=region
     ).save()
-    
+
+    # Translators: This is for "Templates/設備物資集結點" - a template page
+    template_type = u"設備物資集結點"
+    Page(
+        name="Templates/%s" % template_type,
+        slug="templates/%s" % slugify(template_type),
+        content=_(u"""
+    <table>
+    	<tbody>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>名稱</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>地址</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>項目與數量</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>聯絡人</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>電話</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>官方／非官方</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    	</tbody>
+    </table>
+    <h2>
+    	說明</h2>
+    <p>
+    	&nbsp;</p>"""),
+        region=region
+    ).save()
+
+    # Translators: This is for "Templates/保全對象" - a template page
+    template_type = u"保全對象"
+    Page(
+        name="Templates/%s" % template_type,
+        slug="templates/%s" % slugify(template_type),
+        content=_(u"""
+    <table>
+    	<tbody>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>災害類型</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>人數</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>上傳日期</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>官方／非官方</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    	</tbody>
+    </table>
+    <h2>
+    	說明</h2>
+    <p>
+    	&nbsp;</p>"""),
+        region=region
+    ).save()
+
+    # Translators: This is for "Templates/特殊需求機構" - a template page
+    template_type = u"特殊需求機構"
+    Page(
+        name="Templates/%s" % template_type,
+        slug="templates/%s" % slugify(template_type),
+        content=_(u"""
+    <table>
+    	<tbody>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>名稱</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>地址</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>聯絡人</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>電話</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    	</tbody>
+    </table>
+    <h2>
+    	說明</h2>
+    <p>
+    	&nbsp;</p>"""),
+        region=region
+    ).save()
+
+    # Translators: This is for "Templates/重要維生設施" - a template page
+    template_type = u"重要維生設施"
+    Page(
+        name="Templates/%s" % template_type,
+        slug="templates/%s" % slugify(template_type),
+        content=_(u"""
+    <table>
+    	<tbody>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>名稱</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>地址</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>座標</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    	</tbody>
+    </table>
+    <h2>
+    	說明</h2>
+    <p>
+    	&nbsp;</p>"""),
+        region=region
+    ).save()
+
+    # Translators: This is for "Templates/緊急聯絡網" - a template page
+    template_type = u"緊急聯絡網"
+    Page(
+        name="Templates/%s" % template_type,
+        slug="templates/%s" % slugify(template_type),
+        content=_(u"""
+    <table>
+    	<tbody>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>名稱</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>電話</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>地址</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    	</tbody>
+    </table>
+    <h2>
+    	說明</h2>
+    <p>
+    	&nbsp;</p>"""),
+        region=region
+    ).save()
+
+    # Translators: This is for "Templates/環境不安全點" - a template page
+    template_type = u"環境不安全點"
+    Page(
+        name="Templates/%s" % template_type,
+        slug="templates/%s" % slugify(template_type),
+        content=_(u"""
+    <table>
+    	<tbody>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>地址或位置</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>狀況描述</strong></td>
+    		</tr>
+    		<tr>
+    			<td>
+    				</td>
+    		</tr>
+    	</tbody>
+    </table>
+    <h2>
+    	說明</h2>
+    <p>
+    	&nbsp;</p>"""),
+        region=region
+    ).save()
+
     # Translators: This is for "Templates/Disambiguation" - a template page
     template_type = _("Disambiguation")
     Page(
@@ -280,7 +477,7 @@ def populate_region(region):
     	This is a&nbsp;<em>disambiguation</em> page&nbsp;&mdash; a navigational aid which lists other pages that might otherwise share the same title. If an page link referred you here, you might want to go back and fix it to point directly to the intended page.</p>"""),
         region=region
     ).save()
-    
+
     Page(
         name="Front Page",
         slug="front page",
