@@ -57,16 +57,16 @@ SUBSCRIBE_MESSAGE = _(
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Taipei'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'zh'
 
 # Input formats for dates and times enforced in form fields. For all possible
 # options see
 # http://docs.python.org/2/library/datetime.html#strftime-strptime-behavior
-DATE_INPUT_FORMATS = ('%m/%d/%Y',)  # dates like 12/31/2012
+DATE_INPUT_FORMATS = ('%y/%m/%d',)  # dates like 12/31/2012
 TIME_INPUT_FORMATS = ('%I:%M %p',)  # times like 01:35 PM
 
 LOCALE_PATHS = (
@@ -83,7 +83,7 @@ LANGUAGES = (
     ('hu', _('Hungarian')),
     ('nl', _('Dutch')),
     ('uk', _('Ukrainian')),
-    ('zh', _('Traditional Chinese')),
+    ('zh', _('Chinese')),
 )
 
 SITE_ID = 1
