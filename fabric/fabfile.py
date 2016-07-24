@@ -415,10 +415,8 @@ def install_parsoid():
         sudo('mkdir -p %s' % env.parsoid_root)
         sudo('chown -R %s:%s %s' % (env.user, env.user, env.parsoid_root))
         run('git clone https://gerrit.wikimedia.org/r/p/mediawiki/services/parsoid %s' % env.parsoid_root)
-    with cd(env.parsoid_root):
-        run('git checkout `git tag | tail -1`')
-        with nvm(env.node_version):
-            run('npm install')
+    with cd(env.parsoid_root), nvm(env.node_version):
+        run('npm install')
 
 def init_postgres_db():
     # Generate a random password, for now.
@@ -646,11 +644,11 @@ def setup_varnish():
     update_varnish_settings()
 
 def setup_parsoid():
-    settings = os.path.join(env.parsoid_root, 'localsettings.js')
+    settings = os.path.join(env.parsoid_root, 'config.yaml')
     if not os.path.exists(settings):
-        put('config/parsoid/localsettings.js.example', settings)
+        put('config/parsoid/config.yaml.example', settings)
     with nvm(env.node_version):
-        run("node %s" % os.path.join(env.parsoid_root, "bin/server.js"))
+        run("node %s" % os.path.join(env.parsoid_root, "bin/server.js -c %s" % settings))
 
 def test_parsoid():
     with nvm(env.node_version):
