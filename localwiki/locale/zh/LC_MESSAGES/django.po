@@ -619,7 +619,7 @@ msgid ""
 "Provided slug is invalid. Slugs must be lowercase, contain no trailing or "
 "leading whitespace, and contain only alphanumber characters along with "
 "%(KEEP_CHARACTERS)s"
-msgstr "不合法的縮寫。縮寫必須由小寫英文字母、數字，以及$(KEEP_CHARACTERS)等字元組成，並且開頭與結尾不能用空白"
+msgstr "不合法的縮寫。縮寫必須由小寫英文字母、數字，以及%(KEEP_CHARACTERS)s等字元組成，並且開頭與結尾不能用空白"
 
 #: links/models.py:30
 msgid "The number of times the source page links to the destination page."
@@ -1135,7 +1135,7 @@ msgstr ""
 #: pages/feeds.py:52 pages/feeds.py:96
 #, python-format
 msgid "File %(filename)s on page \"%(pagename)s\""
-msgstr "在 \"%(pagename)s\" 頁面的檔案 $(filename)s"
+msgstr "在 \"%(pagename)s\" 頁面的檔案 %(filename)s"
 
 #: pages/fields.py:81
 #, python-format
