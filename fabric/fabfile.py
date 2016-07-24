@@ -213,9 +213,9 @@ env.data_root = os.path.join(env.virtualenv, 'share', 'localwiki')
 env.branch = 'master'
 env.git_hash = None
 env.keepalive = 300
-env.nvm_root = os.path.join(env.localwiki_root, 'nvm')
-env.node_version = 'v0.10'
-env.parsoid_root = os.path.join(env.localwiki_root, 'parsoid')
+env.nvm_root = '/srv/nvm'
+env.parsoid_root = '/srv/parsoid'
+env.node_version = 'v0.12'
 
 def production():
     # Use the global roledefs
