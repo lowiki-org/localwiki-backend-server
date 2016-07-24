@@ -677,31 +677,31 @@ msgstr "英語"
 
 #: main/settings/defaults.py:72
 msgid "Japanese"
-msgstr "日文"
+msgstr "日語"
 
 #: main/settings/defaults.py:73
 msgid "French"
-msgstr "法文"
+msgstr "法語"
 
 #: main/settings/defaults.py:74
 msgid "Spanish"
-msgstr "西班牙"
+msgstr "西班牙語"
 
 #: main/settings/defaults.py:75
 msgid "German"
-msgstr "德得"
+msgstr "德語"
 
 #: main/settings/defaults.py:76
 msgid "Hungarian"
-msgstr "匈牙利"
+msgstr "匈牙利語"
 
 #: main/settings/defaults.py:77
 msgid "Dutch"
-msgstr "荷蘭"
+msgstr "荷蘭語"
 
 #: main/settings/defaults.py:78
 msgid "Ukrainian"
-msgstr "烏克蘭"
+msgstr "烏克蘭語"
 
 #: main/settings/defaults.py:79
 msgid "Chinese"
@@ -1635,7 +1635,7 @@ msgstr "完整名稱"
 
 #: regions/forms.py:54 regions/models.py:21
 msgid "The full name of this region, e.g. 'San Francisco'"
-msgstr "這個區域的完整名稱，像是'台北市內湖區大湖里'"
+msgstr "這個區域的完整名稱，像是「台北市內湖區大湖里」"
 
 #: regions/forms.py:75
 msgid "You cannot delete yourself as an admin"
