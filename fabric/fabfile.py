@@ -1065,6 +1065,20 @@ def fix_locale():
     sudo('update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8')
     disconnect_all()
 
+def fix_vbox(version='4.3.8'):
+    """
+    Somethings virtualbox can't mount folder, because vagrant box does not have VirtualBox Guest Additions installed.
+    """
+    sudo('apt-get install linux-headers-$(uname -r) build-essential dkms')
+    sudo('wget http://download.virtualbox.org/virtualbox/%s/VBoxGuestAdditions_%s.iso' % (version, version))
+    sudo('mkdir -p /media/VBoxGuestAdditions')
+    sudo('mount -o loop,ro VBoxGuestAdditions_%s.iso /media/VBoxGuestAdditions' % version)
+    with settings(warn_only=True):
+        sudo('sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run --nox11')
+    sudo('rm VBoxGuestAdditions_%s.iso' % version)
+    sudo('umount /media/VBoxGuestAdditions')
+    sudo('rmdir /media/VBoxGuestAdditions')
+
 def setup_transifex():
     with virtualenv():
         sudo('apt-get install gettext')
