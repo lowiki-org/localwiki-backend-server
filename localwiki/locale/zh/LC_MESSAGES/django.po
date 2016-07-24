@@ -542,7 +542,7 @@ msgstr "封面照片更新成功!"
 #: frontpage/templates/frontpage/base.html:39
 #: pages/templates/pages/follow_page.html:12
 msgid "region"
-msgstr ""
+msgstr "區域"
 
 #: frontpage/templates/frontpage/base.html:63
 #, python-format
@@ -619,7 +619,7 @@ msgid ""
 "Provided slug is invalid. Slugs must be lowercase, contain no trailing or "
 "leading whitespace, and contain only alphanumber characters along with "
 "%(KEEP_CHARACTERS)s"
-msgstr ""
+msgstr "不合法的縮寫。縮寫必須由小寫英文字母、數字，以及$(KEEP_CHARACTERS)等字元組成，並且開頭與結尾不能用空白"
 
 #: links/models.py:30
 msgid "The number of times the source page links to the destination page."
@@ -953,7 +953,7 @@ msgstr ""
 #: maps/views.py:387 pages/views.py:244
 #, python-format
 msgid "<p>What do you know about %s?</p>"
-msgstr ""
+msgstr "<p>關於 %s，你知道些什麼？</p>"
 
 #: maps/views.py:406
 #, python-format
@@ -1056,13 +1056,13 @@ msgstr ""
 #: pages/templates/pages/page_diff.html:57
 #: tags/templates/tags/pagetagset_diff.html:48
 msgid "Deletions are marked like this"
-msgstr ""
+msgstr "刪除的部份標示如此"
 
 #: maps/templates/maps/mapdata_diff.html:78
 #: pages/templates/pages/page_diff.html:60
 #: tags/templates/tags/pagetagset_diff.html:51
 msgid "Additions are marked like this"
-msgstr ""
+msgstr "增添的部份標示如此"
 
 #: maps/templates/maps/mapdata_form.html:38
 msgid "Editing map for"
@@ -1135,22 +1135,22 @@ msgstr ""
 #: pages/feeds.py:52 pages/feeds.py:96
 #, python-format
 msgid "File %(filename)s on page \"%(pagename)s\""
-msgstr ""
+msgstr "在 \"%(pagename)s\" 頁面的檔案 $(filename)s"
 
 #: pages/fields.py:81
 #, python-format
 msgid "Page %s does not exist!  Please enter a valid page name."
-msgstr ""
+msgstr "頁面 %s 不存在！請輸入正確的頁面名稱"
 
 #: pages/forms.py:119
 msgid ""
 "Warning: someone else saved this page before you.  Please resolve edit "
 "conflicts and save again."
-msgstr ""
+msgstr "警告：有人在你之前編輯並儲存此頁面。請合併版本並重新儲存。"
 
 #: pages/forms.py:169
 msgid "The new file should be of the same type"
-msgstr ""
+msgstr "新檔案的類型必須相同"
 
 #: pages/models.py:72
 msgid "Page name is invalid."
@@ -1159,12 +1159,12 @@ msgstr "頁面名稱錯誤."
 #: pages/models.py:153 pages/models.py:166
 #, python-format
 msgid "Renamed from \"%s\""
-msgstr ""
+msgstr "從 \"%s\" 重新命名"
 
 #: pages/models.py:157
 #, python-format
 msgid "The page '%s' already exists!"
-msgstr ""
+msgstr "頁面 '%s' 已經存在！"
 
 #: pages/models.py:197 pages/models.py:216 pages/models.py:238
 msgid "Parent page renamed"
@@ -1178,7 +1178,7 @@ msgstr "檔案"
 msgid ""
 "The embedded URL is not on the list of approved providers.  Contact the site "
 "administrator to add it."
-msgstr ""
+msgstr "系統未容許這個網址的嵌入碼。請聯繫系統管理員取得許可。"
 
 #: pages/plugins.py:453
 msgid "Invalid embed code"
@@ -1193,7 +1193,7 @@ msgstr "搜尋或建立頁面"
 
 #: pages/signals.py:20
 msgid "Redirect created"
-msgstr ""
+msgstr "重新導向已建立"
 
 #: pages/signals.py:26
 msgid "Page created"
@@ -1201,7 +1201,7 @@ msgstr "頁面已建立"
 
 #: pages/views.py:148
 msgid "Thank you for your changes. Your attention to detail is appreciated."
-msgstr ""
+msgstr "謝謝你的編輯。"
 
 #: pages/views.py:156
 #, python-format
@@ -1210,7 +1210,10 @@ msgid ""
 "next=%(current_path)s\"><strong>log in</strong></a> or <a href="
 "\"%(register_url)s?next=%(current_path)s\"><strong>create an account</"
 "strong></a>."
-msgstr ""
+msgstr "編輯已儲存！想要用你的名字儲存編輯，請<a href=\"%(login_url)s?"
+"next=%(current_path)s\"><strong>登入</strong></a>或<a href="
+"\"%(register_url)s?next=%(current_path)s\"><strong>建立帳號</"
+"strong></a>."
 
 #: pages/views.py:167
 #, python-format
@@ -1218,6 +1221,8 @@ msgid ""
 "<p class=\"create_map\"><a href=\"%s\" class=\"button little map\"><span "
 "class=\"text\">Create a map</span></a> for this page?</p>"
 msgstr ""
+"<p class=\"create_map\">為這個頁面<a href=\"%s\" class=\"button little map\"><span "
+"class=\"text\">建立地圖</span></a>？</p>"
 
 #: pages/views.py:192
 msgid "Follow this page"
@@ -1263,7 +1268,7 @@ msgstr "註記"
 #: pages/views.py:598
 #, python-format
 msgid "Page renamed to \"%s\""
-msgstr ""
+msgstr "頁面重新命名為 \"%s\""
 
 #: pages/views.py:610
 msgid "Move to region (short name)"
@@ -1302,7 +1307,7 @@ msgstr ""
 
 #: pages/templates/pages/editor_actions.html:6
 msgid "Edit map"
-msgstr ""
+msgstr "編輯地圖"
 
 #: pages/templates/pages/editor_actions.html:7
 #: versionutils/templates/versionutils/delete_form.html:11
@@ -1373,7 +1378,7 @@ msgstr ""
 
 #: pages/templates/pages/page_files.html:26
 msgid "Files attached to this page:"
-msgstr ""
+msgstr "這個頁面的附加檔案："
 
 #: pages/templates/pages/page_files.html:41
 msgid "View page"
@@ -1400,22 +1405,22 @@ msgstr "頁面不存在"
 #: pages/templates/pages/page_new.html:6
 #, python-format
 msgid "Page \"%(name)s\" does not exist (yet!)"
-msgstr ""
+msgstr "頁面 \"%(name)s\" 不存在！"
 
 #: pages/templates/pages/page_new.html:15
 #: search/templates/search/search.html:16
 #: search/templates/search/search.html:84
 msgid "Create this page"
-msgstr ""
+msgstr "建立頁面"
 
 #: pages/templates/pages/page_new.html:19
 msgid "Or use one of these templates:"
-msgstr ""
+msgstr "套用以下模板："
 
 #: pages/templates/pages/page_new.html:22
 #, python-format
 msgid "Create with %(name)s template"
-msgstr ""
+msgstr "套用 %(name)s 模板建立頁面"
 
 #: pages/templates/pages/page_permissions.html:5
 #, python-format
@@ -1424,18 +1429,18 @@ msgstr ""
 
 #: pages/templates/pages/page_permissions.html:13
 msgid "Who can change this page?"
-msgstr ""
+msgstr "誰可以修改這個頁面？"
 
 #: pages/templates/pages/page_permissions.html:15
 #: redirects/templates/redirects/redirect_permissions.html:17
 #: users/forms.py:12
 msgid "Everyone"
-msgstr ""
+msgstr "所有人"
 
 #: pages/templates/pages/page_permissions.html:16
 #: redirects/templates/redirects/redirect_permissions.html:18
 msgid "Only these users:"
-msgstr ""
+msgstr "只有這些人："
 
 #: pages/templates/pages/page_permissions.html:22
 #: redirects/templates/redirects/redirect_permissions.html:24
@@ -1501,11 +1506,11 @@ msgstr ""
 
 #: pages/templates/pages/pagefile_diff.html:85
 msgid "File info"
-msgstr ""
+msgstr "檔案資訊"
 
 #: pages/templates/pages/pagefile_info.html:5
 msgid "Recent changes for this file"
-msgstr ""
+msgstr "檔案最近修改"
 
 #: pages/templates/pages/pagefile_info.html:12
 #, python-format
@@ -1522,11 +1527,11 @@ msgstr ""
 #: pages/templates/pages/pagefile_info.html:37
 #, python-format
 msgid "Download %(name)s"
-msgstr ""
+msgstr "下載 %(name)s"
 
 #: pages/templates/pages/pagefile_info.html:42
 msgid "Upload a new version"
-msgstr ""
+msgstr "上傳新版本"
 
 #: pages/templates/pages/pagefile_info.html:54
 msgid "Upload"
@@ -1535,7 +1540,7 @@ msgstr "上傳"
 #: pages/templates/pages/pagefile_info.html:60
 #: tags/templates/tags/pagetagset_versions.html:30
 msgid "Previous versions:"
-msgstr ""
+msgstr "之前的版本："
 
 #: pages/templatetags/pages_tags.py:126
 #, python-format
