@@ -652,6 +652,10 @@ def setup_parsoid():
     with nvm(env.node_version):
         run("node %s" % os.path.join(env.parsoid_root, "bin/server.js"))
 
+def test_parsoid():
+    with nvm(env.node_version):
+        run("node %s" % os.path.join(env.parsoid_root, "bin/parserTests.js"))
+
 def update_varnish_settings():
     # Add our custom configuration
     if env.host_type == 'test_server' or env.host_type == 'varnish':
