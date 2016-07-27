@@ -2031,7 +2031,7 @@ msgstr ""
 "    <p>\n"
 "    \t你可以透過點擊<strong>編輯</strong>來編輯此頁和其他頁面。</p>\n"
 "    <p>需要幫忙嗎？來看看<a href=\"http://localwiki.net/main/Help\">說明</a>"
-"或是<a href=\"%(guide_url)s\">使用導覽</a></p>"
+"或是<a href=\"http://localwiki.net/main/\">使用導覽</a></p>"
 
 #: regions/templates/regions/admins_update.html:6
 #: regions/templates/regions/banned_update.html:6
