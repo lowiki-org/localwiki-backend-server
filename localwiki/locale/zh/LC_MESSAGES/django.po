@@ -74,7 +74,7 @@ msgstr "全部的頁面"
 msgid ""
 "Need help? Want advice? Check out the <a href=\"%(guide_url)s\">LocalWiki "
 "guide</a>."
-msgstr "需要幫忙嗎？來看看<a href=\"%(guide_url)s\">使用說明</a>"
+msgstr "需要幫忙嗎？來看看<a href=\"%(guide_url)s\">使用導覽</a>"
 
 #: activity/templates/activity/followed_activity_index.html:15
 #: themes/sapling/templates/site/common_nav.html:11
@@ -552,7 +552,7 @@ msgstr "歡迎到 %(region_name)s 的 LocalWiki!"
 #: frontpage/templates/frontpage/base.html:64
 #, python-format
 msgid "A website about %(region_name)s that <em>anyone</em> can edit"
-msgstr ""
+msgstr "這是%(region_name)s的專屬網站，任何人都可以編輯"
 
 #: frontpage/templates/frontpage/base.html:66
 msgid ""
@@ -562,6 +562,11 @@ msgid ""
 "create page\"></span>\n"
 "        "
 msgstr ""
+"\n"
+"        我要建立一個新頁面 <span class=\"searchbox\"><input type="
+"\"text\" name=\"q\" value=\"\"><input type=\"submit\" value=\"搜尋或建立頁面"
+"\"></span>\n"
+"        "
 
 #: frontpage/templates/frontpage/base.html:87
 msgid "Change cover"
@@ -593,7 +598,7 @@ msgstr "檢視"
 
 #: frontpage/templates/frontpage/base.html:128
 msgid "Some interesting pages"
-msgstr ""
+msgstr "一些有趣的頁面"
 
 #: frontpage/templates/frontpage/base.html:137
 msgid "Explore more pages"
@@ -601,7 +606,7 @@ msgstr "探索更多頁面"
 
 #: frontpage/templates/frontpage/base.html:141
 msgid "There are no pages yet.  Add some!"
-msgstr ""
+msgstr "目前還沒有頁面。新增一個吧！"
 
 #: frontpage/templates/frontpage/base.html:142
 #: themes/sapling/templates/site/add_page_area.html:5
@@ -2019,6 +2024,14 @@ msgid ""
 "net/main/Help\">help page</a> on the <a href=\"http://localwiki.net/main/"
 "\">LocalWiki Guide</a>!</p>"
 msgstr ""
+"<p>\n"
+"    \t歡迎來到新的 %(region)s! 這是導覽頁面來幫助你開始使用。\n"
+"    <p>\n"
+"    \t點擊<strong>探索</strong>來看看有什麼新鮮事。</p>\n"
+"    <p>\n"
+"    \t你可以透過點擊<strong>編輯</strong>來編輯此頁和其他頁面。</p>\n"
+"    <p>需要幫忙嗎？來看看<a href=\"http://localwiki.net/main/Help\">說明</a>"
+"或是<a href=\"%(guide_url)s\">使用導覽</a></p>"
 
 #: regions/templates/regions/admins_update.html:6
 #: regions/templates/regions/banned_update.html:6
