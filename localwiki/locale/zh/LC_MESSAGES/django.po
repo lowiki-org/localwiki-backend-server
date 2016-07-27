@@ -97,6 +97,9 @@ msgid ""
 "\"><div class=\"follow little button\"><span class=\"text\"></span></div></"
 "div> Then activity will show up here!"
 msgstr ""
+"追蹤頁面或區域和人只要點擊 <div class=\"follow_item\"><div class=\"follow little"
+" button\"><span class=\"text\"></span></div></"
+"div> 就可以嘍!"
 
 #: activity/templates/activity/followed_activity_index.html:34
 msgid "Create a new LocalWiki region"
@@ -159,12 +162,12 @@ msgstr ""
 #: activity/templates/activity/index_page.html:15
 #, python-format
 msgid "last modified %(version_date)s ago"
-msgstr ""
+msgstr "最近編輯於%(version_date)s前"
 
 #: activity/templates/activity/followed_activity_page.html:61
 #: activity/templates/activity/index_page.html:23
 msgid "new"
-msgstr ""
+msgstr "新增"
 
 #: activity/templates/activity/followed_activity_page.html:63
 #: activity/templates/activity/index_page.html:25
@@ -174,13 +177,13 @@ msgstr "已刪除"
 #: activity/templates/activity/followed_activity_page.html:65
 #: activity/templates/activity/index_page.html:27
 msgid "changes"
-msgstr ""
+msgstr "變更"
 
 #: activity/templates/activity/followed_activity_page.html:69
 #: activity/templates/activity/index_page.html:31
 #, python-format
 msgid "Restored version from %(version_date_timesince)s ago"
-msgstr ""
+msgstr "回復%(version_date_timesince)s前的版本"
 
 #: activity/templates/activity/followed_activity_page.html:75
 #: activity/templates/activity/index_page.html:37
@@ -2771,7 +2774,7 @@ msgstr ""
 
 #: utils/templates/utils/history/form.html:18
 msgid "restore"
-msgstr ""
+msgstr "回復"
 
 #: versionutils/diff/diffutils.py:115 versionutils/diff/diffutils.py:225
 #: versionutils/diff/diffutils.py:317 versionutils/diff/diffutils.py:337
@@ -2894,4 +2897,4 @@ msgstr "成功刪除!"
 #: versionutils/versioning/views.py:156
 #, python-format
 msgid "Restored version %s."
-msgstr ""
+msgstr "回復 %s 版本"
