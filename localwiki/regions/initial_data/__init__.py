@@ -59,35 +59,24 @@ def populate_region(region):
     				<strong>人口數</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    			</td>
+    			<td>{{人口數}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>鄰近地形</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    			（溪流、山脈等）</td>
+    			<td>{{鄰近地形}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>歷史災害</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    			</td>
+    			<td>{{歷史災害}}</td>
     		</tr>
     	</tbody>
-    </table>
-    <h2>
-    	介紹</h2>
-    <p>
-    	（內文）</p>
-    <h2>
-    	災害潛勢</h2>
-    <p>
-    	（內文）</p>"""),
+    </table>"""),
         region=region
     ).save()
 
@@ -104,79 +93,66 @@ def populate_region(region):
     				<strong>名稱</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{名稱}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>地址</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{地址}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>適用災別</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{適用災別}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>容納人數</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{容納人數}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>面積</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{面積}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>聯絡人</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{聯絡人}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>電話</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{電話}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>設備</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{設備}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>官方／非官方</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{官方}}</td>
     		</tr>
     	</tbody>
-    </table>
-    <h2>
-    	說明</h2>
-    <p>
-    	&nbsp;</p>"""),
+    </table>"""),
         region=region
     ).save()
 
@@ -193,55 +169,45 @@ def populate_region(region):
     				<strong>名稱</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{名稱}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>地址</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{地址}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>項目與數量</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{項目與數量}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>聯絡人</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{聯絡人}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>電話</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{電話}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>官方／非官方</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{官方}}</td>
     		</tr>
     	</tbody>
-    </table>
-    <h2>
-    	說明</h2>
-    <p>
-    	&nbsp;</p>"""),
+    </table>"""),
         region=region
     ).save()
 
@@ -258,39 +224,31 @@ def populate_region(region):
     				<strong>災害類型</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{災害類型}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>人數</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{人數}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>上傳日期</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{上傳日期}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>官方／非官方</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{官方}}</td>
     		</tr>
     	</tbody>
-    </table>
-    <h2>
-    	說明</h2>
-    <p>
-    	&nbsp;</p>"""),
+    </table>"""),
         region=region
     ).save()
 
@@ -307,39 +265,31 @@ def populate_region(region):
     				<strong>名稱</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{名稱}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>地址</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{地址}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>聯絡人</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{聯絡人}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>電話</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{電話}}</td>
     		</tr>
     	</tbody>
-    </table>
-    <h2>
-    	說明</h2>
-    <p>
-    	&nbsp;</p>"""),
+    </table>"""),
         region=region
     ).save()
 
@@ -356,31 +306,24 @@ def populate_region(region):
     				<strong>名稱</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{名稱}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>地址</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{地址}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>座標</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{座標}}</td>
     		</tr>
     	</tbody>
-    </table>
-    <h2>
-    	說明</h2>
-    <p>
-    	&nbsp;</p>"""),
+    </table>"""),
         region=region
     ).save()
 
@@ -397,31 +340,24 @@ def populate_region(region):
     				<strong>名稱</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{名稱}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>電話</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{電話}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>地址</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{地址}}</td>
     		</tr>
     	</tbody>
-    </table>
-    <h2>
-    	說明</h2>
-    <p>
-    	&nbsp;</p>"""),
+    </table>"""),
         region=region
     ).save()
 
@@ -438,23 +374,17 @@ def populate_region(region):
     				<strong>地址或位置</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{位置}}</td>
     		</tr>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>狀況描述</strong></td>
     		</tr>
     		<tr>
-    			<td>
-    				</td>
+    			<td>{{狀況描述}}</td>
     		</tr>
     	</tbody>
-    </table>
-    <h2>
-    	說明</h2>
-    <p>
-    	&nbsp;</p>"""),
+    </table>"""),
         region=region
     ).save()
 
