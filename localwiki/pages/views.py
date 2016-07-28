@@ -59,13 +59,14 @@ class BasePageDetailView(Custom404Mixin, AddContributorsMixin, RegionMixin, Deta
             return region_404_response(request, kwargs['region'])
         slug = kwargs['slug']
 
-        page_templates = Page.objects.filter(
-                slug__startswith='templates/', region=region
-            ).order_by('name')
+        # page_templates = Page.objects.filter(
+                # slug__startswith='templates/', region=region
+            # ).order_by('name')
         page = Page(name=name, slug=slug, region=region)
         return HttpResponseNotFound(
             render(request, 'pages/page_new.html',
-                   {'page': page, 'page_templates': page_templates,
+                   #{'page': page, 'page_templates': page_templates,
+                   {'page': page,
                     'region': region})
         )
 
