@@ -12,6 +12,8 @@ from pages.plugins import LinkNode, EmbedCodeNode
 from pages import models
 from pages.models import Page, slugify
 
+import mwparserfromhell
+
 register = template.Library()
 
 
@@ -44,6 +46,47 @@ class PageContentNode(BaseIncludeNode):
             if self.nofollow and '_render_nofollow' in context:
                 del context['_render_nofollow']
 
+
+class PageWikicodeNode(BaseIncludeNode):
+    def __init__(self, html_var, render_plugins=True, nofollow=False, *args, **kwargs):
+        super(PageWikicodeNode, self).__init__(*args, **kwargs)
+        self.nofollow = nofollow
+        self.html_var = template.Variable(html_var)
+        self.render_plugins = render_plugins
+
+    def process_context(self, context):
+        self.region = context.get('region', None)
+
+    def renderTemplate(self, name, params):
+        try:
+            template = Page.objects.get(slug__exact=slugify(u"templates/%s" % name), region=self.region)
+        except Page.DoesNotExist:
+            return ""
+        text = unicode(template.content)
+        for param in params:
+            text = text.replace(u"{{%s}}" % unicode(param.name), unicode(param.value))
+        return text
+
+    def render(self, context):
+        self.process_context(context)
+        try:
+            html = unicode(self.html_var.resolve(context))
+            wiki = mwparserfromhell.parse(html)
+            for template in wiki.filter_templates():
+                wiki.replace(template, self.renderTemplate(template.name, template.params))
+            html = unicode(wiki)
+            if self.nofollow:
+                context['_render_nofollow'] = True
+            t = Template(html_to_template_text(html, context, self.render_plugins))
+            html = self.render_template(t, context)
+            if self.nofollow:
+                del context['_render_nofollow']
+            return html
+        except:
+            if settings.TEMPLATE_DEBUG:
+                raise
+            if self.nofollow and '_render_nofollow' in context:
+                del context['_render_nofollow']
 
 class IncludeContentNode(BaseIncludeNode):
     """
@@ -153,7 +196,7 @@ def do_render_plugins(parser, token, render_plugins=True, nofollow=False):
     except ValueError:
         raise template.TemplateSyntaxError, ("%r tag requires one argument" %
                                              token.contents.split()[0])
-    return PageContentNode(html_var, render_plugins, nofollow=nofollow)
+    return PageWikicodeNode(html_var, render_plugins, nofollow=nofollow)
 
 
 @register.tag(name='render_plugins_nofollow')
@@ -213,7 +256,7 @@ def do_link(parser, token):
         href = unescape_string_literal(href)
     else:
         # It's probably a variable in this case.
-        href = template.Variable(href) 
+        href = template.Variable(href)
 
     nodelist = parser.parse(('endlink',))
     parser.delete_first_token()

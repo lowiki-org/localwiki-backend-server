@@ -56,16 +56,17 @@ class BasePageDetailView(Custom404Mixin, AddContributorsMixin, RegionMixin, Deta
         try:
             region = self.get_region(request=request, kwargs=kwargs)
         except Http404:
-            return region_404_response(request, kwargs['region']) 
+            return region_404_response(request, kwargs['region'])
         slug = kwargs['slug']
 
-        page_templates = Page.objects.filter(
-                slug__startswith='templates/', region=region
-            ).order_by('name')
+        # page_templates = Page.objects.filter(
+                # slug__startswith='templates/', region=region
+            # ).order_by('name')
         page = Page(name=name, slug=slug, region=region)
         return HttpResponseNotFound(
             render(request, 'pages/page_new.html',
-                   {'page': page, 'page_templates': page_templates,
+                   #{'page': page, 'page_templates': page_templates,
+                   {'page': page,
                     'region': region})
         )
 
@@ -98,7 +99,7 @@ class BasePageDetailView(Custom404Mixin, AddContributorsMixin, RegionMixin, Deta
         return context
 
 
-class PageDetailView(CacheMixin, BasePageDetailView):
+class PageDetailView(NeverCacheMixin, BasePageDetailView):
     cache_keep_forever = True
 
     @staticmethod
@@ -208,8 +209,8 @@ class PageUpdateView(PermissionRequiredMixin, CreateObjectMixin,
                 'twitter_link': ('<a target="_blank" class="button tiny" href="https://twitter.com/home?status=%s"></a>' % twitter_status)
             }
             share_message = '<div class="share_message">%s</div>' % share_message
-            
-            
+
+
         return '%s%s%s%s' % (default_message, map_create_link, follow_message, share_message)
 
     def get_success_url(self):
@@ -627,7 +628,7 @@ class PageMoveRegionView(PermissionRequiredMixin, RegionMixin, FormView):
         self.new_region_slug = form.cleaned_data['new_region']
         self.new_region = Region.objects.get(slug__iexact=self.new_region_slug)
 
-        move_to_region(self.new_region, pages=[self.page]) 
+        move_to_region(self.new_region, pages=[self.page])
         return HttpResponseRedirect(self.get_success_url())
 
     def success_msg(self):
@@ -725,7 +726,7 @@ def suggest(request, *args, **kwargs):
     Simple page suggest.
     """
     # XXX TODO: Break this out when doing the API work.
-    from haystack.query import SearchQuerySet 
+    from haystack.query import SearchQuerySet
     import json
 
     term = request.GET.get('term', None)

@@ -97,9 +97,7 @@ from copy import copy
 import string
 from collections import defaultdict
 from contextlib import contextmanager as _contextmanager
-from StringIO import StringIO
 from fabric.api import *
-from fabric.api import get
 from fabric.contrib.files import upload_template, exists
 from fabric.network import disconnect_all
 from fabric.api import settings
@@ -635,11 +633,9 @@ def setup_mapserver():
     sudo('service apache2 restart')
 
 def setup_varnish():
-    if not config_secrets['varnish_secret']:
-        fd = StringIO()
-        get('/etc/varnish/secret', use_sudo=True, local_path=fd)
-        config_secrets['varnish_secret'] = fd.getvalue().rstrip()
-        update_django_settings()
+    r = sudo('cat /etc/varnish/secret')
+    config_secrets['varnish_secret'] = r.rstrip()
+    update_django_settings()
     sudo('mkdir -p /mnt/varnish/')
     update_varnish_settings()
 
@@ -1111,6 +1107,20 @@ def fix_locale():
     sudo('update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8')
     disconnect_all()
 
+def fix_vbox(version='4.3.8'):
+    """
+    Somethings virtualbox can't mount folder, because vagrant box does not have VirtualBox Guest Additions installed.
+    """
+    sudo('apt-get install linux-headers-$(uname -r) build-essential dkms')
+    sudo('wget http://download.virtualbox.org/virtualbox/%s/VBoxGuestAdditions_%s.iso' % (version, version))
+    sudo('mkdir -p /media/VBoxGuestAdditions')
+    sudo('mount -o loop,ro VBoxGuestAdditions_%s.iso /media/VBoxGuestAdditions' % version)
+    with settings(warn_only=True):
+        sudo('sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run --nox11')
+    sudo('rm VBoxGuestAdditions_%s.iso' % version)
+    sudo('umount /media/VBoxGuestAdditions')
+    sudo('rmdir /media/VBoxGuestAdditions')
+
 def setup_transifex():
     with virtualenv():
         sudo('apt-get install gettext')
@@ -1133,7 +1143,7 @@ def pull_translations():
                     run('tx pull -a')
                     sudo('localwiki-manage compilemessages', user='www-data')
 
-def push_translations():
+def push_translations(lang='en'):
     with settings(warn_only=True):
         with virtualenv():
             r = run('which tx')
@@ -1142,8 +1152,8 @@ def push_translations():
 
             with cd(os.path.join(env.src_root, 'localwiki')):
                 with virtualenv():
-                    sudo('localwiki-manage makemessages -l en', user='www-data')
-                    sudo('localwiki-manage makemessages -d djangojs -l en', user='www-data')
+                    sudo('localwiki-manage makemessages -l %s' % lang, user='www-data')
+                    sudo('localwiki-manage makemessages -d djangojs -l %s' % lang, user='www-data')
                     run('tx push -s -t')
 
 def populate_page_cards():

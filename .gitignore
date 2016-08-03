@@ -8,4 +8,4 @@
 /dist/
 /env/
 /localwiki.egg-info/
-
+config_secrets/

@@ -25,12 +25,17 @@ PROJECT_ROOT = os.environ.get('LOCALWIKI_PROJECT_ROOT') or \
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or
+        # 'oracle'.
+        'ENGINE': 'django.db.backends.',
+        # Or path to database file if using sqlite3.
+        'NAME': '',
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': '',
+        # Set to empty string for default. Not used with sqlite3.
+        'PORT': '',
     }
 }
 
@@ -44,22 +49,24 @@ EDIT_LICENSE_NOTE = _("""By clicking the "Save changes" button, you agree to the
 
 SIGNUP_TOS = _("""I agree to the <a href="https://localwiki.org/main/Terms_of_Use" target="_blank">Terms of Use</a>, which includes agreeing to release my contributions, unless noted otherwise, under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0 License</a>. See <a href="https://localwiki.org/main/Copyrights" target="_blank">Copyrights</a>.""")
 
-SUBSCRIBE_MESSAGE = _("""I would like to receive occasional updates about this project via email.""")
+SUBSCRIBE_MESSAGE = _(
+    """I would like to receive occasional updates about this project via email.""")
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Taipei'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'zh'
 
 # Input formats for dates and times enforced in form fields. For all possible
-# options see  http://docs.python.org/2/library/datetime.html#strftime-strptime-behavior 
-DATE_INPUT_FORMATS = ('%m/%d/%Y',)  # dates like 12/31/2012
+# options see
+# http://docs.python.org/2/library/datetime.html#strftime-strptime-behavior
+DATE_INPUT_FORMATS = ('%y/%m/%d',)  # dates like 12/31/2012
 TIME_INPUT_FORMATS = ('%I:%M %p',)  # times like 01:35 PM
 
 LOCALE_PATHS = (
@@ -76,6 +83,7 @@ LANGUAGES = (
     ('hu', _('Hungarian')),
     ('nl', _('Dutch')),
     ('uk', _('Ukrainian')),
+    ('zh', _('Chinese')),
 )
 
 SITE_ID = 1
@@ -121,40 +129,40 @@ USERS_ANONYMOUS_GROUP = 'Anonymous'
 USERS_BANNED_GROUP = 'Banned'
 USERS_DEFAULT_GROUP = 'Authenticated'
 USERS_DEFAULT_PERMISSIONS = {'auth.group':
-                                [{'name': USERS_DEFAULT_GROUP,
-                                  'permissions':
-                                    [['add_mapdata', 'maps', 'mapdata'],
-                                     ['change_mapdata', 'maps', 'mapdata'],
-                                     ['delete_mapdata', 'maps', 'mapdata'],
-                                     ['add_page', 'pages', 'page'],
-                                     ['change_page', 'pages', 'page'],
-                                     ['delete_page', 'pages', 'page'],
-                                     ['add_pagefile', 'pages', 'pagefile'],
-                                     ['change_pagefile', 'pages', 'pagefile'],
-                                     ['delete_pagefile', 'pages', 'pagefile'],
-                                     ['add_redirect', 'redirects', 'redirect'],
-                                     ['change_redirect', 'redirects', 'redirect'],
-                                     ['delete_redirect', 'redirects', 'redirect'],
-                                    ]
-                                 },
+                             [{'name': USERS_DEFAULT_GROUP,
+                               'permissions':
+                               [['add_mapdata', 'maps', 'mapdata'],
+                                ['change_mapdata', 'maps', 'mapdata'],
+                                ['delete_mapdata', 'maps', 'mapdata'],
+                                ['add_page', 'pages', 'page'],
+                                ['change_page', 'pages', 'page'],
+                                ['delete_page', 'pages', 'page'],
+                                ['add_pagefile', 'pages', 'pagefile'],
+                                ['change_pagefile', 'pages', 'pagefile'],
+                                ['delete_pagefile', 'pages', 'pagefile'],
+                                ['add_redirect', 'redirects', 'redirect'],
+                                ['change_redirect', 'redirects', 'redirect'],
+                                ['delete_redirect', 'redirects', 'redirect'],
+                                ]
+                               },
                                  {'name': USERS_ANONYMOUS_GROUP,
                                   'permissions':
-                                    [['add_mapdata', 'maps', 'mapdata'],
-                                     ['change_mapdata', 'maps', 'mapdata'],
-                                     ['delete_mapdata', 'maps', 'mapdata'],
-                                     ['add_page', 'pages', 'page'],
-                                     ['change_page', 'pages', 'page'],
-                                     ['delete_page', 'pages', 'page'],
-                                     ['add_pagefile', 'pages', 'pagefile'],
-                                     ['change_pagefile', 'pages', 'pagefile'],
-                                     ['delete_pagefile', 'pages', 'pagefile'],
-                                     ['add_redirect', 'redirects', 'redirect'],
-                                     ['change_redirect', 'redirects', 'redirect'],
-                                     ['delete_redirect', 'redirects', 'redirect'],
-                                    ]
-                                 },
-                                ]
-                            }
+                                  [['add_mapdata', 'maps', 'mapdata'],
+                                   ['change_mapdata', 'maps', 'mapdata'],
+                                   ['delete_mapdata', 'maps', 'mapdata'],
+                                   ['add_page', 'pages', 'page'],
+                                   ['change_page', 'pages', 'page'],
+                                   ['delete_page', 'pages', 'page'],
+                                   ['add_pagefile', 'pages', 'pagefile'],
+                                   ['change_pagefile', 'pages', 'pagefile'],
+                                   ['delete_pagefile', 'pages', 'pagefile'],
+                                   ['add_redirect', 'redirects', 'redirect'],
+                                   ['change_redirect', 'redirects', 'redirect'],
+                                   ['delete_redirect', 'redirects', 'redirect'],
+                                   ]
+                                  },
+                              ]
+                             }
 USER_REGION_ADMIN_CAN_MANAGE = [
     'pages.models.Page',
     'page.models.PageFile',
@@ -254,7 +262,7 @@ CACHES = {
     }
 }
 
-JOHNNY_MIDDLEWARE_KEY_PREFIX='jc_lw'
+JOHNNY_MIDDLEWARE_KEY_PREFIX = 'jc_lw'
 PHASED_KEEP_CONTEXT = False
 
 COMPRESS_CSS_FILTERS = [
@@ -360,7 +368,7 @@ SITE_THEME = 'sapling'
 REST_FRAMEWORK = {
     'PAGINATE_BY': 30,
     # Allow client to override, using `?limit=xxx`.
-    'PAGINATE_BY_PARAM': 'limit',  
+    'PAGINATE_BY_PARAM': 'limit',
     # Maximum limit allowed when using `?limit=xxx`.
     'MAX_PAGINATE_BY': 100,
     'PAGINATE_KWARG': 'p',
@@ -378,7 +386,7 @@ REST_FRAMEWORK = {
     ),
 
     'DEFAULT_PERMISSION_CLASSES': [
-        # Combined, these allow only authenticated users to 
+        # Combined, these allow only authenticated users to
         # write via the API and non-authenticated users to read.
         'main.api.permissions.DjangoObjectPermissionsOrAnonReadOnly',
         'rest_framework.permissions.IsAuthenticatedOrReadOnly'
@@ -412,7 +420,7 @@ TEMPLATED_EMAIL_TEMPLATE_DIR = ''
 EMAIL_BACKEND = 'djcelery_email.backends.CeleryEmailBackend'
 
 CELERY_EMAIL_TASK_CONFIG = {
-    'rate_limit' : '80/m',
+    'rate_limit': '80/m',
 }
 
 ACTSTREAM_SETTINGS = {
@@ -440,6 +448,7 @@ OLWIDGET_DEFAULT_OPTIONS = {
 LANGUAGE_DEFAULT_CENTERS = {
     'ja': (37.23, 137.53),
     'de': (50.33, 9.76),
+    'zh': (22, 121),
 }
 
 DAISYDIFF_URL = 'http://localhost:8080/daisydiff/diff'
