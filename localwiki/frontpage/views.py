@@ -60,7 +60,15 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
         olwidget_options['zoomToDataExtent'] = False
         olwidget_options['cluster'] = True
         if cover:
-            return InfoMap([], options=olwidget_options)
+            return InfoMap([(self.get_region().geom, {
+                'style': {
+                    'fill_color': '#ffdf68',
+                    'stroke_color': '#db9e33',
+                    'fill_opacity': '0',
+                    'stroke_opacity': '1'
+                },
+                'html': '<p>' + self.get_region().full_name + '</p>'
+            })], options=olwidget_options)
         else:
             return InfoMap(self.get_map_objects(), options=olwidget_options)
 
