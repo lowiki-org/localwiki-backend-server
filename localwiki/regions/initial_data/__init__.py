@@ -32,7 +32,9 @@ def populate_region(region):
     	<li>
     		<a href="Templates%2F設備物資集結點">Templates/設備物資集結點</a></li>
     	<li>
-    		<a href="Templates%2F保全對象">Templates/保全對象</a></li>
+    		<a href="Templates%2F土石流保全對象">Templates/土石流保全對象</a></li>
+    	<li>
+    		<a href="Templates%2F水災保全對象">Templates/水災保全對象</a></li>
     	<li>
     		<a href="Templates%2F特殊需求機構">Templates/特殊需求機構</a></li>
     	<li>
@@ -211,8 +213,8 @@ def populate_region(region):
         region=region
     ).save()
 
-    # Translators: This is for "Templates/保全對象" - a template page
-    template_type = u"保全對象"
+    # Translators: This is for "Templates/土石流保全對象" - a template page
+    template_type = u"土石流保全對象"
     Page(
         name="Templates/%s" % template_type,
         slug="templates/%s" % slugify(template_type),
@@ -226,6 +228,74 @@ def populate_region(region):
     		<tr>
     			<td>{{災害類型}}</td>
     		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>人數</strong></td>
+    		</tr>
+    		<tr>
+    			<td>{{人數}}</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>上傳日期</strong></td>
+    		</tr>
+    		<tr>
+    			<td>{{上傳日期}}</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>官方／非官方</strong></td>
+    		</tr>
+    		<tr>
+    			<td>{{官方}}</td>
+    		</tr>
+    	</tbody>
+    </table>"""),
+        region=region
+    ).save()
+
+    # Translators: This is for "Templates/水災保全對象" - a template page
+    template_type = u"水災保全對象"
+    Page(
+        name="Templates/%s" % template_type,
+        slug="templates/%s" % slugify(template_type),
+        content=_(u"""
+    <table>
+    	<tbody>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>人數</strong></td>
+    		</tr>
+    		<tr>
+    			<td>{{人數}}</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>上傳日期</strong></td>
+    		</tr>
+    		<tr>
+    			<td>{{上傳日期}}</td>
+    		</tr>
+    		<tr>
+    			<td style="background-color: rgb(232, 236, 239);">
+    				<strong>官方／非官方</strong></td>
+    		</tr>
+    		<tr>
+    			<td>{{官方}}</td>
+    		</tr>
+    	</tbody>
+    </table>"""),
+        region=region
+    ).save()
+
+    # Translators: This is for "Templates/水災保全對象" - a template page
+    template_type = u"水災保全對象"
+    Page(
+        name="Templates/%s" % template_type,
+        slug="templates/%s" % slugify(template_type),
+        content=_(u"""
+    <table>
+    	<tbody>
     		<tr>
     			<td style="background-color: rgb(232, 236, 239);">
     				<strong>人數</strong></td>
