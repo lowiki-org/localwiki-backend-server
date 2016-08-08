@@ -62,8 +62,8 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
         if cover:
             return InfoMap([(self.get_region().geom, {
                 'style': {
-                    'fill_color': '#ffdf68',
-                    'stroke_color': '#db9e33',
+                    'fill_color': '#ffffff',
+                    'stroke_color': '#fca92e',
                     'fill_opacity': '0',
                     'stroke_opacity': '1'
                 },
