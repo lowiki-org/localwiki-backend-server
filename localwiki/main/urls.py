@@ -45,7 +45,7 @@ urlpatterns = patterns('',
 
     # Region routing URLs
     (r'^', include(regions.site.urls)),
-    
+
     # API URLs
     url(r'^api/{0,1}$', RedirectView.as_view(url='/api/v4/', permanent=False)),
     url(r'^api/v4/', include(router.urls)),
@@ -82,6 +82,8 @@ urlpatterns = patterns('',
     # Search engine sitemap
     # (Usually served via apache, but including here as well if using dev server)
     url(r'^sitemap.xml', include('static_sitemaps.urls')),
+
+    (r'^', include('migrate.urls', 'migrate', 'migrate')),
 
     (r'^(?P<region>[^/]+?)/(((?i)Front[_ ]Page)/?)?', include('frontpage.urls')),
 

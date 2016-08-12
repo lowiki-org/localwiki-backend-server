@@ -57,7 +57,7 @@ class PageWikicodeNode(BaseIncludeNode):
     def process_context(self, context):
         self.region = context.get('region', None)
 
-    def renderTemplate(self, name, params):
+    def render_template(self, name, params):
         try:
             template = Page.objects.get(slug__exact=slugify(u"templates/%s" % name), region=self.region)
         except Page.DoesNotExist:
@@ -73,7 +73,7 @@ class PageWikicodeNode(BaseIncludeNode):
             html = unicode(self.html_var.resolve(context))
             wiki = mwparserfromhell.parse(html)
             for template in wiki.filter_templates():
-                wiki.replace(template, self.renderTemplate(template.name, template.params))
+                wiki.replace(template, self.render_template(template.name, template.params))
             html = unicode(wiki)
             if self.nofollow:
                 context['_render_nofollow'] = True

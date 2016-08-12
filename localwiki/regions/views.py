@@ -189,7 +189,7 @@ class RegionListView(ListView):
         context['map'] = InfoMap(map_objects, options=self.get_map_options())
         return context
 
-    def get_map_options(self):    
+    def get_map_options(self):
         olwidget_options = copy.deepcopy(getattr(settings,
             'OLWIDGET_DEFAULT_OPTIONS', {}))
 
@@ -210,11 +210,11 @@ class RegionListView(ListView):
         olwidget_options['map_div_class'] = 'mapwidget small'
         return olwidget_options
 
-   
+
 class RegionListMapView(RegionListView):
     template_name = 'regions/region_list_map.html'
 
-    def get_map_options(self):    
+    def get_map_options(self):
         olwidget_options = copy.deepcopy(getattr(settings,
             'OLWIDGET_DEFAULT_OPTIONS', {}))
 
@@ -279,7 +279,7 @@ class RegionExploreView(MultipleTypesPaginatedView):
         from maps.widgets import InfoMap
 
         def popup_html(obj):
-            url = reverse('frontpage', kwargs={'region': obj.slug}) 
+            url = reverse('frontpage', kwargs={'region': obj.slug})
             return '<a href="%s">%s</a>' % (url, obj.full_name)
 
         context = super(RegionExploreView, self).get_context_data(*args, **kwargs)
@@ -496,7 +496,7 @@ def suggest(request, *args, **kwargs):
     Simple region suggest.
     """
     # XXX TODO: Break this out when doing the API work.
-    from haystack.query import SearchQuerySet 
+    from haystack.query import SearchQuerySet
     import json
 
     term = request.GET.get('term', None)

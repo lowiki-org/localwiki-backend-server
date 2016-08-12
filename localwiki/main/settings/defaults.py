@@ -353,6 +353,7 @@ INSTALLED_APPS = (
     'stars',
     'cards',
     'explore',
+    'migrate',
     'main_content',
     'crap_comments',
     'main.api',
