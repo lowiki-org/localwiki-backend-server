@@ -242,7 +242,7 @@ class GlobalTaggedList(CacheMixin, ListView):
 
 
 class PageTagSetUpdateView(PageNotFoundMixin, PermissionRequiredMixin,
-        RegionMixin, CreateObjectMixin, UpdateView):
+                           RegionMixin, CreateObjectMixin, UpdateView):
     model = PageTagSet
     form_class = PageTagSetForm
     permission = 'pages.change_page'
@@ -261,7 +261,7 @@ class PageTagSetUpdateView(PageNotFoundMixin, PermissionRequiredMixin,
         if next:
             return next
         return reverse('pages:tags',
-            args=[self.kwargs.get('region'), self.kwargs.get('slug')])
+                       args = [self.kwargs.get('region'), self.kwargs.get('slug')])
 
     def get_context_data(self, *args, **kwargs):
         context = super(PageTagSetUpdateView, self).get_context_data(*args, **kwargs)
@@ -362,11 +362,11 @@ class AddSingleTagView(PermissionRequiredMixin, RegionMixin, CreateObjectMixin, 
 
     def form_valid(self, form):
         tag_slug = form.cleaned_data['tag_slug']
+        page_name = form.cleaned_data['page_name']
 
         if not self.object:
             # Page doesn't exist yet, so let's redirect to page creation screen
-            page_name = form.cleaned_data['page_name']
-            p = Page(name=page_name, region=self.get_region())
+            Page(name=page_name, region=self.get_region())
             url = reverse('pages:edit', kwargs={'slug': page_name, 'region': self.get_region()})
             return HttpResponseRedirect('%s?tag=%s' % (url, tag_slug))
 
@@ -375,7 +375,7 @@ class AddSingleTagView(PermissionRequiredMixin, RegionMixin, CreateObjectMixin, 
         if pts.exists():
             pts = pts[0]
         else:
-            pts = PageTagSet(page=self.object, region=self.get_region()) 
+            pts = PageTagSet(page=self.object, region=self.get_region())
 
         tag_name = Tag._meta.verbose_name.lower()
         pts.save(comment=_("added %(name)s %(added)s.") % {'name': tag_name, 'added': tag_slug})
