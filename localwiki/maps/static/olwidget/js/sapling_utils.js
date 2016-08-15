@@ -11,7 +11,7 @@ SaplingMap = {
         var base_initOptions = olwidget.Map.prototype.initOptions;
         /* Resize map to fit content area */
         olwidget.Map.prototype.initOptions = function(options) {
-            var opts = base_initOptions.call(this, options) 
+            var opts = base_initOptions.call(this, options)
             var border_height = 0;
             var map_height = $(window).height() - $('#header').outerHeight() - $('#main_header').outerHeight() - $('#content_header').outerHeight() - $('#content_footer').outerHeight() - ($('#content_wrapper').outerHeight() - $('#content').outerHeight() - border_height);
             // Let's make sure it's not any smaller than 300px for mobile devices
@@ -64,7 +64,7 @@ SaplingMap = {
         }
         else {
             window.attachEvent('onbeforeunload', this.beforeUnload);
-        } 
+        }
         $('#content form').submit(function() { SaplingMap.is_dirty = false; });
         $('#editor_actions .cancel').click(function() { SaplingMap.is_dirty = false; });
 
@@ -86,6 +86,21 @@ SaplingMap = {
             this.setup_link_hover_activation(map);
         }
         this.disable_scroll_zoom(map);
+
+        var projWGS84 = new OpenLayers.Projection('EPSG:4326');
+        var proj3857 = new OpenLayers.Projection('EPSG:3857');
+        // XXX Hack.  900913 is deprecated.
+        map.projection = proj3857;
+        map.addLayer(new OpenLayers.Layer.WMS('避難收容處所',
+          'http://140.110.141.222/agada/services/CHH/TAIWAN_W84_3857/MapServer/WMSServer?service=WMS',
+          { layers: '0', transparent: true, },
+          { isBaseLayer: false }));
+        map.addLayer(new OpenLayers.Layer.WMS('海嘯潛勢',
+          'http://140.110.141.222/agada/services/CHH/TAIWAN_W84_3857Tsunami/MapServer/WMSServer?service=WMS',
+          { layers: '0', transparent: true },
+          { isBaseLayer: false, opacity: 0.5 }));
+
+        map.addControl(new OpenLayers.Control.LayerSwitcher({'div': OpenLayers.Util.getElement('layerswitcher')}));
     },
 
     _setup_pagename_autocomplete: function () {
@@ -213,7 +228,7 @@ SaplingMap = {
     add_additional_styling: function(map) {
         var layer = map.vectorLayers[0];
 
-        this._fix_line_thickness(layer, map); 
+        this._fix_line_thickness(layer, map);
 
         map.events.register("zoomend", null, function(evt) {
             SaplingMap._fix_line_thickness(layer, map);
@@ -233,7 +248,7 @@ SaplingMap = {
         // Always have some stroke for selected features.
         var strokeAlpha = Math.max(0.2, 1 - 1 * area_ratio);
         var strokeWidth = Math.max(2, 15 * area_ratio);
-        var zoomedStyle = $.extend({}, 
+        var zoomedStyle = $.extend({},
             layer.styleMap.styles['select'].defaultStyle,
             { fillOpacity: fillAlpha,
               // TODO: Not sure why we need to specify strokeWidth
@@ -306,14 +321,14 @@ SaplingMap = {
         enquire.register("screen and (min-width:700px)", {
             match: register_feature_select
         });
-        enquire.listen(); 
+        enquire.listen();
     },
 
     setup_dynamic_map: function(map, layer) {
         if (!layer) {
             var layer = map.vectorLayers[0];
         }
-        
+
         layer.dataExtent = map.getExtent();
         var set_feature_alpha = SaplingMap._set_feature_alpha;
         var is_feature_invisible = SaplingMap._is_feature_invisible;
@@ -429,12 +444,12 @@ SaplingMap = {
 
     _displayRelated: function(map) {
         var layer = map.vectorLayers[0];
-        
+
         var setAlpha = function(feature, viewedArea) {
             if(feature.geometry.CLASS_NAME == "OpenLayers.Geometry.Polygon")
             {
                 var alpha =  0.5 - 0.5 * Math.min(1, feature.geometry.getArea()/viewedArea);
-                var polyStyle = $.extend({}, 
+                var polyStyle = $.extend({},
                           feature.layer.styleMap.styles['default'].defaultStyle,
                           { fillOpacity: alpha });
                 feature.style = polyStyle;
@@ -636,8 +651,8 @@ SaplingMap = {
 
     _get_editing_layer: function(map) {
         for (var i = 0; i < map.controls.length; i++) {
-            if (map.controls[i] && map.controls[i].CLASS_NAME == 
-                "olwidget.EditableLayerSwitcher") { 
+            if (map.controls[i] && map.controls[i].CLASS_NAME ==
+                "olwidget.EditableLayerSwitcher") {
                 return map.vectorLayers[0];
             }
         }
@@ -720,7 +735,7 @@ SaplingMap = {
         .on('typeahead:selected', function(e, datum) {
             if (!datum.osm_type) {
                 // Isn't a way, relation or node - just a point I think?
-                return _add_as_point(datum); 
+                return _add_as_point(datum);
             }
 
             $('.mapwidget').prepend('<div class="loading"></div>');
@@ -745,9 +760,9 @@ SaplingMap = {
     },
 
     _open_editing: function(map) {
-        for (var i = 0; i < map.controls.length; i++) { 
-            if (map.controls[i] && map.controls[i].CLASS_NAME == 
-        "olwidget.EditableLayerSwitcher") { 
+        for (var i = 0; i < map.controls.length; i++) {
+            if (map.controls[i] && map.controls[i].CLASS_NAME ==
+        "olwidget.EditableLayerSwitcher") {
                 layer = map.vectorLayers[0];
                 if (layer.controls) {
                     this._setup_map_search(map, layer);
@@ -757,18 +772,18 @@ SaplingMap = {
                     this._set_modify_control(layer);
                     this._register_edit_events(map, layer);
                 }
-                break; 
-            } 
+                break;
+            }
         }
     },
 
     _remove_unneeded_controls: function(layer) {
-        for (var i = 0; i < layer.controls.length; i++) { 
-            if (layer.controls[i] && layer.controls[i].CLASS_NAME == 
-        "OpenLayers.Control.Navigation") { 
+        for (var i = 0; i < layer.controls.length; i++) {
+            if (layer.controls[i] && layer.controls[i].CLASS_NAME ==
+        "OpenLayers.Control.Navigation") {
                 layer.controls.splice(i, 1);
-                break; 
-            } 
+                break;
+            }
         }
     },
 
@@ -790,9 +805,9 @@ SaplingMap = {
             }
             return false;
         };
-        
+
         OpenLayers.Strategy.Cluster.prototype.cluster = function(event) {
-        
+
             if((!event || event.zoomChanged) && this.features && !this.clustering) {
                 var resolution = this.layer.map.getResolution();
 
@@ -826,7 +841,7 @@ SaplingMap = {
                     }
                     // Different clustering strategy for dynamic and non-dynamic maps.
                     if (!this.layer.map.opts.dynamic) {
-                        
+
                         for(var i=0; i<clusters.length; i++) {
                             var cluster = clusters[i];
 
