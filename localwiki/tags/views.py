@@ -20,6 +20,7 @@ from regions.models import Region
 from regions.views import RegionMixin
 from models import PageTagSet, Tag, slugify
 from forms import PageTagSetForm, SingleTagForm
+from pages.plugins import html_to_template_text
 from pages.models import Page
 
 from utils.views import CreateObjectMixin, PermissionRequiredMixin,\
@@ -246,6 +247,45 @@ class PageTagSetUpdateView(PageNotFoundMixin, PermissionRequiredMixin,
     model = PageTagSet
     form_class = PageTagSetForm
     permission = 'pages.change_page'
+
+    def tryTemplate(self, name):
+        return Page.objects.get(slug=u"templates/%s" % name,
+                                region=self.get_region())
+
+    def renderTemplate(self, name, params):
+        try:
+            t = self.tryTemplate(name)
+        except Page.DoesNotExist:
+            return ""
+        text = unicode(t.content)
+        for param in params:
+            text = text.replace(u"{{%s}}" % unicode(param.name), unicode(param.value))
+        return text
+
+    def form_valid(self, form):
+        tag_slug = form.cleaned_data.get('tags').latest('slug').name
+        page = form.instance.page
+        # Don't check when tag_slug eqal to page_name or no data
+        if tag_slug == page.name or len(tag_slug) == 0:
+            return super(PageTagSetUpdateView, self).form_valid(form)
+
+        # Check tag was also a template key
+        try:
+            tm = self.tryTemplate(tag_slug)
+        except Page.DoesNotExist:
+            tm = None
+        if tm:
+            context = page.content
+            try:
+                html = unicode(tm.content) + unicode(context)
+                page.content = html
+                logging.debug('tt %s', html)
+                page.save()
+            except:
+                if settings.TEMPLATE_DEBUG:
+                    raise
+
+        return super(PageTagSetUpdateView, self).form_valid(form)
 
     def get_object(self):
         page_slug = self.kwargs.get('slug')
