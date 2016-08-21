@@ -97,9 +97,8 @@ msgid ""
 "\"><div class=\"follow little button\"><span class=\"text\"></span></div></"
 "div> Then activity will show up here!"
 msgstr ""
-"追蹤頁面或區域和人只要點擊 <div class=\"follow_item\"><div class=\"follow little"
-" button\"><span class=\"text\"></span></div></"
-"div> 就可以嘍!"
+"追蹤頁面或區域和人只要點擊 <div class=\"follow_item\"><div class=\"follow "
+"little button\"><span class=\"text\"></span></div></div> 就可以嘍!"
 
 #: activity/templates/activity/followed_activity_index.html:34
 msgid "Create a new LocalWiki region"
@@ -209,7 +208,7 @@ msgstr "更多資訊"
 #: activity/templates/activity/index.html:9
 #: themes/sapling/templates/site/nav.html:9
 msgid "Activity"
-msgstr ""
+msgstr "動態"
 
 #: activity/templates/activity/index.html:19
 #, python-format
@@ -566,9 +565,9 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"        我要建立一個新頁面 <span class=\"searchbox\"><input type="
-"\"text\" name=\"q\" value=\"\"><input type=\"submit\" value=\"搜尋或建立頁面"
-"\"></span>\n"
+"        我要建立一個新頁面 <span class=\"searchbox\"><input type=\"text\" "
+"name=\"q\" value=\"\"><input type=\"submit\" value=\"搜尋或建立頁面\"></"
+"span>\n"
 "        "
 
 #: frontpage/templates/frontpage/base.html:87
@@ -627,7 +626,9 @@ msgid ""
 "Provided slug is invalid. Slugs must be lowercase, contain no trailing or "
 "leading whitespace, and contain only alphanumber characters along with "
 "%(KEEP_CHARACTERS)s"
-msgstr "不合法的縮寫。縮寫必須由小寫英文字母、數字，以及%(KEEP_CHARACTERS)s等字元組成，並且開頭與結尾不能用空白"
+msgstr ""
+"不合法的縮寫。縮寫必須由小寫英文字母、數字，以及%(KEEP_CHARACTERS)s等字元組"
+"成，並且開頭與結尾不能用空白"
 
 #: links/models.py:30
 msgid "The number of times the source page links to the destination page."
@@ -1078,7 +1079,7 @@ msgstr ""
 
 #: maps/templates/maps/mapdata_form.html:68
 msgid "Please comment about this change:"
-msgstr ""
+msgstr "簡介關於這次修改的內容"
 
 #: maps/templates/maps/mapdata_form.html:72
 #: pages/templates/pages/page_form.html:81
@@ -1095,12 +1096,12 @@ msgstr "取消"
 
 #: maps/templates/maps/mapdata_list.html:37
 msgid "Near You"
-msgstr ""
+msgstr "靠近你的點"
 
 #: maps/templates/maps/mapdata_list.html:52
 #: maps/templates/maps/mapdata_list.html:56
 msgid "Add a new map"
-msgstr ""
+msgstr "新增地圖"
 
 #: maps/templates/maps/mapdata_list.html:54
 msgid "What's here? (Name of page)"
@@ -1209,7 +1210,7 @@ msgstr "頁面已建立"
 
 #: pages/views.py:148
 msgid "Thank you for your changes. Your attention to detail is appreciated."
-msgstr "謝謝你的編輯。"
+msgstr "謝謝你細心的編輯。"
 
 #: pages/views.py:156
 #, python-format
@@ -1218,10 +1219,10 @@ msgid ""
 "next=%(current_path)s\"><strong>log in</strong></a> or <a href="
 "\"%(register_url)s?next=%(current_path)s\"><strong>create an account</"
 "strong></a>."
-msgstr "編輯已儲存！想要用你的名字儲存編輯，請<a href=\"%(login_url)s?"
-"next=%(current_path)s\"><strong>登入</strong></a>或<a href="
-"\"%(register_url)s?next=%(current_path)s\"><strong>建立帳號</"
-"strong></a>."
+msgstr ""
+"編輯已儲存！想要用你的名字儲存編輯，請<a href=\"%(login_url)s?next="
+"%(current_path)s\"><strong>登入</strong></a>或<a href=\"%(register_url)s?"
+"next=%(current_path)s\"><strong>建立帳號</strong></a>."
 
 #: pages/views.py:167
 #, python-format
@@ -1229,8 +1230,8 @@ msgid ""
 "<p class=\"create_map\"><a href=\"%s\" class=\"button little map\"><span "
 "class=\"text\">Create a map</span></a> for this page?</p>"
 msgstr ""
-"<p class=\"create_map\">為這個頁面<a href=\"%s\" class=\"button little map\"><span "
-"class=\"text\">建立地圖</span></a>？</p>"
+"<p class=\"create_map\">為這個頁面<a href=\"%s\" class=\"button little map"
+"\"><span class=\"text\">建立地圖</span></a>？</p>"
 
 #: pages/views.py:192
 msgid "Follow this page"
@@ -1395,7 +1396,7 @@ msgstr "檢視頁面"
 #: pages/templates/pages/page_form.html:5
 #, python-format
 msgid "Editing page \"%(name)s\" - %(super)s"
-msgstr ""
+msgstr "編輯頁面 \"%(name)s\" - %(super)s"
 
 #: pages/templates/pages/page_form.html:77
 msgid "Please describe this change:"
@@ -1473,6 +1474,9 @@ msgid ""
 "\" rel=\"nofollow\">links</a>, or <a href=\"../_tags/_history/\" rel="
 "\"nofollow\">tags</a>?"
 msgstr ""
+"或是需要<a href=\"../_files/\">檔案</a>，<a href=\"%(page_links_url)s"
+"\" rel=\"nofollow\">相關連接</a>或<a href=\"../_tags/_history/\" rel="
+"\"nofollow\">標籤</a>？"
 
 #: pages/templates/pages/pagefile_diff.html:34
 #, python-format
@@ -2073,8 +2077,8 @@ msgstr "搜尋區域"
 msgid ""
 "or <a href=\"%(region_add_url)s\" class=\"button little\">add a new region</"
 "a>"
-msgstr "或  <a href=\"%(region_add_url)s\" class=\"button little\">建立新區域</"
-"a>"
+msgstr ""
+"或  <a href=\"%(region_add_url)s\" class=\"button little\">建立新區域</a>"
 
 #: regions/templates/regions/region_explore_index.html:52
 #: regions/templates/regions/region_form.html:7
@@ -2101,7 +2105,7 @@ msgstr "當你在選擇區域的時候，雙點擊去結束當下的編輯"
 #: regions/templates/regions/region_form.html:52
 #: regions/templates/regions/settings.html:69
 msgid "Pick an area roughly the size of a city. Don't worry about being exact!"
-msgstr ""
+msgstr "圈選一個區域，有點不準確也沒關係"
 
 #: regions/templates/regions/region_form_log_in.html:10
 #, python-format
@@ -2323,11 +2327,11 @@ msgstr ""
 
 #: tags/templates/tags/tag_list.html:6
 msgid "All tags"
-msgstr ""
+msgstr "全部的標籤"
 
 #: tags/templates/tags/tag_list.html:13
 msgid "Most popular"
-msgstr ""
+msgstr "熱門"
 
 #: tags/templates/tags/tag_list.html:14
 msgid "As a cloud"
@@ -2369,34 +2373,34 @@ msgstr ""
 
 #: templates/registration/login.html:5
 msgid "Log in"
-msgstr ""
+msgstr "登入"
 
 #: templates/registration/login.html:20
 msgid "Your username and password didn't match. Please try again."
-msgstr ""
+msgstr "你的帳號和密碼不符，請再試一次。"
 
 #: templates/registration/login.html:21 templates/registration/login.html:31
 msgid "Forgot your password?"
-msgstr ""
+msgstr "忘記密碼？"
 
 #: templates/registration/login.html:28
 #: templates/registration/registration_form.html:43
 msgid "login"
-msgstr ""
+msgstr "登入"
 
 #: templates/registration/password_reset_complete.html:5
 #: templates/registration/password_reset_complete.html:6
 #: templates/registration/password_reset_complete.html:9
 msgid "Password reset complete"
-msgstr ""
+msgstr "密碼重置成功"
 
 #: templates/registration/password_reset_complete.html:11
 msgid "Your password has been set.  You may go ahead and log in now."
-msgstr ""
+msgstr "你的密碼已經設定，你現在可以登入"
 
 #: templates/registration/password_reset_complete.html:13
 msgid "Sign in"
-msgstr ""
+msgstr "重新登入"
 
 #: templates/registration/password_reset_confirm.html:4
 #: templates/registration/password_reset_confirm.html:6
@@ -2404,51 +2408,54 @@ msgstr ""
 #: templates/registration/password_reset_form.html:5
 #: templates/registration/password_reset_form.html:8
 msgid "Password reset"
-msgstr ""
+msgstr "重置密碼"
 
 #: templates/registration/password_reset_confirm.html:11
 msgid "Enter new password"
-msgstr ""
+msgstr "輸入新密碼"
 
 #: templates/registration/password_reset_confirm.html:13
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
+"請輸入你的新密碼二次，以確認你的輸入正確。"
 
 #: templates/registration/password_reset_confirm.html:17
 msgid "New password:"
-msgstr ""
+msgstr "新密碼"
 
 #: templates/registration/password_reset_confirm.html:19
 msgid "Confirm password:"
-msgstr ""
+msgstr "確認密碼"
 
 #: templates/registration/password_reset_confirm.html:20
 msgid "Change my password"
-msgstr ""
+msgstr "更改密碼"
 
 #: templates/registration/password_reset_confirm.html:24
 msgid "Password reset unsuccessful"
-msgstr ""
+msgstr "密碼重置失敗"
 
 #: templates/registration/password_reset_confirm.html:26
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr ""
+"這個密碼重置連接已失效，有可能是這個重置連接已經被使用過，請重新要求。"
 
 #: templates/registration/password_reset_done.html:4
 #: templates/registration/password_reset_done.html:5
 #: templates/registration/password_reset_done.html:8
 msgid "Password reset successful"
-msgstr ""
+msgstr "重置密碼成功"
 
 #: templates/registration/password_reset_done.html:10
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
 msgstr ""
+"密碼設定信已寄到你的信箱，你應該馬上會收到"
 
 #: templates/registration/password_reset_email.html:2
 #, python-format
@@ -2572,11 +2579,11 @@ msgstr "登入"
 
 #: themes/sapling/templates/site/login_info.html:19
 msgid "or"
-msgstr ""
+msgstr "或"
 
 #: themes/sapling/templates/site/nav.html:13
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: themes/sapling/templates/site/search_form.html:5
 #, python-format
@@ -2609,7 +2616,7 @@ msgstr ""
 
 #: users/forms.py:30 users/registration_backend/forms.py:44
 msgid "Your name"
-msgstr "帳號"
+msgstr "你的名稱"
 
 #: users/forms.py:31
 msgid "Email address"
@@ -2645,7 +2652,7 @@ msgstr "必須登入才能修改使用者設定"
 
 #: users/views.py:244
 msgid "User settings updated!"
-msgstr "使用者設定 更新成功!"
+msgstr "使用者設定更新成功!"
 
 #: users/views.py:281
 msgid "Your account has been de-activated."
@@ -2825,11 +2832,11 @@ msgstr "比較"
 
 #: versionutils/templates/versionutils/history/form.html:47
 msgid "There is no revision history."
-msgstr ""
+msgstr "沒有過往的記錄"
 
 #: versionutils/templates/versionutils/history/media.html:46
 msgid "Please select two versions to compare"
-msgstr ""
+msgstr "請選擇兩個項目來比較"
 
 #: versionutils/versioning/constants.py:15
 msgid "Updated"
