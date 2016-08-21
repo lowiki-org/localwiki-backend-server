@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-24 03:29+0800\n"
+"POT-Creation-Date: 2016-08-21 16:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2461,6 +2461,7 @@ msgid "Reset my password"
 msgstr ""
 
 #: templates/registration/registration_form.html:5
+#: themes/sapling/templates/site/login_info.html:19
 msgid "Create account"
 msgstr ""
 
@@ -2543,10 +2544,6 @@ msgstr ""
 
 #: themes/sapling/templates/site/login_info.html:19
 msgid "or"
-msgstr ""
-
-#: themes/sapling/templates/site/login_info.html:19
-msgid "create account"
 msgstr ""
 
 #: themes/sapling/templates/site/nav.html:13

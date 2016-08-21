@@ -16,7 +16,7 @@
     </span>
 {% else %}
     <span class="actions">
-        <a href="{% url 'auth_login' %}?next=//{{ request.get_host }}{{ request.path }}" rel="nofollow" class="tiny button">{% trans "log in" %}</a> {% trans "or" %} <a href="{% url 'registration_register' %}?next=//{{ request.get_host }}{{ request.path }}" rel="nofollow" class="tiny button">{% trans "create account" %}</a>
+        <a href="{% url 'auth_login' %}?next=//{{ request.get_host }}{{ request.path }}" rel="nofollow" class="tiny button">{% trans "log in" %}</a> {% trans "or" %} <a href="{% url 'registration_register' %}?next=//{{ request.get_host }}{{ request.path }}" rel="nofollow" class="tiny button">{% trans "Create account" %}</a>
     </span>
 {% endif %}
 {% endphased %}
