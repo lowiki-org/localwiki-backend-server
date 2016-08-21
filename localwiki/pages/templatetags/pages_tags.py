@@ -72,8 +72,8 @@ class PageWikicodeNode(BaseIncludeNode):
         try:
             html = unicode(self.html_var.resolve(context))
             wiki = mwparserfromhell.parse(html)
-            for template in wiki.filter_templates():
-                wiki.replace(template, self.render_wiki_template(template.name, template.params))
+            for ft in wiki.filter_templates():
+                wiki.replace(ft, self.renderTemplate(ft.name, ft.params))
             html = unicode(wiki)
             if self.nofollow:
                 context['_render_nofollow'] = True
@@ -88,6 +88,7 @@ class PageWikicodeNode(BaseIncludeNode):
             if self.nofollow and '_render_nofollow' in context:
                 del context['_render_nofollow']
 
+
 class IncludeContentNode(BaseIncludeNode):
     """
     Base class for including some named content inside a other content.
@@ -101,7 +102,7 @@ class IncludeContentNode(BaseIncludeNode):
         bits = token.split_contents()
         if len(bits) < 2:
             raise template.TemplateSyntaxError, ('%r tag requires at least one'
-                                    ' argument' % token.contents.split()[0])
+                                                 ' argument' % token.contents.split()[0])
         self.args = []
         for b in bits[1:]:
             if is_quoted(b):
@@ -240,8 +241,8 @@ def do_searchbox(parser, token):
                                            token.contents.split()[0])
     if not is_quoted(query):
         raise template.TemplateSyntaxError(
-                                    "%r tag's argument should be in quotes" %
-                                     token.contents.split()[0])
+            "%r tag's argument should be in quotes" %
+            token.contents.split()[0])
     return SearchBoxNode(query=unescape_string_literal(query))
 
 
@@ -251,7 +252,7 @@ def do_link(parser, token):
         tag, href = token.split_contents()
     except ValueError:
         raise template.TemplateSyntaxError("%r tag requires one argument" %
-            token.contents.split()[0])
+                                           token.contents.split()[0])
     if is_quoted(href):
         href = unescape_string_literal(href)
     else:

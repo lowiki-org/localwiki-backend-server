@@ -59,13 +59,9 @@ class BasePageDetailView(Custom404Mixin, AddContributorsMixin, RegionMixin, Deta
             return region_404_response(request, kwargs['region'])
         slug = kwargs['slug']
 
-        # page_templates = Page.objects.filter(
-                # slug__startswith='templates/', region=region
-            # ).order_by('name')
         page = Page(name=name, slug=slug, region=region)
         return HttpResponseNotFound(
             render(request, 'pages/page_new.html',
-                   #{'page': page, 'page_templates': page_templates,
                    {'page': page,
                     'region': region})
         )
@@ -146,9 +142,8 @@ class PageUpdateView(PermissionRequiredMixin, CreateObjectMixin,
         #
         # XXX TODO: Refactor this into something more general + show this
         # message on other content types (maps, tags)
-        default_message = '<div>%s</div>' % _('Thank you for your changes. '
-                   'Your attention to detail is appreciated.')
-        log_in_message = ''
+        default_message = '<div>%s</div>' % \
+                          _('Thank you for your changes. Your attention to detail is appreciated.')
         map_create_link = ''
         follow_message = ''
         share_message = ''
@@ -158,7 +153,7 @@ class PageUpdateView(PermissionRequiredMixin, CreateObjectMixin,
                 '<a href="%(login_url)s?next=%(current_path)s"><strong>log in</strong></a> or '
                 '<a href="%(register_url)s?next=%(current_path)s"><strong>create an account</strong></a>.')
                 % {'login_url': reverse('auth_login'),
-                   'current_path' :self.request.path,
+                   'current_path': self.request.path,
                    'register_url': reverse('registration_register')
                    }
                 )
@@ -205,11 +200,10 @@ class PageUpdateView(PermissionRequiredMixin, CreateObjectMixin,
             share_message = "%(share_message)s<div>%(fb_link)s %(twitter_link)s</div>" % {
                 'share_message': share_message,
                 'fb_link': ('<a target="_blank" class="button tiny" href="https://www.facebook.com/sharer/sharer.php?u=https://localwiki.org%s"></a>' %
-                    self.object.get_url_for_share(self.request)),
+                            self.object.get_url_for_share(self.request)),
                 'twitter_link': ('<a target="_blank" class="button tiny" href="https://twitter.com/home?status=%s"></a>' % twitter_status)
             }
             share_message = '<div class="share_message">%s</div>' % share_message
-
 
         return '%s%s%s%s' % (default_message, map_create_link, follow_message, share_message)
 
