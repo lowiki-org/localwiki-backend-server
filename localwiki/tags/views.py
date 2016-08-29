@@ -279,7 +279,6 @@ class PageTagSetUpdateView(PageNotFoundMixin, PermissionRequiredMixin,
             try:
                 html = unicode(tm.content) + unicode(context)
                 page.content = html
-                logging.debug('tt %s', html)
                 page.save()
             except:
                 if settings.TEMPLATE_DEBUG:
