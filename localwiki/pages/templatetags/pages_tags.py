@@ -73,7 +73,7 @@ class PageWikicodeNode(BaseIncludeNode):
             html = unicode(self.html_var.resolve(context))
             wiki = mwparserfromhell.parse(html)
             for ft in wiki.filter_templates():
-                wiki.replace(ft, self.renderTemplate(ft.name, ft.params))
+                wiki.replace(ft, self.render_wiki_template(ft.name, ft.params))
             html = unicode(wiki)
             if self.nofollow:
                 context['_render_nofollow'] = True
