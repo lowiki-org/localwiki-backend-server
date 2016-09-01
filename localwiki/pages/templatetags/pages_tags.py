@@ -13,6 +13,7 @@ from pages import models
 from pages.models import Page, slugify
 
 import mwparserfromhell
+import re
 
 register = template.Library()
 
@@ -65,6 +66,7 @@ class PageWikicodeNode(BaseIncludeNode):
         text = unicode(template.content)
         for param in params:
             text = text.replace(u"{{%s}}" % unicode(param.name), unicode(param.value))
+        text = re.compile(u"{{.*?}}").sub(u"", text)
         return text
 
     def render(self, context):
