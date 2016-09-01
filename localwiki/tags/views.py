@@ -1,4 +1,6 @@
 import copy
+import mwparserfromhell
+import re
 from dateutil.parser import parse as dateparser
 
 from localwiki.utils.urlresolvers import reverse
@@ -248,19 +250,23 @@ class PageTagSetUpdateView(PageNotFoundMixin, PermissionRequiredMixin,
     form_class = PageTagSetForm
     permission = 'pages.change_page'
 
-    def tryTemplate(self, name):
-        return Page.objects.get(slug=u"templates/%s" % name,
+    def find_template(self, name):
+        qs = Page.objects.filter(slug=u"templates/%s" % name,
                                 region=self.get_region())
+        if qs.exists():
+            return qs.all()[0]
+        else:
+            return None
 
-    def renderTemplate(self, name, params):
-        try:
-            t = self.tryTemplate(name)
-        except Page.DoesNotExist:
-            return ""
-        text = unicode(t.content)
-        for param in params:
-            text = text.replace(u"{{%s}}" % unicode(param.name), unicode(param.value))
-        return text
+    def get_template_string(self, name):
+        tm = self.find_template(name)
+        if tm == None:
+            return u"{{%s}}" % unicode(name)
+        else:
+            return u"{{%s}}" % "|".join(
+                [unicode(name)]
+                + [ u"%s=" % variable for variable in re.compile(r"{{(.*?)}}").findall(unicode(tm.content)) ]
+            )
 
     def form_valid(self, form):
         tag_slug = form.cleaned_data.get('tags').latest('slug').name
@@ -270,19 +276,17 @@ class PageTagSetUpdateView(PageNotFoundMixin, PermissionRequiredMixin,
             return super(PageTagSetUpdateView, self).form_valid(form)
 
         # Check tag was also a template key
-        try:
-            tm = self.tryTemplate(tag_slug)
-        except Page.DoesNotExist:
-            tm = None
-        if tm:
-            context = page.content
-            try:
-                html = unicode(tm.content) + unicode(context)
-                page.content = html
-                page.save()
-            except:
-                if settings.TEMPLATE_DEBUG:
-                    raise
+        tm = self.find_template(tag_slug)
+        if tm != None:
+            html = unicode(page.content)
+            wiki = mwparserfromhell.parse(html)
+            if tag_slug not in [ t.name for t in wiki.filter_templates() ]:
+                try:
+                    page.content = self.get_template_string(tag_slug) + html
+                    page.save()
+                except:
+                    if settings.TEMPLATE_DEBUG:
+                        raise
 
         return super(PageTagSetUpdateView, self).form_valid(form)
 
