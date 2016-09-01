@@ -6,7 +6,7 @@ from localwiki.utils.urlresolvers import reverse
 
 from localwiki.regions.views import RegionAdminRequired, RegionMixin, FormView
 from localwiki.pages.models import Page
-from localwiki.page_score.models import PageScore
+from localwiki.page_scores.models import PageScore
 from localwiki.tags.models import Tag, PageTagSet
 from localwiki.maps.models import MapData
 from .forms import PageMigrateSourceForm
@@ -95,10 +95,11 @@ class PageTemplateMigrator():
         if self.template_page != None and len(self.param_keys) > 0:
             new_page.content = u'{{%s}}' % "|".join(
                     [self.template_name] + [ u'%s=%s' % (k, record[k]) for k in self.param_keys if k in record ])
-        if new_page.score == None:
-            new_page.score = PageScore(score=1)
-
         new_page.save()
+
+        if not PageScore.objects.filter(page=new_page).exists():
+            score = PageScore(score=1, page=new_page, page_content_length=len(new_page.content)).save()
+
         self.migration_result['total'] = self.migration_result['total'] + 1
 
         if len(self.tags) > 0:
