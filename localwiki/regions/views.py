@@ -192,6 +192,9 @@ class RegionListView(ListView):
     def get_map_options(self):
         olwidget_options = copy.deepcopy(getattr(settings,
             'OLWIDGET_DEFAULT_OPTIONS', {}))
+        olwidget_options.update({
+            'cluster': True
+        })
 
         if get_language() in settings.LANGUAGE_DEFAULT_CENTERS:
             olwidget_options['default_lat'], olwidget_options['default_lon'] = settings.LANGUAGE_DEFAULT_CENTERS[get_language()]
@@ -290,6 +293,9 @@ class RegionExploreView(MultipleTypesPaginatedView):
 
         olwidget_options = copy.deepcopy(getattr(settings,
             'OLWIDGET_DEFAULT_OPTIONS', {}))
+        olwidget_options.update({
+            'cluster': True
+        })
 
         if get_language() in settings.LANGUAGE_DEFAULT_CENTERS:
             olwidget_options['default_lat'], olwidget_options['default_lon'] = settings.LANGUAGE_DEFAULT_CENTERS[get_language()]
