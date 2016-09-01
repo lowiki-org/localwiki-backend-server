@@ -1,3 +1,4 @@
+# encoding: utf-8
 from django import template
 from django.template.loader_tags import BaseIncludeNode
 from django.template import Template
@@ -83,6 +84,9 @@ class PageWikicodeNode(BaseIncludeNode):
             html = self.render_template(t, context)
             if self.nofollow:
                 del context['_render_nofollow']
+            if html.find('%% twitter %%') >= 0:
+                html = html.replace('%% twitter %%', u'<a class="twitter-timeline" href="https://twitter.com/lowiki_tw">即時訊息</a>')
+                html = html + ' <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>'
             return html
         except:
             if settings.TEMPLATE_DEBUG:
