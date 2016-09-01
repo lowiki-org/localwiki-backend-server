@@ -78,18 +78,45 @@ class PageTemplateMigrator():
     def add_tag(self, tag):
         self.tags.append(tag)
 
+    def get_name(self, rec):
+        if u'名稱' in rec:
+            return rec[u'名稱']
+        elif u'機構名稱' in rec:
+            return rec[u'機構名稱']
+        else:
+            return None
+
+    def get_latitude(self, rec):
+        if u'緯度' in rec:
+            return rec[u'緯度']
+        elif 'Y' in rec:
+            return rec['Y']
+        else:
+            return None
+
+    def get_longitude(self, rec):
+        if u'經度' in rec:
+            return rec[u'經度']
+        elif 'X' in rec:
+            return rec['X']
+        else:
+            return None
+
     def migrate(self):
         for rec in self.records:
-            if u'名稱' not in rec:
+            if self.get_name(rec) == None:
                 continue
             self.migrate_record(rec)
 
     def migrate_record(self, record):
+        slug = self.get_name(record)
+        longitude = self.get_longitude(record)
+        latitude = self.get_latitude(record)
 
         try:
-            new_page = Page.objects.get(slug=record[u'名稱'], region=self.region)
+            new_page = Page.objects.get(slug=slug, region=self.region)
         except Page.DoesNotExist:
-            new_page = Page(name=record[u'名稱'], slug=record[u'名稱'], region=self.region)
+            new_page = Page(name=slug, slug=slug, region=self.region)
             self.migration_result['new'] = self.migration_result['new'] + 1
 
         if self.template_page != None and len(self.param_keys) > 0:
@@ -112,10 +139,10 @@ class PageTemplateMigrator():
                 if not tagset.tags.filter(pk=tag.pk).exists():
                     tagset.tags.add(tag)
 
-        if u'經度' in record and u'緯度' in record:
+        if longitude != None and latitude != None:
             try:
                 mapdata = new_page.mapdata
             except MapData.DoesNotExist:
                 mapdata = MapData(page=new_page, region=self.region)
-            mapdata.points = GEOSGeometry("""MULTIPOINT (%s %s)""" % (record[u'經度'], record[u'緯度']))
+            mapdata.points = GEOSGeometry("""MULTIPOINT (%s %s)""" % (longitude, latitude))
             mapdata.save()
