@@ -86,7 +86,7 @@ class PageTemplateMigrator():
     def migrate_record(self, record):
 
         try:
-            new_page = Page.objects.get(slug=record[u'名稱'])
+            new_page = Page.objects.get(slug=record[u'名稱'], region=self.region)
         except Page.DoesNotExist:
             new_page = Page(name=record[u'名稱'], slug=record[u'名稱'], region=self.region)
             self.migration_result['new'] = self.migration_result['new'] + 1
