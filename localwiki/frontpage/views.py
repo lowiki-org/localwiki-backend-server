@@ -1,8 +1,9 @@
+# encoding=utf-8
 import copy
 from PIL import Image
 from cStringIO import StringIO
 
-from django.views.generic import View 
+from django.views.generic import View
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib import messages
@@ -16,6 +17,7 @@ from maps.models import MapData
 from maps.widgets import InfoMap, map_options_for_region
 from regions.views import RegionMixin, RegionAdminRequired, TemplateView, region_404_response
 from regions.models import Region
+from tags.models import Tag
 from localwiki.utils.views import Custom404Mixin, CacheMixin
 
 from .models import FrontPage
@@ -72,24 +74,38 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
         else:
             return InfoMap(self.get_map_objects(), options=olwidget_options)
 
+    def get_categories_for_cards(self):
+        names = [u'避難收容處所', u'設備物資集結點', u'特殊需求機構', u'重要維生設施', u'緊急聯絡網']
+        categories = []
+        for name in names:
+            if Tag.objects.filter(name=name).exists():
+                categories.append({
+                    'name': name,
+                    'tag': Tag.objects.filter(name=name)[0]
+                })
+        return categories
+
     def get_pages_for_cards(self):
-        qs = Page.objects.filter(region=self.get_region())
+        categories = self.get_categories_for_cards()
+        for category in categories:
+            qs = Page.objects.filter(region=self.get_region(), pagetagset__tags__slug=category['tag'].slug)
 
-        # Exclude meta stuff
-        qs = qs.exclude(slug__startswith='templates/')
-        qs = qs.exclude(slug='templates')
-        qs = qs.exclude(slug='front page')
+            # Exclude meta stuff
+            qs = qs.exclude(slug__startswith='templates/')
+            qs = qs.exclude(slug='templates')
+            qs = qs.exclude(slug='front page')
 
-        # Exclude ones with empty scores
-        qs = qs.exclude(score=None)
+            # Exclude ones with empty scores
+            qs = qs.exclude(score=None)
 
-        qs = qs.defer('content').select_related('region').order_by('-score__score', '?')
+            qs = qs.defer('content').select_related('region').order_by('-score__score', '?')
 
-        # Just grab 6 items
-        return qs[:6]
+            # Just grab 6 items
+            category['pages'] = qs[:6]
+        return categories
 
     def get_context_data(self, *args, **kwargs):
-        context = super(FrontPageView, self).get_context_data() 
+        context = super(FrontPageView, self).get_context_data()
 
         context['frontpage'] = FrontPage.objects.get(region=self.get_region())
         context['no_index'] = self.get_region().is_empty
@@ -167,6 +183,6 @@ class CoverUploadView(RegionMixin, RegionAdminRequired, View):
         frontpage.save()
 
         messages.add_message(self.request, messages.SUCCESS, _("Cover photo updated!"))
-                
+
         return HttpResponseRedirect(
             reverse('frontpage', kwargs={'region': self.get_region().slug}))

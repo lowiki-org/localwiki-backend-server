@@ -48,7 +48,7 @@
 {% endblock %}
 
 {% block main_wrapper %}
-  {% phased with messages %} 
+  {% phased with messages %}
   {% if messages %}
   <ul class="messages">
     {% for message in messages %}
@@ -113,7 +113,7 @@ and submit using #cover_form.
           ({{ date }} by {{ user_link }}){% endblocktrans %}
       </em>
     {% endif %}
-    
+
     <div id="page" class="frontpage">
         {% if map %}
         <div id="map">
@@ -125,24 +125,21 @@ and submit using #cover_form.
 
         {% render_plugins page.content %}
         <div class="interesting_cards">
-            <h2>{% trans "Some interesting pages" %}</h2>
-            {% cache 300 int_frnt_pg request.META.HTTP_HOST region.slug %}
-              {% if pages_for_cards %}
+          {% cache 300 int_frnt_pg request.META.HTTP_HOST region.slug %}
+            {% for category in pages_for_cards %}
+              {% if category.pages %}
+                <h2>{{ category.name }}</h2>
                   <div class="cards">
-                  {% for page in pages_for_cards %}
+                  {% for page in category.pages %}
                     {% show_card page %}
                   {% endfor %}
                   </div>
                   <div class="explore_more">
                     <a class="button" href="{% url 'explore' region=region.slug %}">{% trans "Explore more pages" %}</a>
                   </div>
-              {% else %}
-              <div class="no_pages">
-                <p>{% trans "There are no pages yet.  Add some!" %}</p>
-                <p><a class="button" href="{% url 'haystack_search' region=region.slug %}">{% trans "Add a new page" %}</a></p>
-              </div>
               {% endif %}
-            {% endcache %}
+            {% endfor %}
+          {% endcache %}
          </div>
 
         {% if region.get_nearby_regions %}
