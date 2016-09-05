@@ -100,8 +100,7 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
 
             qs = qs.defer('content').select_related('region').order_by('-score__score', '?')
 
-            # Just grab 6 items
-            category['pages'] = qs[:6]
+            category['pages'] = qs
         return categories
 
     def get_context_data(self, *args, **kwargs):
