@@ -53,7 +53,7 @@ msgstr ""
 #: activity/templates/activity/all_activity_index.html:6
 #: activity/templates/activity/all_activity_index.html:18
 msgid "All activity on LocalWiki"
-msgstr "全部的更新狀態"
+msgstr "防災地方誌全站的更新狀態"
 
 #: activity/templates/activity/all_activity_index.html:24
 #: activity/templates/activity/followed_activity_index.html:19
@@ -84,7 +84,7 @@ msgstr "最新編輯"
 
 #: activity/templates/activity/followed_activity_index.html:30
 msgid "Welcome to LocalWiki! What's next?"
-msgstr "歡迎來到 LocalWiki! 來做點什麼吧？"
+msgstr "歡迎來到防災地方誌!來做點什麼吧？"
 
 #: activity/templates/activity/followed_activity_index.html:32
 msgid "Explore LocalWiki communities"
@@ -106,7 +106,7 @@ msgstr "建立一個新的區域"
 
 #: activity/templates/activity/followed_activity_index.html:35
 msgid "Follow <strong>@localwiki</strong> on Twitter"
-msgstr ""
+msgstr "追蹤防災地方誌的推特"
 
 #: activity/templates/activity/followed_activity_page.html:22
 #, python-format
@@ -305,7 +305,7 @@ msgstr "網誌"
 #: blog/templates/blog/post_archive.html:6
 #: blog/templates/blog/post_detail.html:6
 msgid "LocalWiki blog"
-msgstr "官方網誌"
+msgstr "防災地方誌官方網誌"
 
 #: blog/templates/blog/post_archive.html:16
 msgid "View this post"
@@ -549,7 +549,7 @@ msgstr "區域"
 #: frontpage/templates/frontpage/base.html:63
 #, python-format
 msgid "Welcome to the %(region_name)s LocalWiki!"
-msgstr "歡迎到 %(region_name)s 的 LocalWiki!"
+msgstr "歡迎到 %(region_name)s 的防災地方誌!"
 
 #: frontpage/templates/frontpage/base.html:64
 #, python-format
@@ -721,7 +721,7 @@ msgstr "正體中文"
 #: main_content/templates/main_content/default.html:6
 #: regions/templates/regions/region_form.html:5
 msgid "LocalWiki"
-msgstr "LocalWiki"
+msgstr "防災地方誌"
 
 #: main_content/templates/main_content/base.html:39
 #: main_content/templates/main_content/default.html:33
@@ -744,18 +744,20 @@ msgid ""
 "LocalWiki is a grassroots effort to collect, share and open the world's "
 "local knowledge."
 msgstr ""
+"防災地方誌是一個民間收集、分享和全世界共享知識的地方誌。"
 
 #: main_content/templates/main_content/index.html:25
 msgid ""
 "LocalWiki is a grassroots effort to collect, share and <span class="
 "\"highlight\">open the world's local knowledge</span>"
-msgstr ""
+msgstr "防災地方誌是一個民間收集、分享和<span class="
+"\"highlight\">全世界共享知識的地方誌</span>。"
 
 #: main_content/templates/main_content/index.html:30
 #: regions/templates/regions/region_explore_index.html:27
 #: regions/templates/regions/region_list.html:18
 msgid "Explore LocalWiki"
-msgstr "探索 LocalWiki"
+msgstr "探索防災地方誌"
 
 #: main_content/templates/main_content/index.html:39
 msgid "Explore all communities"
@@ -2044,7 +2046,7 @@ msgstr ""
 #: regions/templates/regions/banned_update.html:6
 #: regions/templates/regions/settings.html:6
 msgid "LocalWiki - Settings"
-msgstr ""
+msgstr "防災地方誌 - 設定"
 
 #: regions/templates/regions/admins_update.html:10
 #: regions/templates/regions/banned_update.html:10
@@ -2064,7 +2066,7 @@ msgstr ""
 #: regions/templates/regions/region_explore_index.html:17
 #: regions/templates/regions/region_list.html:8
 msgid "Explore - LocalWiki"
-msgstr "探索 - LocalWiki"
+msgstr "探索 - 防災地方誌"
 
 #: regions/templates/regions/region_explore_index.html:30
 #: regions/templates/regions/region_list.html:21
@@ -2120,7 +2122,7 @@ msgstr ""
 
 #: regions/templates/regions/region_list_map.html:30
 msgid "Communities - LocalWiki"
-msgstr ""
+msgstr "社區 - 防災地方誌"
 
 #: regions/templates/regions/settings.html:9
 #, python-format
@@ -2515,6 +2517,9 @@ msgid ""
 "world’s local knowledge.  We are a 501(c)3 non-profit organization.\n"
 "        "
 msgstr ""
+"\n"
+"        防災地方誌是一個民間收集、分享和全世界共享知識的地方誌。 我們是非營利組織。\n"
+"        "
 
 #: themes/sapling/templates/site/base.html:173
 msgid "Learn more"
@@ -2592,7 +2597,7 @@ msgstr ""
 
 #: themes/sapling/templates/site/search_form.html:10
 msgid "Search LocalWiki "
-msgstr "搜尋"
+msgstr "搜尋防災地方誌"
 
 #: users/__init__.py:7
 msgid "You are now logged out."
