@@ -22,7 +22,11 @@
     {% if region %}
     <li><a href="{{ pagetags.page.get_absolute_url }}">{{ pagetags.page.name }}</a></li>
     {% else %}
-    <li><a href="{{ pagetags.page.get_absolute_url }}">{{ pagetags.page.name }}</a> <span class="weak">(<a href="{{ pagetags.region.get_absolute_url }}">{{ pagetags.region.slug }}</a>)</span></li>
+      {% if pagetags.page.name == 'Front Page' %}
+        <li><a href="{{ pagetags.page.get_absolute_url }}">{{ pagetags.region.full_name }}</a></li>
+      {% else %}
+        <li><a href="{{ pagetags.page.get_absolute_url }}">{{ pagetags.page.name }}</a> <span class="weak">(<a href="{{ pagetags.region.get_absolute_url }}">{{ pagetags.region.full_name }}</a>)</span></li>
+      {% endif %}
     {% endif %}
   {% endfor %}
   </ul>
