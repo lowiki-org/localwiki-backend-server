@@ -43,13 +43,13 @@
             <span class="user">{{ actor_link }}</span> starred <a href="{{ region_url }}">{{ region_name }}</a> <span class="weak">{{ timesince }} ago</span>
           {% endblocktrans %}
         {% endif %}
-        
+
       </h3>
 
     {% else %}
       {% if forloop.first %}
         <div class="item">
-        <h3><a class="title" href="{{ change.page.get_absolute_url }}">{{ change.page.name }}</a> <span class="weak">(<a class="region_link" href="{{ change.page.region.get_absolute_url }}">{{ change.page.region.slug }}</a>)
+        <h3><a class="title" href="{{ change.page.get_absolute_url }}">{{ change.page.name }}</a> <span class="weak">(<a class="region_link" href="{{ change.page.region.get_absolute_url }}">{{ change.page.region.full_name }}</a>)
             {% blocktrans with version_date=change.version_info.date|timesince %}last modified {{ version_date }} ago{% endblocktrans %}</span></h3>
         <ul>
       {% endif %}
