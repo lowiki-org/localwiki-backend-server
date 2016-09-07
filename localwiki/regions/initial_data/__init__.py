@@ -444,7 +444,7 @@ def populate_region(region):
         region=region
     ).save()
 
-    Page(
+    frontpage = Page(
         name="Front Page",
         slug="front page",
         content=(_("""<p>
@@ -456,3 +456,11 @@ def populate_region(region):
     <p>Need <strong>help</strong>? Please see the <a href="http://localwiki.net/main/Help">help page</a> on the <a href="http://localwiki.net/main/">LocalWiki Guide</a>!</p>""") % {'region': region.full_name}),
         region=region
     ).save()
+
+    frontpage.content = (_("""<p>
+    歡迎來到 %(region)s 的首頁！以下為此區域的介紹。</p>
+    <h2>環境概述</h2>
+    <h2>災害潛勢</h2>
+    <h2>歷史災害</h2>
+    """))
+    frontpage.save()
