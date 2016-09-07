@@ -15,7 +15,11 @@
 
 {% block header_title %}
   {% if page %}
-    <a href="{% url 'pages:show' slug=page.pretty_slug region=page.region.slug %}">{{ page.name }}</a>
+    {% if page.name == 'Front Page' %}
+      <a href="{% url 'pages:show' slug=page.pretty_slug region=page.region.slug %}">{{ page.region.full_name }}</a>
+    {% else %}
+      <a href="{% url 'pages:show' slug=page.pretty_slug region=page.region.slug %}">{{ page.name }}</a>
+    {% endif %}
   {% endif %}
 {% endblock %}
 
