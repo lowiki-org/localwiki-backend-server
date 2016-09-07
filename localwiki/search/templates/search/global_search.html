@@ -32,7 +32,7 @@
       {% for result in page.object_list %}
           {% ifequal result.model_name "page" %}
           <h3>
-              <a href="{{ result.object.get_absolute_url }}">{{ result.name }}</a> (<a href="{{ result.object.region.get_absolute_url }}">{{ result.object.region.slug }}</a>)
+              <a href="{{ result.object.get_absolute_url }}">{{ result.name }}</a> (<a href="{{ result.object.region.get_absolute_url }}">{{ result.object.region.full_name }}</a>)
           </h3>
           <div id="object_tags">
               {% filtered_tags result.tags keywords %}
