@@ -146,6 +146,11 @@ and submit using #cover_form.
         <div class="nearby_regions">
             <h2>{% trans "Explore nearby regions" %}</h2>
             <ul>
+                {% if page.pagetagset %}
+                    {% for tag in page.pagetagset.tags.all %}
+                        <li><a class="region_link" href="{% url 'tags:global-tagged' slug=tag.slug %}">{{ tag.name }}</a></li>
+                    {% endfor %}
+                {% endif %}
                 {% for region in region.get_nearby_regions %}
                     <li><a class="region_link" href="{% host_url 'frontpage' region=region.slug on hub %}">{{ region.full_name }}</a></li>
                 {% endfor %}
