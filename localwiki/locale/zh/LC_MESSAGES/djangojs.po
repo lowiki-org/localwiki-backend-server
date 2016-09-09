@@ -31,11 +31,11 @@ msgstr ""
 
 #: crap_comments/static/js/ckeditor/_source/plugins/commentbox/dialogs/commentbox.js:23
 msgid "Title:"
-msgstr ""
+msgstr "標題："
 
 #: crap_comments/static/js/ckeditor/_source/plugins/commentbox/dialogs/commentbox.js:30
 msgid "Comments:"
-msgstr ""
+msgstr "備註："
 
 #: maps/static/olwidget/js/sapling_utils.js:290
 msgid " for "
@@ -190,43 +190,43 @@ msgstr "插入圖檔"
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:249
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:253
 msgid "Choose a file from your computer"
-msgstr ""
+msgstr "從你的檔案選擇一個檔案"
 
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:339
 msgid "Select a file"
-msgstr ""
+msgstr "選擇一個檔案"
 
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:339
 msgid "Select an image"
-msgstr ""
+msgstr "選擇一張圖片"
 
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:347
 msgid "or <a href=\"#\">use a file from the web</a>"
-msgstr ""
+msgstr "或是<a href=\"#\">從網頁上來的檔案</a>"
 
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:347
 msgid "or <a href=\"#\">use an image from the web</a>"
-msgstr ""
+msgstr "或是<a href=\"#\">從網頁上來的圖片</a>"
 
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:358
 msgid "File URL"
-msgstr "檔案 URL"
+msgstr "檔案網址"
 
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:358
 msgid "Image URL"
-msgstr "圖檔 URL"
+msgstr "圖檔網址"
 
 #: pages/static/js/ckeditor/_source/plugins/insertimage/dialogs/insertimage.js:396
 msgid "No file selected"
-msgstr ""
+msgstr "沒有選擇檔案"
 
 #: pages/static/js/ckeditor/_source/plugins/pagelink/dialogs/pageanchor.js:60
 msgid "Anchor name"
-msgstr ""
+msgstr "作者"
 
 #: pages/static/js/ckeditor/_source/plugins/pagelink/dialogs/pagelink.js:143
 msgid "Page name or URL"
-msgstr ""
+msgstr "頁面名稱或是網址"
 
 #: pages/static/js/ckeditor/_source/plugins/searchbox/plugin.js:14
 #: pages/static/js/ckeditor/_source/plugins/searchbox/dialogs/searchbox.js:10
@@ -237,7 +237,7 @@ msgstr "搜尋框"
 
 #: pages/static/js/ckeditor/_source/plugins/searchbox/dialogs/searchbox.js:23
 msgid "Search query"
-msgstr ""
+msgstr "搜尋條件"
 
 #: pages/static/js/ckeditor/_source/plugins/simpleimage/plugin.js:83
 msgid "Add a caption"
@@ -249,7 +249,7 @@ msgstr "進階設定..."
 
 #: pages/static/js/ckeditor/_source/plugins/simpletable/dialogs/simpletable.js:478
 msgid "CSS classes"
-msgstr ""
+msgstr "網頁樣式表類別"
 
 #: pages/static/js/ckeditor/_source/plugins/wikiplugins/plugin.js:23
 #: pages/static/js/ckeditor/_source/plugins/wikiplugins/plugin.js:24
@@ -258,12 +258,12 @@ msgstr "插入物件"
 
 #: themes/sapling/assets/js/base.js:122
 msgid "Search for \"{{ value }}\""
-msgstr ""
+msgstr "搜尋有關於\"{{ value }}\""
 
 #: themes/sapling/assets/js/base.js:136 themes/sapling/assets/js/base.js:173
 #: themes/sapling/assets/js/base.js:203
 msgid "Search all of LocalWiki"
-msgstr ""
+msgstr "全站搜尋"
 
 #: versionutils/diff/static/js/diff/htmldiff.js:24
 msgid "Previous"
@@ -279,7 +279,7 @@ msgstr "預覽更動"
 
 #: versionutils/diff/static/js/diff/htmldiff.js:59
 msgid "You can use the &larr; and &rarr; keys, too."
-msgstr ""
+msgstr "你也可以用 &larr; 和 &rarr;。"
 
 #: versionutils/diff/static/js/diff/htmldiff.js:69
 msgid "Content was deleted"
