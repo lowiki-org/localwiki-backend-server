@@ -455,12 +455,11 @@ def populate_region(region):
     	You can edit this and any other page by clicking the <strong>Edit</strong> button.</p>
     <p>Need <strong>help</strong>? Please see the <a href="http://localwiki.net/main/Help">help page</a> on the <a href="http://localwiki.net/main/">LocalWiki Guide</a>!</p>""") % {'region': region.full_name}),
         region=region
-    ).save()
-
-    frontpage.content = _("""<p>
+    )
+    frontpage.content = (_("""<p>
     Welcome to the new LocalWiki region for %(region)s!  Here are some information about this area.
     <h2>Environment</h2>
     <h2>Disaster Potential</h2>
     <h2>Historical Disasters</h2>
-    """)
+    """) % { 'region': region.full_name })
     frontpage.save()
