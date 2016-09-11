@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 16:44+0800\n"
+"POT-Creation-Date: 2016-09-11 17:20+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -78,7 +78,7 @@ msgstr "需要幫忙嗎？來看看<a href=\"%(guide_url)s\">使用導覽</a>"
 
 #: activity/templates/activity/followed_activity_index.html:15
 #: themes/sapling/templates/site/common_nav.html:11
-#: themes/sapling/templates/site/nav.html:18
+#: themes/sapling/templates/site/nav.html:19
 msgid "News Feed"
 msgstr "最新編輯"
 
@@ -298,7 +298,7 @@ msgstr ""
 
 #: blog/templates/blog/base_blog.html:16
 #: themes/sapling/templates/site/common_nav.html:19
-#: themes/sapling/templates/site/nav.html:22
+#: themes/sapling/templates/site/nav.html:23
 msgid "Blog"
 msgstr "網誌"
 
@@ -537,7 +537,7 @@ msgstr ""
 msgid "Start tour"
 msgstr ""
 
-#: frontpage/views.py:161
+#: frontpage/views.py:184
 msgid "Cover photo updated!"
 msgstr "封面照片更新成功!"
 
@@ -598,25 +598,11 @@ msgstr ""
 msgid "View"
 msgstr "檢視"
 
-#: frontpage/templates/frontpage/base.html:128
-msgid "Some interesting pages"
-msgstr "一些有趣的頁面"
-
-#: frontpage/templates/frontpage/base.html:137
+#: frontpage/templates/frontpage/base.html:138
 msgid "Explore more pages"
 msgstr "探索更多頁面"
 
-#: frontpage/templates/frontpage/base.html:141
-msgid "There are no pages yet.  Add some!"
-msgstr "目前還沒有頁面。新增一個吧！"
-
-#: frontpage/templates/frontpage/base.html:142
-#: themes/sapling/templates/site/add_page_area.html:5
-#: themes/sapling/templates/site/add_page_area.html:9
-msgid "Add a new page"
-msgstr "建立新頁面"
-
-#: frontpage/templates/frontpage/base.html:150
+#: frontpage/templates/frontpage/base.html:147
 msgid "Explore nearby regions"
 msgstr "探索最近的區域"
 
@@ -656,7 +642,7 @@ msgid ""
 "<h3>Pages <a href=\"%(page_url)s\">%(page_name)s</a> links to:</h3>\n"
 msgstr ""
 
-#: main/settings/defaults.py:43
+#: main/settings/defaults.py:48
 msgid ""
 "By clicking the \"Save changes\" button, you agree to the <a href=\"https://"
 "localwiki.org/main/Terms_of_Use\" target=\"_blank\">Terms of Use</a>, and "
@@ -665,7 +651,7 @@ msgid ""
 "\"_blank\">Copyrights</a>."
 msgstr ""
 
-#: main/settings/defaults.py:45
+#: main/settings/defaults.py:50
 msgid ""
 "I agree to the <a href=\"https://localwiki.org/main/Terms_of_Use\" target="
 "\"_blank\">Terms of Use</a>, which includes agreeing to release my "
@@ -675,44 +661,44 @@ msgid ""
 "\">Copyrights</a>."
 msgstr ""
 
-#: main/settings/defaults.py:47
+#: main/settings/defaults.py:53
 msgid ""
 "I would like to receive occasional updates about this project via email."
 msgstr "我願意收到這個專案的更新"
 
-#: main/settings/defaults.py:71
+#: main/settings/defaults.py:78
 msgid "English"
 msgstr "英語"
 
-#: main/settings/defaults.py:72
+#: main/settings/defaults.py:79
 msgid "Japanese"
 msgstr "日語"
 
-#: main/settings/defaults.py:73
+#: main/settings/defaults.py:80
 msgid "French"
 msgstr "法語"
 
-#: main/settings/defaults.py:74
+#: main/settings/defaults.py:81
 msgid "Spanish"
 msgstr "西班牙語"
 
-#: main/settings/defaults.py:75
+#: main/settings/defaults.py:82
 msgid "German"
 msgstr "德語"
 
-#: main/settings/defaults.py:76
+#: main/settings/defaults.py:83
 msgid "Hungarian"
 msgstr "匈牙利語"
 
-#: main/settings/defaults.py:77
+#: main/settings/defaults.py:84
 msgid "Dutch"
 msgstr "荷蘭語"
 
-#: main/settings/defaults.py:78
+#: main/settings/defaults.py:85
 msgid "Ukrainian"
 msgstr "烏克蘭語"
 
-#: main/settings/defaults.py:79
+#: main/settings/defaults.py:86
 msgid "Chinese"
 msgstr "正體中文"
 
@@ -743,15 +729,15 @@ msgstr ""
 msgid ""
 "LocalWiki is a grassroots effort to collect, share and open the world's "
 "local knowledge."
-msgstr ""
-"防災地方誌是一個民間收集、分享和全世界共享知識的地方誌。"
+msgstr "防災地方誌是一個民間收集、分享和全世界共享知識的地方誌。"
 
 #: main_content/templates/main_content/index.html:25
 msgid ""
 "LocalWiki is a grassroots effort to collect, share and <span class="
 "\"highlight\">open the world's local knowledge</span>"
-msgstr "防災地方誌是一個民間收集、分享和<span class="
-"\"highlight\">全世界共享知識的地方誌</span>。"
+msgstr ""
+"防災地方誌是一個民間收集、分享和<span class=\"highlight\">全世界共享知識的地"
+"方誌</span>。"
 
 #: main_content/templates/main_content/index.html:30
 #: regions/templates/regions/region_explore_index.html:27
@@ -961,7 +947,7 @@ msgstr ""
 msgid "Map for tag \"<a href=\"%(page_tag_url)s\">%(tag_name)s</a>\""
 msgstr ""
 
-#: maps/views.py:387 pages/views.py:244
+#: maps/views.py:387 pages/views.py:239
 #, python-format
 msgid "<p>What do you know about %s?</p>"
 msgstr "<p>關於 %s，你知道些什麼？</p>"
@@ -994,7 +980,7 @@ msgstr "地圖"
 
 #: maps/templates/maps/base.html:27 maps/templates/maps/mapdata_form.html:90
 #: maps/templates/maps/mapdata_versions.html:25
-#: pages/templates/pages/base.html:29
+#: pages/templates/pages/base.html:33
 #: pages/templates/pages/page_detail.html:62
 #: pages/templates/pages/page_form.html:99
 #: pages/templates/pages/page_versions.html:27
@@ -1003,7 +989,7 @@ msgstr "編輯"
 
 #: maps/templates/maps/base.html:28 maps/templates/maps/mapdata_form.html:91
 #: maps/templates/maps/mapdata_versions.html:26
-#: pages/templates/pages/base.html:30 pages/templates/pages/page_form.html:100
+#: pages/templates/pages/base.html:34 pages/templates/pages/page_form.html:100
 #: pages/templates/pages/page_versions.html:28
 msgid "Info"
 msgstr "資訊"
@@ -1044,9 +1030,9 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"        貢獻者<span class=\"contributor_list\">"
-"%(contributors_html)s</span> 和其他人 <a href=\"%(request_path)s/_history/\">"
-"%(contributors_number)s</a>。\n"
+"        貢獻者<span class=\"contributor_list\">%(contributors_html)s</span> "
+"和其他人 <a href=\"%(request_path)s/_history/\">%(contributors_number)s</"
+"a>。\n"
 "        "
 
 #: maps/templates/maps/mapdata_detail.html:55
@@ -1059,8 +1045,7 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"        貢獻者<span class=\"contributor_list\">"
-"%(contributors_html)s</span>\n"
+"        貢獻者<span class=\"contributor_list\">%(contributors_html)s</span>\n"
 "        "
 
 #: maps/templates/maps/mapdata_diff.html:54
@@ -1147,6 +1132,43 @@ msgstr ""
 msgid "No pages near you. Make some!"
 msgstr ""
 
+#: migrate/views.py:46
+#, python-format
+msgid ""
+"File has been imported.  Total %(total)d records updated, including %(new)d "
+"new records."
+msgstr ""
+
+#: migrate/templates/migrate/region_page_import.html:6
+#, fuzzy
+msgid "LocalWiki - Import"
+msgstr "防災地方誌官方網誌"
+
+#: migrate/templates/migrate/region_page_import.html:9
+#, fuzzy, python-format
+msgid ""
+"\n"
+"        Import pages to <a href=\"%(url)s\">%(region_slug)s</a>\n"
+"    "
+msgstr ""
+"\n"
+"        <a href=\"%(url)s\">%(region_slug)s</a>的設定頁面\n"
+"    "
+
+#: migrate/templates/migrate/region_page_import.html:46 tags/models.py:36
+#: tags/templates/tags/global_pagetagset_list.html:5
+#: tags/templates/tags/global_pagetagset_list.html:6
+#: tags/templates/tags/pagetagset_list.html:5
+#: tags/templates/tags/pagetagset_list.html:6
+#: tags/templates/tags/tag_list.html:5
+msgid "Tags"
+msgstr ""
+
+#: migrate/templates/migrate/region_page_import.html:51
+#: themes/sapling/templates/site/nav.html:14
+msgid "Import"
+msgstr ""
+
 #: page_scores/models.py:29
 #, python-format
 msgid "Page score %s: %s"
@@ -1219,11 +1241,11 @@ msgstr "重新導向已建立"
 msgid "Page created"
 msgstr "頁面已建立"
 
-#: pages/views.py:148
+#: pages/views.py:146
 msgid "Thank you for your changes. Your attention to detail is appreciated."
 msgstr "謝謝你細心的編輯。"
 
-#: pages/views.py:156
+#: pages/views.py:152
 #, python-format
 msgid ""
 "Changes saved! To use your name when editing, please <a href=\"%(login_url)s?"
@@ -1235,7 +1257,7 @@ msgstr ""
 "%(current_path)s\"><strong>登入</strong></a>或<a href=\"%(register_url)s?"
 "next=%(current_path)s\"><strong>建立帳號</strong></a>."
 
-#: pages/views.py:167
+#: pages/views.py:163
 #, python-format
 msgid ""
 "<p class=\"create_map\"><a href=\"%s\" class=\"button little map\"><span "
@@ -1244,57 +1266,57 @@ msgstr ""
 "<p class=\"create_map\">為這個頁面<a href=\"%s\" class=\"button little map"
 "\"><span class=\"text\">建立地圖</span></a>？</p>"
 
-#: pages/views.py:192
+#: pages/views.py:188
 msgid "Follow this page"
 msgstr ""
 
-#: pages/views.py:194
+#: pages/views.py:190
 #, python-format
 msgid "%(follow_page_notice)s for updates!"
 msgstr ""
 
 #. Translators: Keep under < 100 characters
-#: pages/views.py:198
+#: pages/views.py:194
 #, python-format
 msgid "I just edited %(page)s on @localwiki! %(page_url)s"
 msgstr ""
 
-#: pages/views.py:203
+#: pages/views.py:199
 msgid "Tell the world about this page:"
 msgstr ""
 
-#: pages/views.py:236 tags/forms.py:118 tags/views.py:381
+#: pages/views.py:231 tags/forms.py:118 tags/views.py:424
 #, python-format
 msgid "added %(name)s %(added)s."
 msgstr ""
 
-#: pages/views.py:459
+#: pages/views.py:454
 msgid "You must provide a page name when creating a page."
 msgstr "建立新頁面，必須輸入頁面名稱"
 
-#: pages/views.py:540
+#: pages/views.py:535
 msgid "A file with this name already exists"
 msgstr "存在相同檔名的檔案"
 
 #. Translators: This is for the page rename form.
-#: pages/views.py:554
+#: pages/views.py:549
 msgid "New page name"
 msgstr "新頁面名稱"
 
-#: pages/views.py:555 versionutils/versioning/forms.py:18
+#: pages/views.py:550 versionutils/versioning/forms.py:18
 msgid "Comment"
 msgstr "註記"
 
-#: pages/views.py:598
+#: pages/views.py:593
 #, python-format
 msgid "Page renamed to \"%s\""
 msgstr "頁面重新命名為 \"%s\""
 
-#: pages/views.py:610
+#: pages/views.py:605
 msgid "Move to region (short name)"
 msgstr ""
 
-#: pages/views.py:636
+#: pages/views.py:631
 #, python-format
 msgid ""
 "Page moved to <a href=\"%(page_url)s\">%(page_name)s</a> on <a href="
@@ -1485,9 +1507,9 @@ msgid ""
 "\" rel=\"nofollow\">links</a>, or <a href=\"../_tags/_history/\" rel="
 "\"nofollow\">tags</a>?"
 msgstr ""
-"或是需要<a href=\"../_files/\">檔案</a>，<a href=\"%(page_links_url)s"
-"\" rel=\"nofollow\">相關連接</a>或<a href=\"../_tags/_history/\" rel="
-"\"nofollow\">標籤</a>？"
+"或是需要<a href=\"../_files/\">檔案</a>，<a href=\"%(page_links_url)s\" rel="
+"\"nofollow\">相關連接</a>或<a href=\"../_tags/_history/\" rel=\"nofollow\">標"
+"籤</a>？"
 
 #: pages/templates/pages/pagefile_diff.html:34
 #, python-format
@@ -1565,14 +1587,14 @@ msgstr "上傳"
 msgid "Previous versions:"
 msgstr "之前的版本："
 
-#: pages/templatetags/pages_tags.py:126
+#: pages/templatetags/pages_tags.py:176
 #, python-format
 msgid ""
 "Unable to include <a href=\"%(page_url)s\" class=\"missing_link\">"
 "%(page_name)s</a>"
 msgstr ""
 
-#: pages/templatetags/pages_tags.py:134
+#: pages/templatetags/pages_tags.py:184
 #, python-format
 msgid ""
 "Unable to include <a href=\"%(page_url)s\">%(page_name)s</a>: endless "
@@ -1714,26 +1736,26 @@ msgstr ""
 msgid "Sorry, you are not allowed to perform this action."
 msgstr ""
 
-#: regions/views.py:371
+#: regions/views.py:377
 msgid ""
 "There was a problem with the map area you drew. Please re-draw it and try "
 "again."
 msgstr ""
 
-#: regions/views.py:438
+#: regions/views.py:444
 msgid "Settings updated!"
 msgstr "設定已更新"
 
-#: regions/views.py:463
+#: regions/views.py:469
 msgid "Region admins updated!"
 msgstr "區域管理員已更新"
 
-#: regions/views.py:484
+#: regions/views.py:490
 msgid "Banned users updated."
 msgstr ""
 
-#. Translators: Please fix the links here to point to "Place," "Business", "Disambiguation", "Restaurant" as translated in your language.  But leave the "Templates/" part of the page link.  "Templates/" in a URL is currently hard-coded and must remain in English for now.
-#: regions/initial_data/__init__.py:20
+#. Translators: Please fix the links here to point to "社區," "避難收容處所", "設備物資集結點", "Restaurant" as translated in your language.  But leave the "Templates/" part of the page link.  "Templates/" in a URL is currently hard-coded and must remain in English for now.
+#: regions/initial_data/__init__.py:21
 msgid ""
 "<p>\n"
 "    \tTemplates are special pages that serve as a starting point when "
@@ -1749,262 +1771,381 @@ msgid ""
 "    \t<span>List of templates</span></h3>\n"
 "    <ul>\n"
 "    \t<li>\n"
-"    \t\t<a href=\"Templates%2FPlace\">Templates/Place</a></li>\n"
+"    \t\t<a href=\"Templates%2F社區\">Templates/社區</a></li>\n"
 "    \t<li>\n"
-"    \t\t<a href=\"Templates%2FBusiness\">Templates/Business</a></li>\n"
+"    \t\t<a href=\"Templates%2F避難收容處所\">Templates/避難收容處所</a></"
+"li>\n"
+"    \t<li>\n"
+"    \t\t<a href=\"Templates%2F設備物資集結點\">Templates/設備物資集結點</a></"
+"li>\n"
+"    \t<li>\n"
+"    \t\t<a href=\"Templates%2F土石流保全對象\">Templates/土石流保全對象</a></"
+"li>\n"
+"    \t<li>\n"
+"    \t\t<a href=\"Templates%2F水災保全對象\">Templates/水災保全對象</a></"
+"li>\n"
+"    \t<li>\n"
+"    \t\t<a href=\"Templates%2F特殊需求機構\">Templates/特殊需求機構</a></"
+"li>\n"
+"    \t<li>\n"
+"    \t\t<a href=\"Templates%2F重要維生設施\">Templates/重要維生設施</a></"
+"li>\n"
+"    \t<li>\n"
+"    \t\t<a href=\"Templates%2F緊急聯絡網\">Templates/緊急聯絡網</a></li>\n"
+"    \t<li>\n"
+"    \t\t<a href=\"Templates%2F環境不安全點\">Templates/環境不安全點</a></"
+"li>\n"
 "    \t<li>\n"
 "    \t\t<a href=\"Templates%2FDisambiguation\">Templates/Disambiguation</a></"
 "li>\n"
-"    \t<li>\n"
-"    \t\t<a href=\"Templates%2FRestaurant\">Templates/Restaurant</a></li>\n"
 "    </ul>"
 msgstr ""
 
-#. Translators: This is for "Templates/Page" - a template page
-#: regions/initial_data/__init__.py:40
-msgid "Place"
-msgstr ""
-
-#: regions/initial_data/__init__.py:44
+#: regions/initial_data/__init__.py:57
 msgid ""
 "<table>\n"
 "    \t<tbody>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Location</strong></td>\n"
+"    \t\t\t\t<strong>人口數</strong></td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\taddress</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Contact</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\t(555) 555 5555</td>\n"
+"    \t\t\t<td>{{人口數}}</td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Website</strong></td>\n"
+"    \t\t\t\t<strong>鄰近地形</strong></td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tAdd link here</td>\n"
+"    \t\t\t<td>{{鄰近地形}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>歷史災害</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{歷史災害}}</td>\n"
 "    \t\t</tr>\n"
 "    \t</tbody>\n"
-"    </table>\n"
-"    <p>\n"
-"    \tThe <strong>Thing I&#39;m Talking About</strong> should have a blurb "
-"here with links to relevant things, like the <a href=\"Front%20Page\">Front "
-"Page</a>.</p>\n"
-"    <h2>\n"
-"    \tSection Title</h2>\n"
-"    <p>\n"
-"    \tText goes here.</p>"
+"    </table>"
 msgstr ""
 
-#. Translators: This is for "Templates/Restaurant" - a template page
-#: regions/initial_data/__init__.py:82
-msgid "Restaurant"
-msgstr ""
-
-#: regions/initial_data/__init__.py:86
-msgid ""
-"<table>\n"
-"    \t<tbody>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Location</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tPlease fill in address</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Hours</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\t(Please fill in hours)</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Phone</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\t(415) 555-5555</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Website</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tAdd link here</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Established</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\t(Date, i.e. YYYY-MM-DD)</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Price range</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\t(Prices for &quot;average&quot; entrees)</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Payment Methods</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\t(Cash, check, credit cards, other?)</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Wheelchair accessibility</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\t(notes on stairs, bathroom access, handrails, aisle width)</td>\n"
-"    \t\t</tr>\n"
-"    \t</tbody>\n"
-"    </table>\n"
-"    <p>\n"
-"    \tThen, put&nbsp;<em>whatever</em>&nbsp;you want down here! Note "
-"that&nbsp;<a href=\"http://local.google.com\">http://local.google.com</"
-"a>&nbsp;is sometimes a good and easy place to find times/phone. Better yet, "
-"look them up in the phone book, and ask them.</p>\n"
-"    <p>\n"
-"    \tRemember to add this restaurant to the neighborhood&nbsp;<a href="
-"\"restaurants\">restaurants</a>&nbsp;page.</p>\n"
-"    <h3>\n"
-"    \tRelated Links</h3>\n"
-"    <ul>\n"
-"    \t<li>\n"
-"    \t\t<a href=\"Restaurants\">Restaurants</a></li>\n"
-"    </ul>\n"
-"    <p>\n"
-"    \t&nbsp;</p>"
-msgstr ""
-
-#. Translators: This is for "Templates/Business" - a template page
-#: regions/initial_data/__init__.py:170
-msgid "Business"
-msgstr ""
-
-#: regions/initial_data/__init__.py:174
+#: regions/initial_data/__init__.py:90
 msgid ""
 "\n"
 "    <table>\n"
 "    \t<tbody>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Location</strong></td>\n"
+"    \t\t\t\t<strong>名稱</strong></td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tPlease fill in address</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Hours</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tPlease fill in hours</td>\n"
+"    \t\t\t<td>{{名稱}}</td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Phone</strong></td>\n"
+"    \t\t\t\t<strong>地址</strong></td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\t(415) 555-5555</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Website</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tAdd link here</td>\n"
+"    \t\t\t<td>{{地址}}</td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>E-mail</strong></td>\n"
+"    \t\t\t\t<strong>適用災別</strong></td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tEmail address</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Owner(s)</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tNames of owners/proprietors here</td>\n"
+"    \t\t\t<td>{{適用災別}}</td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Established</strong></td>\n"
+"    \t\t\t\t<strong>容納人數</strong></td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tDate, i.e. YYYY-MM-DD</td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Payment Method</strong></td>\n"
-"    \t\t</tr>\n"
-"    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tType of payment</td>\n"
+"    \t\t\t<td>{{容納人數}}</td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
-"    \t\t\t\t<strong>Wheelchair accessibility</strong></td>\n"
+"    \t\t\t\t<strong>面積</strong></td>\n"
 "    \t\t</tr>\n"
 "    \t\t<tr>\n"
-"    \t\t\t<td>\n"
-"    \t\t\t\tstairs, bathrooms, handrails, aisle width?</td>\n"
+"    \t\t\t<td>{{面積}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>聯絡人</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{聯絡人}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>電話</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{電話}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>設備</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{設備}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>官方／非官方</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{官方}}</td>\n"
 "    \t\t</tr>\n"
 "    \t</tbody>\n"
-"    </table>\n"
-"    <p>\n"
-"    \tThen, put&nbsp;<em>whatever</em>&nbsp;you want down here! Note "
-"that&nbsp;<a href=\"http://local.google.com\">http://local.google.com</"
-"a>&nbsp;is sometimes a good and easy place to find times/phone. Better yet, "
-"look them up in the phone book, and ask them. Remove the fields you don&#39;"
-"t fill out &mdash; or even better, look up or call them for the missing "
-"information!</p>\n"
-"    <h3>\n"
-"    \tRelated Links</h3>\n"
-"    <ul>\n"
-"    \t<li>\n"
-"    \t\t<a href=\"Shopping\">Shopping</a></li>\n"
-"    </ul>\n"
-"    <p>\n"
-"    \t&nbsp;</p>"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:166
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>名稱</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{名稱}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>地址</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{地址}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>項目與數量</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{項目與數量}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>聯絡人</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{聯絡人}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>電話</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{電話}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>官方／非官方</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{官方}}</td>\n"
+"    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:221
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>災害類型</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{災害類型}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>人數</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{人數}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>上傳日期</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{上傳日期}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>官方／非官方</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{官方}}</td>\n"
+"    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:262
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>人數</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{人數}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>上傳日期</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{上傳日期}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>官方／非官方</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{官方}}</td>\n"
+"    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:296
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>名稱</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{名稱}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>地址</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{地址}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>聯絡人</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{聯絡人}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>電話</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{電話}}</td>\n"
+"    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:337
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>名稱</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{名稱}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>地址</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{地址}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>座標</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{座標}}</td>\n"
+"    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:371
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>名稱</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{名稱}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>電話</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{電話}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>地址</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{地址}}</td>\n"
+"    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:405
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>地址或位置</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{位置}}</td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
+"    \t\t\t\t<strong>狀況描述</strong></td>\n"
+"    \t\t</tr>\n"
+"    \t\t<tr>\n"
+"    \t\t\t<td>{{狀況描述}}</td>\n"
+"    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
 msgstr ""
 
 #. Translators: This is for "Templates/Disambiguation" - a template page
-#: regions/initial_data/__init__.py:265
+#: regions/initial_data/__init__.py:428
 msgid "Disambiguation"
 msgstr ""
 
-#: regions/initial_data/__init__.py:269
+#: regions/initial_data/__init__.py:432
 msgid ""
 "<p>\n"
 "    \tThis has multiple meanings. You are probably looking for information "
@@ -2026,7 +2167,7 @@ msgid ""
 "it to point directly to the intended page.</p>"
 msgstr ""
 
-#: regions/initial_data/__init__.py:287
+#: regions/initial_data/__init__.py:450
 #, python-format
 msgid ""
 "<p>\n"
@@ -2050,6 +2191,24 @@ msgstr ""
 "    \t你可以透過點擊<strong>編輯</strong>來編輯此頁和其他頁面。</p>\n"
 "    <p>需要幫忙嗎？來看看<a href=\"http://localwiki.net/main/Help\">說明</a>"
 "或是<a href=\"http://localwiki.net/main/\">使用導覽</a></p>"
+
+#: regions/initial_data/__init__.py:460
+#, python-format
+msgid ""
+"<p>\n"
+"    Welcome to the new LocalWiki region for %(region)s!  Here are some "
+"information about this area.\n"
+"    <h2>Environment</h2>\n"
+"    <h2>Disaster Potential</h2>\n"
+"    <h2>Historical Disasters</h2>\n"
+"    "
+msgstr ""
+"<p>\n"
+"   歡迎來到 %(region)s 的首頁！以下為此區域的介紹。</p>"
+"   <h2>環境概述</h2>"
+"   <h2>災害潛勢</h2>"
+"   <h2>歷史災害</h2>"
+"   "
 
 #: regions/templates/regions/admins_update.html:6
 #: regions/templates/regions/banned_update.html:6
@@ -2202,8 +2361,8 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"            想要<a href=\"%(global_search)s?q=%(query)s\">搜尋全站"
-"有關於\"%(query)s\"</a>?\n"
+"            想要<a href=\"%(global_search)s?q=%(query)s\">搜尋全站有關於"
+"\"%(query)s\"</a>?\n"
 "            "
 
 #: search/templates/search/search.html:81
@@ -2291,15 +2450,7 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: tags/models.py:36 tags/templates/tags/global_pagetagset_list.html:5
-#: tags/templates/tags/global_pagetagset_list.html:6
-#: tags/templates/tags/pagetagset_list.html:5
-#: tags/templates/tags/pagetagset_list.html:6
-#: tags/templates/tags/tag_list.html:5
-msgid "Tags"
-msgstr ""
-
-#: tags/views.py:171
+#: tags/views.py:174
 #, python-format
 msgid "<p>No pages tagged \"%s\".</p>"
 msgstr ""
@@ -2359,17 +2510,17 @@ msgstr ""
 msgid "There are no tags. Add some!"
 msgstr ""
 
-#: tags/templates/tags/tagged_list_snippet.html:31
+#: tags/templates/tags/tagged_list_snippet.html:35
 #, python-format
 msgid "Add new \"%(tag_name)s\""
 msgstr ""
 
-#: tags/templates/tags/tagged_list_snippet.html:33
+#: tags/templates/tags/tagged_list_snippet.html:37
 #: themes/sapling/templates/site/add_page_area.html:7
 msgid "Name of page"
 msgstr ""
 
-#: tags/templates/tags/tagged_list_snippet.html:41
+#: tags/templates/tags/tagged_list_snippet.html:45
 #, python-format
 msgid "There are no pages with the tag \"%(tag_name)s\"."
 msgstr ""
@@ -2436,8 +2587,7 @@ msgstr "輸入新密碼"
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
-msgstr ""
-"請輸入你的新密碼二次，以確認你的輸入正確。"
+msgstr "請輸入你的新密碼二次，以確認你的輸入正確。"
 
 #: templates/registration/password_reset_confirm.html:17
 msgid "New password:"
@@ -2459,8 +2609,7 @@ msgstr "密碼重置失敗"
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
-msgstr ""
-"這個密碼重置連接已失效，有可能是這個重置連接已經被使用過，請重新要求。"
+msgstr "這個密碼重置連接已失效，有可能是這個重置連接已經被使用過，請重新要求。"
 
 #: templates/registration/password_reset_done.html:4
 #: templates/registration/password_reset_done.html:5
@@ -2472,8 +2621,7 @@ msgstr "重置密碼成功"
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
-msgstr ""
-"密碼設定信已寄到你的信箱，你應該馬上會收到"
+msgstr "密碼設定信已寄到你的信箱，你應該馬上會收到"
 
 #: templates/registration/password_reset_email.html:2
 #, python-format
@@ -2526,6 +2674,11 @@ msgstr "頁面不存在呦"
 msgid "Item not found"
 msgstr ""
 
+#: themes/sapling/templates/site/add_page_area.html:5
+#: themes/sapling/templates/site/add_page_area.html:9
+msgid "Add a new page"
+msgstr "建立新頁面"
+
 #: themes/sapling/templates/site/base.html:168
 msgid ""
 "\n"
@@ -2534,7 +2687,8 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"        防災地方誌是一個民間收集、分享和全世界共享知識的地方誌。 我們是非營利組織。\n"
+"        防災地方誌是一個民間收集、分享和全世界共享知識的地方誌。 我們是非營利"
+"組織。\n"
 "        "
 
 #: themes/sapling/templates/site/base.html:173
@@ -2550,8 +2704,6 @@ msgid "Terms of Use"
 msgstr ""
 
 #: themes/sapling/templates/site/base.html:176
-#: themes/sapling/templates/site/common_nav.html:20
-#: themes/sapling/templates/site/nav.html:23
 msgid "Donate"
 msgstr ""
 
@@ -2565,23 +2717,23 @@ msgstr ""
 
 #: themes/sapling/templates/site/common_nav.html:13
 #: themes/sapling/templates/site/nav.html:5
-#: themes/sapling/templates/site/nav.html:20
+#: themes/sapling/templates/site/nav.html:21
 msgid "Explore"
 msgstr "探索"
 
 #: themes/sapling/templates/site/common_nav.html:15
 #: themes/sapling/templates/site/common_nav.html:17
-#: themes/sapling/templates/site/nav.html:21
+#: themes/sapling/templates/site/nav.html:22
 msgid "About"
 msgstr "關於"
 
-#: themes/sapling/templates/site/common_nav.html:21
+#: themes/sapling/templates/site/common_nav.html:20
 #: themes/sapling/templates/site/nav.html:24
 msgid "API"
 msgstr ""
 
-#: themes/sapling/templates/site/common_nav.html:24
-#: themes/sapling/templates/site/common_nav.html:26
+#: themes/sapling/templates/site/common_nav.html:23
+#: themes/sapling/templates/site/common_nav.html:25
 #: themes/sapling/templates/site/nav.html:25
 msgid "Help"
 msgstr "說明"
@@ -2738,8 +2890,7 @@ msgstr "變更你在Gravatar的使用者圖示"
 #, python-format
 msgid ""
 "You can also <a href=\"%(deactivate_url)s\">deactivate your account</a>."
-msgstr ""
-"你也可以<a href=\"%(deactivate_url)s\">註銷你的帳號</a>"
+msgstr "你也可以<a href=\"%(deactivate_url)s\">註銷你的帳號</a>"
 
 #: users/templates/users/subscribed_list.html:4
 msgid "List of subscribers"
@@ -2924,3 +3075,9 @@ msgstr "成功刪除!"
 #, python-format
 msgid "Restored version %s."
 msgstr "回復 %s 版本"
+
+#~ msgid "Some interesting pages"
+#~ msgstr "一些有趣的頁面"
+
+#~ msgid "There are no pages yet.  Add some!"
+#~ msgstr "目前還沒有頁面。新增一個吧！"

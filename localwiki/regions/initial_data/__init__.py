@@ -457,10 +457,10 @@ def populate_region(region):
         region=region
     ).save()
 
-    frontpage.content = (_("""<p>
-    歡迎來到 %(region)s 的首頁！以下為此區域的介紹。</p>
-    <h2>環境概述</h2>
-    <h2>災害潛勢</h2>
-    <h2>歷史災害</h2>
-    """))
+    frontpage.content = _("""<p>
+    Welcome to the new LocalWiki region for %(region)s!  Here are some information about this area.
+    <h2>Environment</h2>
+    <h2>Disaster Potential</h2>
+    <h2>Historical Disasters</h2>
+    """)
     frontpage.save()
