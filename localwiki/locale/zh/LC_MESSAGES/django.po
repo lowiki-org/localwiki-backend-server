@@ -420,7 +420,7 @@ msgstr "檔案"
 
 #: dashboard/views.py:209 dashboard/views.py:227
 msgid "redirects"
-msgstr "重新導向"
+msgstr "重新定向"
 
 #: dashboard/templates/dashboard/index.html:7
 msgid "Dashboard"
@@ -450,7 +450,7 @@ msgstr "地圖"
 #: dashboard/templates/dashboard/index.html:28
 #: dashboard/templates/dashboard/render.html:7
 msgid "Redirects"
-msgstr "重新導向"
+msgstr "重新定向"
 
 #: dashboard/templates/dashboard/index.html:30
 #: dashboard/templates/dashboard/render.html:8
@@ -1204,7 +1204,7 @@ msgstr "搜尋或建立頁面"
 
 #: pages/signals.py:20
 msgid "Redirect created"
-msgstr "重新導向已建立"
+msgstr "重新定向已建立"
 
 #: pages/signals.py:26
 msgid "Page created"
@@ -1327,7 +1327,7 @@ msgstr "刪除"
 
 #: pages/templates/pages/editor_actions.html:9
 msgid "Redirect"
-msgstr "重新導向"
+msgstr "重新定向"
 
 #: pages/templates/pages/editor_actions.html:19
 msgid "Move"
@@ -1573,56 +1573,56 @@ msgstr ""
 #: redirects/feeds.py:30
 #, python-format
 msgid "Redirect %(objsrc)s --> %(objdest)s"
-msgstr ""
+msgstr "重新定向 %(objsrc)s --> %(objdest)s"
 
 #: redirects/forms.py:17
 msgid "Destination"
-msgstr ""
+msgstr "目標頁面"
 
 #: redirects/models.py:35
 msgid "You cannot redirect a page to itself"
-msgstr ""
+msgstr "你不能重新定向頁面到原來的頁面"
 
 #: redirects/views.py:51 redirects/views.py:117
 #: versionutils/versioning/views.py:67
 msgid "Thank you for your changes. "
-msgstr ""
+msgstr "感謝你的修改。"
 
 #: redirects/views.py:52
 #, python-format
 msgid "This page now redirects to <a href=\"%(url)s\">%(obj)s</a>."
-msgstr ""
+msgstr "這頁現在將重新定向到<a href=\"%(url)s\">%(obj)s</a>"
 
 #: redirects/views.py:118
 msgid "The redirect has been deleted"
-msgstr ""
+msgstr "這個重新定向已被刪除"
 
 #: redirects/templates/redirects/redirect_diff.html:34
 #: redirects/templates/redirects/redirect_diff.html:35
 #, python-format
 msgid "Differences for %(new.source)s redirect"
-msgstr ""
+msgstr "%(new.source)s 的差異"
 
 #: redirects/templates/redirects/redirect_form.html:27
 msgid "Update redirect"
-msgstr ""
+msgstr "更新重新定向連接"
 
 #: redirects/templates/redirects/redirect_form.html:28
 msgid "Delete redirect"
-msgstr ""
+msgstr "刪除重新定向連接"
 
 #: redirects/templates/redirects/redirect_form.html:30
 msgid "Create redirect"
-msgstr ""
+msgstr "建立重新定向連接"
 
 #: redirects/templates/redirects/redirect_permissions.html:7
 #, python-format
 msgid "Permissions for redirect \"%(name)s\" - %(super)s"
-msgstr ""
+msgstr "重新定向權限 \"%(name)s\" - %(super)s"
 
 #: redirects/templates/redirects/redirect_permissions.html:15
 msgid "Who can change this redirect?"
-msgstr ""
+msgstr "誰可以變更這個重新定向連接"
 
 #: region_scores/models.py:19
 #, python-format
