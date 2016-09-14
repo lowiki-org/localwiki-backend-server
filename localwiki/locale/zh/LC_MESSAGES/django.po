@@ -28,7 +28,7 @@ msgstr ""
 #: activity/feeds.py:40 activity/feeds.py:46
 #, python-format
 msgid "Activity on %s"
-msgstr ""
+msgstr "%s的動態"
 
 #: activity/feeds.py:81 activity/feeds.py:177
 #, python-format
@@ -509,13 +509,13 @@ msgstr "預設"
 #: explore/templates/explore/random_index.html:48
 #: tags/templates/tags/tag_list.html:12
 msgid "Alphabetical"
-msgstr ""
+msgstr "字母"
 
 #: explore/templates/explore/alphabetical_index.html:44
 #: explore/templates/explore/just_list.html:34
 #: explore/templates/explore/random_index.html:49
 msgid "List"
-msgstr ""
+msgstr "清單"
 
 #: explore/templates/explore/just_list.html:9
 msgid "Explore - All Pages"
@@ -1043,6 +1043,11 @@ msgid ""
 "%(contributors_number)s</a> others.\n"
 "        "
 msgstr ""
+"\n"
+"        貢獻者<span class=\"contributor_list\">"
+"%(contributors_html)s</span> 和其他人 <a href=\"%(request_path)s/_history/\">"
+"%(contributors_number)s</a>。\n"
+"        "
 
 #: maps/templates/maps/mapdata_detail.html:55
 #: pages/templates/pages/page_detail.html:99
@@ -1053,6 +1058,10 @@ msgid ""
 "%(contributors_html)s</span>\n"
 "        "
 msgstr ""
+"\n"
+"        貢獻者<span class=\"contributor_list\">"
+"%(contributors_html)s</span>\n"
+"        "
 
 #: maps/templates/maps/mapdata_diff.html:54
 msgid "Differences for map on"
@@ -1713,11 +1722,11 @@ msgstr ""
 
 #: regions/views.py:438
 msgid "Settings updated!"
-msgstr ""
+msgstr "設定已更新"
 
 #: regions/views.py:463
 msgid "Region admins updated!"
-msgstr ""
+msgstr "區域管理員已更新"
 
 #: regions/views.py:484
 msgid "Banned users updated."
@@ -2131,14 +2140,17 @@ msgid ""
 "        Settings for <a href=\"%(url)s\">%(region_slug)s</a>\n"
 "    "
 msgstr ""
+"\n"
+"        <a href=\"%(url)s\">%(region_slug)s</a>的設定頁面\n"
+"    "
 
 #: regions/templates/regions/settings.html:45
 msgid "Admins"
-msgstr ""
+msgstr "管理員"
 
 #: regions/templates/regions/settings.html:57
 msgid "Nobody is banned. Hooray!"
-msgstr ""
+msgstr "沒有人被封鎖，萬歲！"
 
 #: regions/templates/regions/settings.html:68
 msgid "The rough area the region covers"
@@ -2148,12 +2160,12 @@ msgstr ""
 #: search/templates/search/map_for_search.html:10
 #: search/templates/search/map_for_search.html:30
 msgid "Search results for"
-msgstr ""
+msgstr "搜尋結果"
 
 #: search/templates/search/base.html:19 search/templates/search/base.html:63
 #: search/templates/search/search.html:91
 msgid "Search"
-msgstr ""
+msgstr "搜尋"
 
 #: search/templates/search/global_search.html:21
 #: search/templates/search/global_search.html:61
@@ -2174,12 +2186,12 @@ msgstr ""
 #: search/templates/search/global_search.html:54
 #: search/templates/search/search.html:56
 msgid "No results found."
-msgstr ""
+msgstr "無符合查詢條件的結果。"
 
 #: search/templates/search/search.html:15
 #, python-format
 msgid "No page with the exact title \"%(query)s\" exists."
-msgstr ""
+msgstr "沒有標題是 \"%(query)s\" 的頁面存在。"
 
 #: search/templates/search/search.html:73
 #, python-format
@@ -2189,6 +2201,10 @@ msgid ""
 "LocalWiki for \"%(query)s\"</a>?\n"
 "            "
 msgstr ""
+"\n"
+"            想要<a href=\"%(global_search)s?q=%(query)s\">搜尋全站"
+"有關於\"%(query)s\"</a>?\n"
+"            "
 
 #: search/templates/search/search.html:81
 msgid "Create a new page:"
@@ -2295,7 +2311,7 @@ msgstr ""
 #: tags/templates/tags/nearby_tagged_list_snippet.html:20
 #, python-format
 msgid "All LocalWiki pages tagged %(tag)s"
-msgstr ""
+msgstr "全部頁面中有 %(tag)s 標籤"
 
 #: tags/templates/tags/pagetagset_diff.html:28
 #: tags/templates/tags/pagetagset_diff.html:29
@@ -2593,7 +2609,7 @@ msgstr "設定"
 #: themes/sapling/templates/site/search_form.html:5
 #, python-format
 msgid "Search %(region_name)s"
-msgstr ""
+msgstr "搜尋 %(region_name)s"
 
 #: themes/sapling/templates/site/search_form.html:10
 msgid "Search LocalWiki "
@@ -2716,13 +2732,14 @@ msgstr "使用者設定"
 
 #: users/templates/users/settings.html:33
 msgid "Change your user icon at Gravatar.com"
-msgstr ""
+msgstr "變更你在Gravatar的使用者圖示"
 
 #: users/templates/users/settings.html:39
 #, python-format
 msgid ""
 "You can also <a href=\"%(deactivate_url)s\">deactivate your account</a>."
 msgstr ""
+"你也可以<a href=\"%(deactivate_url)s\">註銷你的帳號</a>"
 
 #: users/templates/users/subscribed_list.html:4
 msgid "List of subscribers"
