@@ -20,6 +20,7 @@
 {% block dialog %}
 <div id="dialog">
  <form method="post" action="">{% csrf_token %}
+    {% trans 'Intro about redirect' %}
     <ul>
     {{ form.as_ul }}
     </ul>
