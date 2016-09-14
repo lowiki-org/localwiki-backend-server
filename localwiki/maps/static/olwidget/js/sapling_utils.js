@@ -91,15 +91,49 @@ SaplingMap = {
         var proj3857 = new OpenLayers.Projection('EPSG:3857');
         // XXX Hack.  900913 is deprecated.
         map.projection = proj3857;
-        map.addLayer(new OpenLayers.Layer.WMS('避難收容處所',
-          'http://140.110.141.222/agada/services/CHH/TAIWAN_W84_3857/MapServer/WMSServer?service=WMS',
-          { layers: '0', transparent: true, },
-          { isBaseLayer: false }));
-        map.addLayer(new OpenLayers.Layer.WMS('海嘯潛勢',
-          'http://140.110.141.222/agada/services/CHH/TAIWAN_W84_3857Tsunami/MapServer/WMSServer?service=WMS',
-          { layers: '0', transparent: true },
-          { isBaseLayer: false, opacity: 0.5 }));
+        var layers = [
+          { name: '消防局', id: '111', options: { minScale: 1/100000 } },
+          { name: '警察局', id: '110', options: { minScale: 1/100000 } },
+          //{ name: '社福機構 - 兒少福利', id: '105' },
+          //{ name: '社福機構 - 老人福利', id: '102' },
+          //{ name: '社福機構 - 身心障礙福利', id: '101' },
+          //{ name: '社福機構 - 護理之家', id: '100' },
+          { name: '歷史坡地災害位置', id: '98', options: { minScale: 1/250000 } },
+          { name: '土石流潛勢溪流影響範圍', id: '89', options: { minScale: 1/250000 }  },
+          { name: '土石流潛勢溪流保全住戶', id: '97', options: { minScale: 1/250000 }  },
+          { name: '土石流潛勢溪流保全住戶', id: '89', options: { minScale: 1/250000 }  },
+          { name: '活動斷層', id: '96' },
 
+          //{ name: '重點監控橋梁', id: '95', options: { visibility: false } },
+          //{ name: '重點監控路段', id: '94', options: { visibility: false } },
+
+          { name: '海嘯潛勢圖_溢淹水深(m)', id: '82', options: { opacity: 0.7 } },
+          { name: '大規模崩塌災害潛勢地區', id: '81' },
+
+          //{ name: '中央地質調查所 - 順向坡', id: '74', options: { opacity: 0.7, minScale: 1/250000 }  },
+          //{ name: '中央地質調查所 - 岩體滑動', id: '75', options: { opacity: 0.7, minScale: 1/250000 }  },
+          //{ name: '中央地質調查所 - 岩屑崩滑', id: '76', options: { opacity: 0.7, minScale: 1/250000 }  },
+          //{ name: '中央地質調查所 - 落石', id: '77', options: { opacity: 0.7, minScale: 1/250000 }  },
+
+          { name: '一日暴雨600mm 台北市', id: '3', options: { opacity: 0.7, minScale: 1/250000 } },
+          { name: '一日暴雨450mm 台北市', id: '26', options: { opacity: 0.7, minScale: 1/250000 } },
+          { name: '一日暴雨350mm 台北市', id: '49', options: { opacity: 0.7, minScale: 1/250000 } },
+
+          { name: '一日暴雨600mm 宜蘭縣', id: '18', options: { opacity: 0.7, minScale: 1/250000 } },
+          { name: '一日暴雨450mm 宜蘭縣', id: '41', options: { opacity: 0.7, minScale: 1/250000 } },
+          { name: '一日暴雨350mm 宜蘭縣', id: '64', options: { opacity: 0.7, minScale: 1/250000 } },
+        ];
+        layers.forEach(function (layer) {
+          var options = { isBaseLayer: false, minScale: 1/500000 };
+          if (layer.options) {
+            Object.keys(layer.options).forEach(function (key) {
+              options[key] = layer.options[key];
+            });
+          }
+          map.addLayer(new OpenLayers.Layer.WMS(layer.name,
+            'http://140.110.141.222/agada/services/CHH/L1Dmap2016AllMap_W84_3857/MapServer/WMSServer?service=WMS',
+            { layers: layer.id, transparent: true, }, options));
+        });
         map.addControl(new OpenLayers.Control.LayerSwitcher({'div': OpenLayers.Util.getElement('layerswitcher')}));
     },
 
