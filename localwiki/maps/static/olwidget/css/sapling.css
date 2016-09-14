@@ -30,24 +30,30 @@
     color: inherit;
 }
 
-/* Hide Data overlay description */
+/* Data overlay description */
+.baseLbl {
+    display: none;
+}
+
 .dataLbl {
     display: none;
 }
 
+.baseLayersDiv {
+    display: none;
+}
+
 .dataLayersDiv {
-   margin-top: 0.5em;
-   margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
-.dataLayersDiv .labelSpan {
-    display: none;
-}
-.dataLayersDiv br {
-    display: none;
-}
-.dataLayersDiv:after {
-    content: "Show overlay";
-    margin-left: 0.2em;
+
+.dataLayersDiv input:first-child { display: none; }
+.dataLayersDiv label:nth-child(2) { display: none; }
+.dataLayersDiv br:nth-child(3) { display: none; }
+
+.dataLayersDiv label {
+    color: #ccc;
 }
 
 .olControlLayerSwitcher .layersDiv {
@@ -89,7 +95,7 @@
 @media screen and (max-width: 700px) {
     .mapwidget #map_search input {
         padding-left: 5px;
-    } 
+    }
 }
 #map_search .tt-suggestion {
     font-size: 11px;
