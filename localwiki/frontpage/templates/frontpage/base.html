@@ -126,16 +126,21 @@ and submit using #cover_form.
         <div class="interesting_cards">
           {% cache 300 int_frnt_pg request.META.HTTP_HOST region.slug %}
             {% for category in pages_for_cards %}
+              <h2>{{ category.name }}</h2>
               {% if category.pages %}
-                <h2>{{ category.name }}</h2>
-                  <div class="cards">
-                  {% for page in category.pages %}
-                    {% show_card page %}
-                  {% endfor %}
-                  </div>
-                  <div class="explore_more">
-                    <a class="button" href="{% url 'explore' region=region.slug %}">{% trans "Explore more pages" %}</a>
-                  </div>
+                <div class="cards">
+                {% for page in category.pages %}
+                  {% show_card page %}
+                {% endfor %}
+                </div>
+                <div class="explore_more">
+                  <a class="button" href="{% url 'explore' region=region.slug %}">{% trans "Explore more pages" %}</a>
+                </div>
+              {% else %}
+                <div class="no_pages">
+                  <p>{% trans "There are no pages yet.  Add some!" %}</p>
+                  <p><a class="button" href="{% url 'haystack_search' region=region.slug %}">{% trans "Add a new page" %}</a></p>
+                </div>
               {% endif %}
             {% endfor %}
           {% endcache %}

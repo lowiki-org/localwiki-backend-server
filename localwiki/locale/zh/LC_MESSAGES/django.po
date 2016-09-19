@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 12:50+0800\n"
+"POT-Creation-Date: 2016-09-19 13:27+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -602,7 +602,17 @@ msgstr "檢視"
 msgid "Explore more pages"
 msgstr "探索更多頁面"
 
-#: frontpage/templates/frontpage/base.html:146
+#: frontpage/templates/frontpage/base.html:141
+msgid "There are no pages yet.  Add some!"
+msgstr "目前還沒有頁面。新增一個吧！"
+
+#: frontpage/templates/frontpage/base.html:142
+#: themes/sapling/templates/site/add_page_area.html:5
+#: themes/sapling/templates/site/add_page_area.html:9
+msgid "Add a new page"
+msgstr "建立新頁面"
+
+#: frontpage/templates/frontpage/base.html:151
 msgid "Explore nearby regions"
 msgstr "探索最近的區域"
 
@@ -2487,7 +2497,13 @@ msgstr ""
 
 #: tags/templates/tags/pagetagset_form_snippet.html:13
 msgid "Suggested tags: "
-msgstr "建議標籤: (圖例) 國道, 省道, 鄉道, 鐵路, 取水點, 快速道路, 指揮中心, 消防單位, 警察單位, 醫療院所, 高速鐵路, 物資存備點, 海嘯危險區域, 直升機起降點, 老人福利機構, 適用地震災害, 適用水災災害, 適用海嘯災害, 人車轉運集結點, 室內避難收容所, 室外避難收容所, 救援器材放置點, 通訊設備放置點, 適用土石流災害, 海嘯避難收容處所, (模板) 身心障礙福利機構, 避難收容處所, 設備物資集結點, 特殊需求機構, 重要維生設施, 緊急聯絡網"
+msgstr ""
+"建議標籤: (圖例) 國道, 省道, 鄉道, 鐵路, 取水點, 快速道路, 指揮中心, 消防單"
+"位, 警察單位, 醫療院所, 高速鐵路, 物資存備點, 海嘯危險區域, 直升機起降點, 老"
+"人福利機構, 適用地震災害, 適用水災災害, 適用海嘯災害, 人車轉運集結點, 室內避"
+"難收容所, 室外避難收容所, 救援器材放置點, 通訊設備放置點, 適用土石流災害, 海"
+"嘯避難收容處所, (模板) 身心障礙福利機構, 避難收容處所, 設備物資集結點, 特殊需"
+"求機構, 重要維生設施, 緊急聯絡網"
 
 #: tags/templates/tags/pagetagset_version_detail.html:17
 #: tags/templates/tags/pagetagset_versions.html:15
@@ -2681,11 +2697,6 @@ msgstr "頁面不存在呦"
 #: themes/sapling/templates/404.html:14
 msgid "Item not found"
 msgstr ""
-
-#: themes/sapling/templates/site/add_page_area.html:5
-#: themes/sapling/templates/site/add_page_area.html:9
-msgid "Add a new page"
-msgstr "建立新頁面"
 
 #: themes/sapling/templates/site/base.html:168
 msgid ""
@@ -3086,6 +3097,3 @@ msgstr "回復 %s 版本"
 
 #~ msgid "Some interesting pages"
 #~ msgstr "一些有趣的頁面"
-
-#~ msgid "There are no pages yet.  Add some!"
-#~ msgstr "目前還沒有頁面。新增一個吧！"
