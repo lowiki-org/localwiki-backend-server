@@ -3,11 +3,11 @@
 
 {% load i18n %}
 
-{% block title %}{% trans "LocalWiki - Import" %}{% endblock %}
+{% block title %}{% trans "Import pages into" %} {{ region.full_name }} - {{ block.super }}{% endblock %}
 
 {% block header_title %}
-    {% blocktrans with url=region.get_absolute_url region_slug=region.slug %}
-        Import pages to <a href="{{ url }}">{{ region_slug }}</a>
+    {% blocktrans with url=region.get_absolute_url region_full_name=region.full_name %}
+        Import pages into <a href="{{ url }}">{{ region_full_name }}</a>
     {% endblocktrans %}
 {% endblock %}
 

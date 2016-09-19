@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-11 17:20+0800\n"
+"POT-Creation-Date: 2016-09-19 08:41+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -420,7 +420,7 @@ msgstr "檔案"
 
 #: dashboard/views.py:209 dashboard/views.py:227
 msgid "redirects"
-msgstr "重新導向"
+msgstr "重新定向"
 
 #: dashboard/templates/dashboard/index.html:7
 msgid "Dashboard"
@@ -450,7 +450,7 @@ msgstr "地圖"
 #: dashboard/templates/dashboard/index.html:28
 #: dashboard/templates/dashboard/render.html:7
 msgid "Redirects"
-msgstr "重新導向"
+msgstr "重新定向"
 
 #: dashboard/templates/dashboard/index.html:30
 #: dashboard/templates/dashboard/render.html:8
@@ -1140,19 +1140,17 @@ msgid ""
 msgstr ""
 
 #: migrate/templates/migrate/region_page_import.html:6
-#, fuzzy
-msgid "LocalWiki - Import"
-msgstr "防災地方誌官方網誌"
+msgid "Import pages into"
+msgstr "匯入頁面到"
 
 #: migrate/templates/migrate/region_page_import.html:9
-#, fuzzy, python-format
 msgid ""
 "\n"
-"        Import pages to <a href=\"%(url)s\">%(region_slug)s</a>\n"
+"        Import pages into <a href=\"%(url)s\">%(region_full_name)s</a>\n"
 "    "
 msgstr ""
 "\n"
-"        <a href=\"%(url)s\">%(region_slug)s</a>的設定頁面\n"
+"        匯入頁面到 <a href=\"%(url)s\">%(region_full_name)s</a>\n"
 "    "
 
 #: migrate/templates/migrate/region_page_import.html:46 tags/models.py:36
@@ -1162,12 +1160,12 @@ msgstr ""
 #: tags/templates/tags/pagetagset_list.html:6
 #: tags/templates/tags/tag_list.html:5
 msgid "Tags"
-msgstr ""
+msgstr "標籤"
 
 #: migrate/templates/migrate/region_page_import.html:51
 #: themes/sapling/templates/site/nav.html:14
 msgid "Import"
-msgstr ""
+msgstr "匯入"
 
 #: page_scores/models.py:29
 #, python-format
@@ -1235,7 +1233,7 @@ msgstr "搜尋或建立頁面"
 
 #: pages/signals.py:20
 msgid "Redirect created"
-msgstr "重新導向已建立"
+msgstr "重新定向已建立"
 
 #: pages/signals.py:26
 msgid "Page created"
@@ -1358,7 +1356,7 @@ msgstr "刪除"
 
 #: pages/templates/pages/editor_actions.html:9
 msgid "Redirect"
-msgstr "重新導向"
+msgstr "重新定向"
 
 #: pages/templates/pages/editor_actions.html:19
 msgid "Move"
@@ -1604,56 +1602,64 @@ msgstr ""
 #: redirects/feeds.py:30
 #, python-format
 msgid "Redirect %(objsrc)s --> %(objdest)s"
-msgstr ""
+msgstr "重新定向 %(objsrc)s --> %(objdest)s"
 
 #: redirects/forms.py:17
 msgid "Destination"
-msgstr ""
+msgstr "目標頁面"
 
 #: redirects/models.py:35
 msgid "You cannot redirect a page to itself"
-msgstr ""
+msgstr "你不能重新定向到原來的頁面"
 
 #: redirects/views.py:51 redirects/views.py:117
 #: versionutils/versioning/views.py:67
 msgid "Thank you for your changes. "
-msgstr ""
+msgstr "感謝你的修改。"
 
 #: redirects/views.py:52
 #, python-format
 msgid "This page now redirects to <a href=\"%(url)s\">%(obj)s</a>."
-msgstr ""
+msgstr "這頁現在將重新定向到<a href=\"%(url)s\">%(obj)s</a>"
 
 #: redirects/views.py:118
 msgid "The redirect has been deleted"
-msgstr ""
+msgstr "這個重新定向已被刪除"
 
 #: redirects/templates/redirects/redirect_diff.html:34
 #: redirects/templates/redirects/redirect_diff.html:35
 #, python-format
 msgid "Differences for %(new.source)s redirect"
-msgstr ""
+msgstr "%(new.source)s 的差異"
 
-#: redirects/templates/redirects/redirect_form.html:27
-msgid "Update redirect"
+#: redirects/templates/redirects/redirect_form.html:23
+msgid "Intro about redirect"
 msgstr ""
+"<b>重新定向</b>是一種特殊的頁面。當系統中的一個頁面名稱被重新定向到另一個目"
+"標頁面，人們在輸入或者點擊該名稱時，系統能自動導航到被定向的目標頁面。舉例來"
+"說，我們可以設定「名稱為『台北縣』」，而目標指向「新北市」的重新定向頁。這樣"
+"一來，任何人都可以用「台北縣」或「新北市」這兩個名稱其中之一開啟新北市條目。"
 
 #: redirects/templates/redirects/redirect_form.html:28
-msgid "Delete redirect"
-msgstr ""
+msgid "Update redirect"
+msgstr "更新重新定向連接"
 
-#: redirects/templates/redirects/redirect_form.html:30
+#: redirects/templates/redirects/redirect_form.html:29
+msgid "Delete redirect"
+msgstr "刪除重新定向連接"
+
+#: redirects/templates/redirects/redirect_form.html:31
 msgid "Create redirect"
-msgstr ""
+msgstr "建立重新定向連接"
 
 #: redirects/templates/redirects/redirect_permissions.html:7
 #, python-format
 msgid "Permissions for redirect \"%(name)s\" - %(super)s"
-msgstr ""
+msgstr "重新定向權限 \"%(name)s\" - %(super)s"
 
 #: redirects/templates/redirects/redirect_permissions.html:15
 msgid "Who can change this redirect?"
-msgstr ""
+msgstr "誰可以變更這個重新定向連接"
 
 #: region_scores/models.py:19
 #, python-format
@@ -1942,6 +1948,15 @@ msgid ""
 "    \t\t<tr>\n"
 "    \t\t\t<td>{{電話}}</td>\n"
 "    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:221
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
 "    \t\t\t\t<strong>官方／非官方</strong></td>\n"
@@ -2099,6 +2114,15 @@ msgid ""
 "    \t\t<tr>\n"
 "    \t\t\t<td>{{名稱}}</td>\n"
 "    \t\t</tr>\n"
+"    \t</tbody>\n"
+"    </table>"
+msgstr ""
+
+#: regions/initial_data/__init__.py:371
+msgid ""
+"\n"
+"    <table>\n"
+"    \t<tbody>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
 "    \t\t\t\t<strong>電話</strong></td>\n"
