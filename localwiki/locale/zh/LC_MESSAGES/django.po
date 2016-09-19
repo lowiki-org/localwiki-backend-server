@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 08:41+0800\n"
+"POT-Creation-Date: 2016-09-19 12:50+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -537,7 +537,7 @@ msgstr ""
 msgid "Start tour"
 msgstr ""
 
-#: frontpage/views.py:184
+#: frontpage/views.py:201
 msgid "Cover photo updated!"
 msgstr "封面照片更新成功!"
 
@@ -587,7 +587,7 @@ msgid ""
 "          (%(date)s by %(user_link)s)"
 msgstr ""
 
-#: frontpage/templates/frontpage/base.html:122
+#: frontpage/templates/frontpage/base.html:121
 #: maps/templates/maps/nearby_pages.html:44
 #: pages/templates/pages/page_detail.html:62
 #: search/templates/search/global_search.html:17
@@ -598,11 +598,11 @@ msgstr ""
 msgid "View"
 msgstr "檢視"
 
-#: frontpage/templates/frontpage/base.html:138
+#: frontpage/templates/frontpage/base.html:137
 msgid "Explore more pages"
 msgstr "探索更多頁面"
 
-#: frontpage/templates/frontpage/base.html:147
+#: frontpage/templates/frontpage/base.html:146
 msgid "Explore nearby regions"
 msgstr "探索最近的區域"
 
@@ -935,24 +935,24 @@ msgstr ""
 msgid "Map error: %s."
 msgstr ""
 
-#: maps/views.py:239
+#: maps/views.py:273
 #, python-format
 msgid ""
 "<a href=\"%(map_url)s\">Map</a> for tag \"<a href=\"%(page_tag_url)s\">"
 "%(tag_name)s</a>\""
 msgstr ""
 
-#: maps/views.py:268
+#: maps/views.py:302
 #, python-format
 msgid "Map for tag \"<a href=\"%(page_tag_url)s\">%(tag_name)s</a>\""
 msgstr ""
 
-#: maps/views.py:387 pages/views.py:239
+#: maps/views.py:421 pages/views.py:239
 #, python-format
 msgid "<p>What do you know about %s?</p>"
 msgstr "<p>關於 %s，你知道些什麼？</p>"
 
-#: maps/views.py:406
+#: maps/views.py:440
 #, python-format
 msgid ""
 "Map saved! You should probably go <a href=\"%s\">edit the page that was "
@@ -1144,6 +1144,7 @@ msgid "Import pages into"
 msgstr "匯入頁面到"
 
 #: migrate/templates/migrate/region_page_import.html:9
+#, python-format
 msgid ""
 "\n"
 "        Import pages into <a href=\"%(url)s\">%(region_full_name)s</a>\n"
@@ -1487,7 +1488,7 @@ msgstr "只有這些人："
 #: regions/templates/regions/admins_update.html:24
 #: regions/templates/regions/banned_update.html:24
 #: regions/templates/regions/settings.html:78
-#: tags/templates/tags/pagetagset_form_snippet.html:13
+#: tags/templates/tags/pagetagset_form_snippet.html:14
 #: users/templates/users/deactivate.html:17
 #: users/templates/users/settings.html:35
 msgid "Save"
@@ -1635,8 +1636,8 @@ msgstr "%(new.source)s 的差異"
 #: redirects/templates/redirects/redirect_form.html:23
 msgid "Intro about redirect"
 msgstr ""
-"<b>重新定向</b>是一種特殊的頁面。當系統中的一個頁面名稱被重新定向到另一個目"
-"標頁面，人們在輸入或者點擊該名稱時，系統能自動導航到被定向的目標頁面。舉例來"
+"<b>重新定向</b>是一種特殊的頁面。當系統中的一個頁面名稱被重新定向到另一個目標"
+"頁面，人們在輸入或者點擊該名稱時，系統能自動導航到被定向的目標頁面。舉例來"
 "說，我們可以設定「名稱為『台北縣』」，而目標指向「新北市」的重新定向頁。這樣"
 "一來，任何人都可以用「台北縣」或「新北市」這兩個名稱其中之一開啟新北市條目。"
 
@@ -1948,15 +1949,6 @@ msgid ""
 "    \t\t<tr>\n"
 "    \t\t\t<td>{{電話}}</td>\n"
 "    \t\t</tr>\n"
-"    \t</tbody>\n"
-"    </table>"
-msgstr ""
-
-#: regions/initial_data/__init__.py:221
-msgid ""
-"\n"
-"    <table>\n"
-"    \t<tbody>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
 "    \t\t\t\t<strong>官方／非官方</strong></td>\n"
@@ -2114,15 +2106,6 @@ msgid ""
 "    \t\t<tr>\n"
 "    \t\t\t<td>{{名稱}}</td>\n"
 "    \t\t</tr>\n"
-"    \t</tbody>\n"
-"    </table>"
-msgstr ""
-
-#: regions/initial_data/__init__.py:371
-msgid ""
-"\n"
-"    <table>\n"
-"    \t<tbody>\n"
 "    \t\t<tr>\n"
 "    \t\t\t<td style=\"background-color: rgb(232, 236, 239);\">\n"
 "    \t\t\t\t<strong>電話</strong></td>\n"
@@ -2216,7 +2199,7 @@ msgstr ""
 "    <p>需要幫忙嗎？來看看<a href=\"http://localwiki.net/main/Help\">說明</a>"
 "或是<a href=\"http://localwiki.net/main/\">使用導覽</a></p>"
 
-#: regions/initial_data/__init__.py:460
+#: regions/initial_data/__init__.py:459
 #, python-format
 msgid ""
 "<p>\n"
@@ -2228,11 +2211,8 @@ msgid ""
 "    "
 msgstr ""
 "<p>\n"
-"   歡迎來到 %(region)s 的首頁！以下為此區域的介紹。</p>"
-"   <h2>環境概述</h2>"
-"   <h2>災害潛勢</h2>"
-"   <h2>歷史災害</h2>"
-"   "
+"   歡迎來到 %(region)s 的首頁！以下為此區域的介紹。</p>   <h2>環境概述</"
+"h2>   <h2>災害潛勢</h2>   <h2>歷史災害</h2>   "
 
 #: regions/templates/regions/admins_update.html:6
 #: regions/templates/regions/banned_update.html:6
@@ -2504,6 +2484,10 @@ msgstr ""
 #: tags/templates/tags/pagetagset_versions.html:16
 msgid "Tags for"
 msgstr ""
+
+#: tags/templates/tags/pagetagset_form_snippet.html:13
+msgid "Suggested tags: "
+msgstr "建議標籤: (圖例) 國道, 省道, 鄉道, 鐵路, 取水點, 快速道路, 指揮中心, 消防單位, 警察單位, 醫療院所, 高速鐵路, 物資存備點, 海嘯危險區域, 直升機起降點, 老人福利機構, 適用地震災害, 適用水災災害, 適用海嘯災害, 人車轉運集結點, 室內避難收容所, 室外避難收容所, 救援器材放置點, 通訊設備放置點, 適用土石流災害, 海嘯避難收容處所, (模板) 身心障礙福利機構, 避難收容處所, 設備物資集結點, 特殊需求機構, 重要維生設施, 緊急聯絡網"
 
 #: tags/templates/tags/pagetagset_version_detail.html:17
 #: tags/templates/tags/pagetagset_versions.html:15

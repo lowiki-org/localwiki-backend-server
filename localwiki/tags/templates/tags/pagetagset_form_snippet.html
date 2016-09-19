@@ -10,5 +10,6 @@ we want to avoid sending the csrftoken cookie in order to allow maximal non-auth
     {{ form }}
     <input type="hidden" name="next" value="{{ request.path }}"/>
     <br/>
+    <div class="help_text">{% trans "Suggested tags: " %}</div>
     <input type="submit" name="save" class="little" value="{% trans "Save" %}"/>
 </form>

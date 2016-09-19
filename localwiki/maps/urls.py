@@ -9,7 +9,7 @@ from .feeds import MapChangesFeed
 urlpatterns = patterns('',
     url(r'^map/tags/(?P<tag>.+)', GlobalMapForTag.as_view(), name='global-tagged'),
 
-    url(r'^(?P<region>[^/]+?)/map/$', MapFullRegionView.as_view(), name='global'),
+    url(r'^(?P<region>[^/]+?)/map/$', MapFullRegionLayerView.as_view(), name='global'),
     url(r'^(?P<region>[^/]+?)/map/_nearby/?$', MapNearbyView.as_view(), name='nearby'),
     url(r'^(?P<region>[^/]+?)/map/_everything_everywhere$', EverythingEverywhereAsPointsView.as_view(), name='everything-as-points'),
     url(r'^(?P<region>[^/]+?)/map/tags/(?P<tag>.+)', MapForTag.as_view(), name='tagged'),
