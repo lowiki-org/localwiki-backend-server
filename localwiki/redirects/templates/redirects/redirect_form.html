@@ -20,15 +20,15 @@
 {% block dialog %}
 <div id="dialog">
  <form method="post" action="">{% csrf_token %}
-    {% trans 'Intro about redirect' %}
+    <div class="help_text">{% trans 'Intro about redirect' %}</div>
     <ul>
     {{ form.as_ul }}
     </ul>
     {% if exists %}
-      <input type="submit" value="{% trans 'Update redirect' %}"/> 
+      <input type="submit" value="{% trans 'Update redirect' %}"/>
       <a class="button" href="{% url 'redirects:delete' region=page.region slug=page.slug %}">{% trans "Delete redirect" %}</a>
     {% else %}
-      <input type="submit" value="{% trans 'Create redirect' %}"/> 
+      <input type="submit" value="{% trans 'Create redirect' %}"/>
     {% endif %}
  </form>
 </div>

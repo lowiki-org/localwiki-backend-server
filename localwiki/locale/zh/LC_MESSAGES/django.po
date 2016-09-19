@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 18:30+0800\n"
+"POT-Creation-Date: 2016-09-19 08:41+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -1140,19 +1140,17 @@ msgid ""
 msgstr ""
 
 #: migrate/templates/migrate/region_page_import.html:6
-#, fuzzy
-msgid "LocalWiki - Import"
-msgstr "防災地方誌官方網誌"
+msgid "Import pages into"
+msgstr "匯入頁面到"
 
 #: migrate/templates/migrate/region_page_import.html:9
-#, fuzzy, python-format
 msgid ""
 "\n"
-"        Import pages to <a href=\"%(url)s\">%(region_slug)s</a>\n"
+"        Import pages into <a href=\"%(url)s\">%(region_full_name)s</a>\n"
 "    "
 msgstr ""
 "\n"
-"        <a href=\"%(url)s\">%(region_slug)s</a>的設定頁面\n"
+"        匯入頁面到 <a href=\"%(url)s\">%(region_full_name)s</a>\n"
 "    "
 
 #: migrate/templates/migrate/region_page_import.html:46 tags/models.py:36
@@ -1162,12 +1160,12 @@ msgstr ""
 #: tags/templates/tags/pagetagset_list.html:6
 #: tags/templates/tags/tag_list.html:5
 msgid "Tags"
-msgstr ""
+msgstr "標籤"
 
 #: migrate/templates/migrate/region_page_import.html:51
 #: themes/sapling/templates/site/nav.html:14
 msgid "Import"
-msgstr ""
+msgstr "匯入"
 
 #: page_scores/models.py:29
 #, python-format
@@ -1612,7 +1610,7 @@ msgstr "目標頁面"
 
 #: redirects/models.py:35
 msgid "You cannot redirect a page to itself"
-msgstr "你不能重新定向頁面到原來的頁面"
+msgstr "你不能重新定向到原來的頁面"
 
 #: redirects/views.py:51 redirects/views.py:117
 #: versionutils/versioning/views.py:67
@@ -1635,14 +1633,12 @@ msgid "Differences for %(new.source)s redirect"
 msgstr "%(new.source)s 的差異"
 
 #: redirects/templates/redirects/redirect_form.html:23
-#, fuzzy
 msgid "Intro about redirect"
 msgstr ""
-"重新定向是一種特殊的頁面，它提供一種運作機制，使得人們在輸入該名稱進入條目或"
-"者點擊指向該名稱的內部連結時，系統能夠自動導航到重新定向頁面內部指定的另一相"
-"關頁面中，從而實現相關頁面可以以多個名稱進行存取。舉例來說，如果設定了「名稱"
-"為「台北縣」」，而內容指向「新北市」的重新定向頁之後，任何人都可以用「台北"
-"縣」這一名稱進入到新北市條目中。"
+"<b>重新定向</b>是一種特殊的頁面。當系統中的一個頁面名稱被重新定向到另一個目"
+"標頁面，人們在輸入或者點擊該名稱時，系統能自動導航到被定向的目標頁面。舉例來"
+"說，我們可以設定「名稱為『台北縣』」，而目標指向「新北市」的重新定向頁。這樣"
+"一來，任何人都可以用「台北縣」或「新北市」這兩個名稱其中之一開啟新北市條目。"
 
 #: redirects/templates/redirects/redirect_form.html:28
 msgid "Update redirect"

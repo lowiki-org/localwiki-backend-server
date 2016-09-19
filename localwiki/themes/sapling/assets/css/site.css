@@ -63,7 +63,7 @@ a:hover {
 table {
     margin-bottom: 1em;
 }
-p { 
+p {
     margin-bottom: 1em;
 }
 pre, code {
@@ -176,12 +176,12 @@ textarea, input, select {
     margin-right: 0;
 }
 .mapdata_detail #content {
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 0;
 }
 /* Page edit view - we don't want margins. */
 #main.page_form #content {
-    margin-top: 0.9em; 
+    margin-top: 0.9em;
 }
 
 /*
@@ -386,7 +386,7 @@ textarea, input, select {
 #region_header.with_logo #new_page_area > div {
   height: 56px;
   display: table-cell;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
 #region_header #new_page_button {
@@ -493,7 +493,7 @@ textarea, input, select {
     #common_header #common_title {
         display: none;
     }
-    #common_header { 
+    #common_header {
         /*position: absolute;*/
         margin-top: 0px;
         display: block;
@@ -667,7 +667,7 @@ textarea, input, select {
 }
 @media screen and (max-width: 735px){
     #login_info .welcome .user_link span {
-        display: none; 
+        display: none;
     }
     #login_info .welcome .user_link img {
         float: none;
@@ -714,7 +714,7 @@ textarea, input, select {
     color: #bbbbbb;
     opacity: 1;
 }
-.search input::-ms-input-placeholder{ 
+.search input::-ms-input-placeholder{
     color: #bbbbbb;
     opacity: 1;
 }
@@ -855,7 +855,7 @@ textarea, input, select {
 }
 
 #nav #pull {
-    display: static;  
+    display: static;
 }
 #nav .fa {
     margin-right: 0.2em;
@@ -949,7 +949,7 @@ textarea, input, select {
     .region_nav li {
         margin: 0.2em;
     }
-    
+
     .region_nav li a {
     }
 }
@@ -1021,22 +1021,22 @@ textarea, input, select {
     #nav .fa {
         color: #F4F4F4;
     }
-    #nav #pull {  
+    #nav #pull {
         display: block;
         height: 40px;
-    }  
+    }
     #nav #pull .button {
         float: none;
     }
-    #nav #pull:after {  
-        content:"";  
-        background: url('../img/nav-icon.png') no-repeat;  
-        width: 30px;  
-        height: 30px;  
-        display: block;  
+    #nav #pull:after {
+        content:"";
+        background: url('../img/nav-icon.png') no-repeat;
+        width: 30px;
+        height: 30px;
+        display: block;
         position: absolute;
-        margin-top: 11px;  
-        right: 5px;  
+        margin-top: 11px;
+        right: 5px;
     }
     #nav li {
         text-transform: capitalize;
@@ -1223,7 +1223,7 @@ textarea, input, select {
     }
     #map .map_cover.small {
         width: 100%;
-    } 
+    }
     #add_map_button {
         margin-top: 15px;
     }
@@ -1358,7 +1358,7 @@ textarea, input, select {
     margin-top: 1px!important;
     text-decoration: none!important;
 }
-#nearby_regions_bar a.region_link:before { 
+#nearby_regions_bar a.region_link:before {
     padding-left: 0!important;
 }
 
@@ -1695,6 +1695,11 @@ input:focus {
 #dialog ul li, .dialog ul li {
     margin-left: 0;
 }
+#dialog .help_text {
+    color: #868686;
+    display: block;
+    margin-bottom: 0.8em;
+}
 
 .messages .share_message > div {
     padding-top: 0.8em;
@@ -1988,7 +1993,7 @@ input:focus {
     color: #818181;
     font-weight: normal!important;
     text-decoration: none;
-    
+
 }
 #activityfeed .redirect .changelabel span {
     padding-left: 0px;
@@ -2417,7 +2422,7 @@ input:focus {
     font-weight: normal;
 }
 .follow_item:hover {
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 /* We display "follow this page" inline inside of the messages dialog sometimes, e.g.
@@ -2562,7 +2567,7 @@ input:focus {
     }
 }
 .tt-suggestion {
-    padding-left: 30px;    
+    padding-left: 30px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     padding-right: 1em;
@@ -2883,10 +2888,10 @@ form #content_footer {
     margin-top: 1em;
 }
 
-/* Inside page editor, indicate that clicking on page title 
+/* Inside page editor, indicate that clicking on page title
    allows for page rename */
 .in_edit #object_title a:hover {
-    background-color: white; 
+    background-color: white;
     outline: 1px solid gray;
     color: #444;
 }
@@ -3013,7 +3018,7 @@ form #content_footer {
 
 form .item {
     margin-top: 1em;
-    margin-bottom: 1em; 
+    margin-bottom: 1em;
     padding: 1.1em 1em 1em 1em;
     background-color: #ededef;
     border-radius: 5px 5px 5px 5px;
@@ -3174,7 +3179,7 @@ table.noborder, table.noborder td {
 }
 @media screen and (max-width: 500px) {
     .olControlLayerSwitcher {
-        display: none;    
+        display: none;
     }
 }
 
