@@ -45,7 +45,7 @@ class MapDetailView(Custom404Mixin, AddContributorsMixin, RegionMixin, DetailVie
         try:
             region = self.get_region(request=request, kwargs=kwargs)
         except Http404:
-            return region_404_response(request, kwargs['region']) 
+            return region_404_response(request, kwargs['region'])
 
         try:
             page = Page.objects.get(slug=slugify(page_slug), region=region)
@@ -163,7 +163,7 @@ class BaseMapRegionView(RegionMixin, MapBaseListView):
         _map = InfoMap(map_objects, options=options)
         return _map
 
-    
+
 class MapFullRegionView(CacheMixin, BaseMapRegionView):
     @staticmethod
     def get_cache_key(*args, **kwargs):
@@ -179,6 +179,20 @@ class MapFullRegionView(CacheMixin, BaseMapRegionView):
         context = super(MapFullRegionView, self).get_context_data(*args, **kwargs)
         context['allow_near_you'] = True
         return context
+
+
+class MapFullRegionLayerView(MapFullRegionView):
+    def get_map(self):
+        map_objects = self.get_map_objects()
+        options = map_options_for_region(self.get_region())
+        options.update({
+            'dynamic': self.dynamic,
+            'zoomToDataExtent': self.zoom_to_data,
+            'permalink': self.permalink,
+            'cluster': True
+        })
+        _map = Map([InfoLayer(map_objects, { 'overlay_style': { 'fill_color': '#ffff00' } })], options=options)
+        return _map
 
 
 class MapAllObjectsAsPointsView(BaseMapRegionView):
