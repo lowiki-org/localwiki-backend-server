@@ -3275,3 +3275,9 @@ ul.errorlist li {
     background-color: #FFCACA;
     padding: 0.5em;
 }
+
+#pagetagset_form .help_text {
+    color: #868686;
+    display: block;
+    margin-bottom: 0.8em;
+}
