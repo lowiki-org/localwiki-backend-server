@@ -31,7 +31,7 @@ from regions.models import Region
 from users.views import AddContributorsMixin
 from localwiki.utils.views import CacheMixin
 
-from .widgets import InfoMap, map_options_for_region
+from .widgets import Map, InfoLayer, InfoMap, map_options_for_region
 from .models import MapData
 from .forms import MapForm
 from .osm import get_osm_geom
