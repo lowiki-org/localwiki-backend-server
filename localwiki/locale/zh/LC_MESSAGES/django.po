@@ -739,15 +739,15 @@ msgstr ""
 msgid ""
 "LocalWiki is a grassroots effort to collect, share and open the world's "
 "local knowledge."
-msgstr "防災地方誌是一個民間收集、分享和全世界共享知識的地方誌。"
+msgstr "防災地方誌是一個由民間收集在地防災資訊、知識，並與全世界共享、進行對話的地方誌。"
 
 #: main_content/templates/main_content/index.html:25
 msgid ""
 "LocalWiki is a grassroots effort to collect, share and <span class="
 "\"highlight\">open the world's local knowledge</span>"
 msgstr ""
-"防災地方誌是一個民間收集、分享和<span class=\"highlight\">全世界共享知識的地"
-"方誌</span>。"
+"防災地方誌是一個由民間收集在地防災資訊、知識，並與<span class=\"highlight\">"
+"全世界共享、進行對話的地方誌</span>。"
 
 #: main_content/templates/main_content/index.html:30
 #: regions/templates/regions/region_explore_index.html:27
