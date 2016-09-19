@@ -1,3 +1,4 @@
+# coding=utf-8
 import copy
 from dateutil.parser import parse as dateparser
 from operator import attrgetter
@@ -83,6 +84,10 @@ def filter_by_bounds(queryset, bbox):
     return queryset.filter(Q(points__intersects=bbox)
                          | Q(lines__within=bbox)
                          | Q(polys__intersects=bbox))
+
+
+def filter_by_tags(queryset, tag_name):
+    return queryset.filter(page__pagetagset__tags__name=tag_name)
 
 
 def filter_by_zoom(queryset, zoom):
@@ -182,8 +187,23 @@ class MapFullRegionView(CacheMixin, BaseMapRegionView):
 
 
 class MapFullRegionLayerView(MapFullRegionView):
+    layer_names = [ u'國道', u'省道', u'鄉道', u'鐵路', u'取水點', u'快速道路', u'指揮中心', u'消防單位', u'警察單位', u'醫瘵院所', u'高速鐵路', u'物資存備點', u'海嘯危險區域', u'直升機起降點', u'老人福利機構', u'適用地震災害', u'適用水災災害', u'適用海嘯災害', u'人車轉運集結點', u'室內避難收容所', u'室外避難收容所', u'救援器材放置點', u'通訊設備放置點', u'適用土石流災害', u'海嘯避難收容處所', u'身心障礙福利機構' ]
+    def get_map_objects_by_tag(self, tag_name):
+        return [(obj.geom, popup_html(obj)) for obj in filter_by_tags(self.object_list, tag_name)]
+
     def get_map(self):
-        map_objects = self.get_map_objects()
+        map_objects = [InfoLayer(self.get_map_objects())]
+        for layer_name in MapFullRegionLayerView.layer_names:
+            layer_objects = self.get_map_objects_by_tag(layer_name)
+            if len(layer_objects) > 0:
+                map_objects.append(InfoLayer(layer_objects, {
+                    'overlay_style': {
+                        'external_graphic': '/static/tagicon/%s.png' % layer_name,
+                        'graphic_height': 32,
+                        'graphic_width': 32,
+                        'graphic_opacity': 1.0
+                        }
+                    }))
         options = map_options_for_region(self.get_region())
         options.update({
             'dynamic': self.dynamic,
@@ -191,7 +211,7 @@ class MapFullRegionLayerView(MapFullRegionView):
             'permalink': self.permalink,
             'cluster': True
         })
-        _map = Map([InfoLayer(map_objects, { 'overlay_style': { 'fill_color': '#ffff00' } })], options=options)
+        _map = Map(map_objects, options=options)
         return _map
 
 
