@@ -14,7 +14,7 @@ from django.conf import settings
 from pages.models import Page
 from pages.views import PageDetailView
 from maps.models import MapData
-from maps.widgets import InfoMap, map_options_for_region
+from maps.widgets import Map, InfoLayer, InfoMap, map_options_for_region
 from regions.views import RegionMixin, RegionAdminRequired, TemplateView, region_404_response
 from regions.models import Region
 from tags.models import Tag
@@ -26,6 +26,7 @@ from .models import FrontPage
 class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
     template_name = 'frontpage/base.html'
     cache_timeout = 60 * 60  # 1 hr, and we invalidate after Front Page save
+    layer_names = [ u'國道', u'省道', u'鄉道', u'鐵路', u'取水點', u'快速道路', u'指揮中心', u'消防單位', u'警察單位', u'醫療院所', u'高速鐵路', u'物資存備點', u'海嘯危險區域', u'直升機起降點', u'老人福利機構', u'適用地震災害', u'適用水災災害', u'適用海嘯災害', u'人車轉運集結點', u'室內避難收容所', u'室外避難收容所', u'救援器材放置點', u'通訊設備放置點', u'適用土石流災害', u'海嘯避難收容處所', u'身心障礙福利機構' ]
 
     def get(self, *args, **kwargs):
         # If there's no FrontPage defined, let's send the "Front Page" Page object.
@@ -40,6 +41,10 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
     def get_map_objects(self):
         centroids = MapData.objects.filter(
             region=self.get_region()).centroid().values('centroid')
+        return [(g['centroid'], '') for g in centroids]
+
+    def get_map_objects_by_tag(self, tag_name):
+        centroids = MapData.objects.filter(region=self.get_region()).filter(page__pagetagset__tags__name=tag_name).centroid().values('centroid')
         return [(g['centroid'], '') for g in centroids]
 
     def get_map(self, cover=False):
@@ -72,7 +77,19 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
                 'html': '<p>' + self.get_region().full_name + '</p>'
             })], options=olwidget_options)
         else:
-            return InfoMap(self.get_map_objects(), options=olwidget_options)
+            map_objects = [InfoLayer(self.get_map_objects())]
+            for layer_name in FrontPageView.layer_names:
+                layer_objects = self.get_map_objects_by_tag(layer_name)
+                if len(layer_objects) > 0:
+                    map_objects.append(InfoLayer(layer_objects, {
+                        'overlay_style': {
+                            'external_graphic': '/static/tagicon/%s.png' % layer_name,
+                            'graphic_height': 32,
+                            'graphic_width': 32,
+                            'graphic_opacity': 1.0
+                            }
+                        }))
+            return Map(map_objects, options=olwidget_options)
 
     def get_categories_for_cards(self):
         names = [u'避難收容處所', u'設備物資集結點', u'特殊需求機構', u'重要維生設施', u'緊急聯絡網']
