@@ -187,7 +187,7 @@ class MapFullRegionView(CacheMixin, BaseMapRegionView):
 
 
 class MapFullRegionLayerView(MapFullRegionView):
-    layer_names = [ u'國道', u'省道', u'鄉道', u'鐵路', u'取水點', u'快速道路', u'指揮中心', u'消防單位', u'警察單位', u'醫瘵院所', u'高速鐵路', u'物資存備點', u'海嘯危險區域', u'直升機起降點', u'老人福利機構', u'適用地震災害', u'適用水災災害', u'適用海嘯災害', u'人車轉運集結點', u'室內避難收容所', u'室外避難收容所', u'救援器材放置點', u'通訊設備放置點', u'適用土石流災害', u'海嘯避難收容處所', u'身心障礙福利機構' ]
+    layer_names = [ u'國道', u'省道', u'鄉道', u'鐵路', u'取水點', u'快速道路', u'指揮中心', u'消防單位', u'警察單位', u'醫療院所', u'高速鐵路', u'物資存備點', u'海嘯危險區域', u'直升機起降點', u'老人福利機構', u'適用地震災害', u'適用水災災害', u'適用海嘯災害', u'人車轉運集結點', u'室內避難收容所', u'室外避難收容所', u'救援器材放置點', u'通訊設備放置點', u'適用土石流災害', u'海嘯避難收容處所', u'身心障礙福利機構' ]
     def get_map_objects_by_tag(self, tag_name):
         return [(obj.geom, popup_html(obj)) for obj in filter_by_tags(self.object_list, tag_name)]
 
