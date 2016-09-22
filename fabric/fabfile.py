@@ -25,8 +25,12 @@ LocalWiki servers.  Set up the requirements (above), then::
     $ fab vagrant setup_dev  # Provision and set up for vagrant:
 
 You now have a complete vagrant setup with the LocalWiki servers
-running inside it.  To do development, you'll want to do something
-like::
+running inside it.  To do development, you can do the following in the fabric
+directory::
+
+    $ fab vagrant runserver
+
+Or you can to do something like::
 
     $ cd vagrant_localwiki
     $ vagrant ssh
@@ -1113,3 +1117,7 @@ def push_translations(lang='en'):
 def populate_page_cards():
     with virtualenv():
         sudo('localwiki-manage runscript populate_page_cards', user='www-data')
+
+def runserver():
+    with virtualenv():
+        run('DJANGO_DEBUG=1 localwiki-manage runserver 0.0.0.0:8000')
