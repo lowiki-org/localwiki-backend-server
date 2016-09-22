@@ -85,8 +85,8 @@ class TaggedList(CacheMixin, Custom404Mixin, RegionMixin, ListView):
             self.nearby_pagetagset_list = []
             return []
 
-        # __dwithin=(center, 0.5) means: all objects within
-        # 1 degree of center. This is roughly 60 miles. This will vary slightly as we move around the earth,
+        # __dwithin=(center, 0.02) means: all objects within
+        # 0.02 degree to the center. This is roughly 2 km. This will vary slightly as we move around the earth,
         # but the complexity of fixing this here is too great. Not a huge deal
         # for this particular case. The real fix here is to:
         #
@@ -98,7 +98,7 @@ class TaggedList(CacheMixin, Custom404Mixin, RegionMixin, ListView):
         #
         nearby_pts = PageTagSet.objects.exclude(region=region).\
             exclude(region__regionsettings=None).exclude(region__regionsettings__region_center=None).\
-            filter(region__regionsettings__region_center__dwithin=(center, 0.5))
+            filter(region__regionsettings__region_center__dwithin=(center, 0.02))
         nearby_pts = nearby_pts.filter(tags__slug=self.tag.slug)
         nearby_pts = nearby_pts.select_related('page__mapdata')
 
@@ -163,7 +163,7 @@ class TaggedList(CacheMixin, Custom404Mixin, RegionMixin, ListView):
             context['more_tags'] = False
 
         if not region.regionsettings.is_meta_region and region.regionsettings.region_zoom_level is not None:
-            zoom = region.regionsettings.region_zoom_level - 2 
+            zoom = region.regionsettings.region_zoom_level - 2
             map_params = "#zoom=%s&lon=%s&lat=%s" % (zoom, region.regionsettings.region_center.x, region.regionsettings.region_center.y)
             context['map_params'] = map_params
 
@@ -171,7 +171,7 @@ class TaggedList(CacheMixin, Custom404Mixin, RegionMixin, ListView):
 
     def handler404(self, request, *args, **kwargs):
         tag_name = slugify(kwargs['slug'])
-        msg = (_('<p>No pages tagged "%s".</p>') % 
+        msg = (_('<p>No pages tagged "%s".</p>') %
              tag_name)
         html = render_to_string('404.html', {'message': msg}, RequestContext(request))
         return HttpResponseNotFound(html)
@@ -448,7 +448,7 @@ def suggest_tags(request):
         for m in l:
             if m['slug'] in d:
                 continue
-            ll.append(m) 
+            ll.append(m)
             d[m['slug']] = True
         return ll
 
