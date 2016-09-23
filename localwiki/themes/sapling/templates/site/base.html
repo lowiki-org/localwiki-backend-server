@@ -154,7 +154,7 @@
         {% cache 3600 nearby_regions region %}
           {% if region.get_nearby_regions %}
           <div id="nearby_regions_bar">
-            Nearby LocalWiki regions:
+            {% trans "Nearby LocalWiki regions:" %}
             {% for region in region.get_nearby_regions %}
                 <a class="region_link" href="{% host_url 'frontpage' region=region.slug on hub %}">{{ region.full_name }}</a>
             {% endfor %}

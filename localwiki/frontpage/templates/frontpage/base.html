@@ -159,7 +159,8 @@ and submit using #cover_form.
                     <li><a class="region_link" href="{% host_url 'frontpage' region=region.slug on hub %}">{{ region.full_name }}</a></li>
                 {% endfor %}
             </ul>
-            <p>Or maybe you want to <a href="{% url 'regions:list' %}">see all LocalWiki regions</a>?</p>
+            {% url 'regions:list' as r_url %}
+            <p>{% blocktrans with url=r_url %}Or maybe you want to <a href="{{ url }}">see all LocalWiki regions</a>?{% endblocktrans %}</p>
         </div>
         {% endif %}
 

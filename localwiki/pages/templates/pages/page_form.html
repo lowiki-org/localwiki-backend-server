@@ -24,10 +24,10 @@
 <script type="text/javascript">
     $(function() {
         $('#object_title a.not_created_yet').click(function() {
-            alert(gettext('You must create the page before renaming it.'));
+            alert({% trans "You must create the page before renaming it." %});
         });
         $('#object_title a.front_page').click(function() {
-            alert(gettext("Sorry, you can't rename the 'Front Page' right now."));
+            alert({% trans "Sorry, you can't rename the 'Front Page' right now." %});
         });
     });
 </script>
