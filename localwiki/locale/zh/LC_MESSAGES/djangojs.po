@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-14 18:30+0800\n"
+"POT-Creation-Date: 2016-09-24 05:05+0800\n"
 "PO-Revision-Date: 2015-01-19 06:27+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -37,29 +37,29 @@ msgstr "標題："
 msgid "Comments:"
 msgstr "備註："
 
-#: maps/static/olwidget/js/sapling_utils.js:290
+#: maps/static/olwidget/js/sapling_utils.js:339
 msgid " for "
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:335
+#: maps/static/olwidget/js/sapling_utils.js:384
 msgid ""
 "You've made changes but haven't saved.  Are you sure you want to leave this "
 "page?"
 msgstr "變動還未儲存，確定要離開頁面？"
 
-#: maps/static/olwidget/js/sapling_utils.js:446
+#: maps/static/olwidget/js/sapling_utils.js:495
 msgid "Things on this map:"
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:462
+#: maps/static/olwidget/js/sapling_utils.js:511
 msgid "Things inside "
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:476
+#: maps/static/olwidget/js/sapling_utils.js:525
 msgid "Things near "
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:714
+#: maps/static/olwidget/js/sapling_utils.js:763
 msgid "Add marker for lat, lon \"{{ value }}\""
 msgstr ""
 
