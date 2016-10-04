@@ -92,7 +92,7 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
             return Map(map_objects, options=olwidget_options)
 
     def get_categories_for_cards(self):
-        names = [u'避難收容處所', u'設備物資集結點', u'特殊需求機構', u'重要維生設施', u'緊急聯絡網']
+        names = [u'社區', u'避難收容處所', u'設備物資集結點', u'特殊需求機構', u'重要維生設施', u'緊急聯絡網']
         categories = []
         for name in names:
             if Tag.objects.filter(name=name).exists():
