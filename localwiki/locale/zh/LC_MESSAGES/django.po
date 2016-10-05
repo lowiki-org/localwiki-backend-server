@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-24 05:57+0800\n"
+"POT-Creation-Date: 2016-10-06 01:41+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -420,7 +420,7 @@ msgstr "檔案"
 
 #: dashboard/views.py:209 dashboard/views.py:227
 msgid "redirects"
-msgstr "重新定向"
+msgstr "重新導向"
 
 #: dashboard/templates/dashboard/index.html:7
 msgid "Dashboard"
@@ -450,7 +450,7 @@ msgstr "地圖"
 #: dashboard/templates/dashboard/index.html:28
 #: dashboard/templates/dashboard/render.html:7
 msgid "Redirects"
-msgstr "重新定向"
+msgstr "重新導向"
 
 #: dashboard/templates/dashboard/index.html:30
 #: dashboard/templates/dashboard/render.html:8
@@ -599,18 +599,15 @@ msgid "View"
 msgstr "檢視"
 
 #: frontpage/templates/frontpage/base.html:137
-msgid "Explore more pages"
-msgstr "探索更多頁面"
-
-#: frontpage/templates/frontpage/base.html:141
-msgid "There are no pages yet.  Add some!"
-msgstr "目前還沒有頁面。新增一個吧！"
-
 #: frontpage/templates/frontpage/base.html:142
 #: themes/sapling/templates/site/add_page_area.html:5
 #: themes/sapling/templates/site/add_page_area.html:9
 msgid "Add a new page"
 msgstr "建立新頁面"
+
+#: frontpage/templates/frontpage/base.html:141
+msgid "There are no pages yet.  Add some!"
+msgstr "目前還沒有頁面。新增一個吧！"
 
 #: frontpage/templates/frontpage/base.html:151
 msgid "Explore nearby regions"
@@ -1252,7 +1249,7 @@ msgstr "搜尋或建立頁面"
 
 #: pages/signals.py:20
 msgid "Redirect created"
-msgstr "重新定向已建立"
+msgstr "重新導向已建立"
 
 #: pages/signals.py:26
 msgid "Page created"
@@ -1375,7 +1372,7 @@ msgstr "刪除"
 
 #: pages/templates/pages/editor_actions.html:9
 msgid "Redirect"
-msgstr "重新定向"
+msgstr "重新導向"
 
 #: pages/templates/pages/editor_actions.html:19
 msgid "Move"
@@ -1467,18 +1464,18 @@ msgstr "送出"
 
 #: pages/templates/pages/page_new.html:5
 msgid "Page not found"
-msgstr "頁面不存在"
+msgstr "此頁面不存在"
 
 #: pages/templates/pages/page_new.html:6
 #, python-format
 msgid "Page \"%(name)s\" does not exist (yet!)"
-msgstr "頁面 \"%(name)s\" 不存在！"
+msgstr "此頁面 \"%(name)s\" 不存在！"
 
 #: pages/templates/pages/page_new.html:15
 #: search/templates/search/search.html:16
 #: search/templates/search/search.html:84
 msgid "Create this page"
-msgstr "建立頁面"
+msgstr "建立此頁面"
 
 #: pages/templates/pages/page_new.html:19
 msgid "Or use one of these templates:"
@@ -1629,7 +1626,7 @@ msgstr ""
 #: redirects/feeds.py:30
 #, python-format
 msgid "Redirect %(objsrc)s --> %(objdest)s"
-msgstr "重新定向 %(objsrc)s --> %(objdest)s"
+msgstr "重新導向 %(objsrc)s --> %(objdest)s"
 
 #: redirects/forms.py:17
 msgid "Destination"
@@ -1637,7 +1634,7 @@ msgstr "目標頁面"
 
 #: redirects/models.py:35
 msgid "You cannot redirect a page to itself"
-msgstr "你不能重新定向到原來的頁面"
+msgstr "你不能重新導向到原來的頁面"
 
 #: redirects/views.py:51 redirects/views.py:117
 #: versionutils/versioning/views.py:67
@@ -1647,11 +1644,11 @@ msgstr "感謝你的修改。"
 #: redirects/views.py:52
 #, python-format
 msgid "This page now redirects to <a href=\"%(url)s\">%(obj)s</a>."
-msgstr "這頁現在將重新定向到<a href=\"%(url)s\">%(obj)s</a>"
+msgstr "這頁現在將重新導向到<a href=\"%(url)s\">%(obj)s</a>"
 
 #: redirects/views.py:118
 msgid "The redirect has been deleted"
-msgstr "這個重新定向已被刪除"
+msgstr "這個重新導向已被刪除"
 
 #: redirects/templates/redirects/redirect_diff.html:34
 #: redirects/templates/redirects/redirect_diff.html:35
@@ -1662,31 +1659,32 @@ msgstr "%(new.source)s 的差異"
 #: redirects/templates/redirects/redirect_form.html:23
 msgid "Intro about redirect"
 msgstr ""
-"<b>重新定向</b>是一種特殊的頁面。當系統中的一個頁面名稱被重新定向到另一個目標"
-"頁面，人們在輸入或者點擊該名稱時，系統能自動導航到被定向的目標頁面。舉例來"
-"說，我們可以設定「名稱為『台北縣』」，而目標指向「新北市」的重新定向頁。這樣"
-"一來，任何人都可以用「台北縣」或「新北市」這兩個名稱其中之一開啟新北市條目。"
+"<p><b>重新導向</b>是一種特殊的頁面。當系統中的一個頁面名稱被重新導向到另一個"
+"目標頁面，人們在輸入或者點擊該名稱時，系統能自動導航到被導向的目標頁面。</"
+"p><p>舉例來說，我們可以設定「名稱為『台北縣』」，而目標指向「新北市」的重新導"
+"向頁。這樣一來，任何人都可以用「台北縣」或「新北市」這兩個名稱其中之一開啟新"
+"北市條目。</p><p><b>目標頁面</b>，這個欄位填入想要重新導向的目標頁面。</p>"
 
 #: redirects/templates/redirects/redirect_form.html:28
 msgid "Update redirect"
-msgstr "更新重新定向連接"
+msgstr "更新重新導向連接"
 
 #: redirects/templates/redirects/redirect_form.html:29
 msgid "Delete redirect"
-msgstr "刪除重新定向連接"
+msgstr "刪除重新導向連接"
 
 #: redirects/templates/redirects/redirect_form.html:31
 msgid "Create redirect"
-msgstr "建立重新定向連接"
+msgstr "建立重新導向連接"
 
 #: redirects/templates/redirects/redirect_permissions.html:7
 #, python-format
 msgid "Permissions for redirect \"%(name)s\" - %(super)s"
-msgstr "重新定向權限 \"%(name)s\" - %(super)s"
+msgstr "重新導向權限 \"%(name)s\" - %(super)s"
 
 #: redirects/templates/redirects/redirect_permissions.html:15
 msgid "Who can change this redirect?"
-msgstr "誰可以變更這個重新定向連接"
+msgstr "誰可以變更這個重新導向連接"
 
 #: region_scores/models.py:19
 #, python-format
@@ -2553,7 +2551,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"        這頁沒有任何標籤。 <a href=\"%(page_url)s\">建立一些吧！</a>\n"
+"        這頁沒有任何標籤。 <a href=\"%(page_url)s\">建一立些吧！</a>\n"
 "    "
 
 #: tags/templates/tags/tag_list.html:6
@@ -3137,6 +3135,9 @@ msgstr "成功刪除!"
 #, python-format
 msgid "Restored version %s."
 msgstr "回復 %s 版本"
+
+#~ msgid "Explore more pages"
+#~ msgstr "探索更多頁面"
 
 #~ msgid "Some interesting pages"
 #~ msgstr "一些有趣的頁面"
