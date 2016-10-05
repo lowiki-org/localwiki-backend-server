@@ -23,7 +23,7 @@ from localwiki.utils.views import Custom404Mixin, CacheMixin
 from .models import FrontPage
 
 
-class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
+class FrontPageView(Custom404Mixin, TemplateView):
     template_name = 'frontpage/base.html'
     cache_timeout = 60 * 60  # 1 hr, and we invalidate after Front Page save
     layer_names = [ u'國道', u'省道', u'鄉道', u'鐵路', u'取水點', u'快速道路', u'指揮中心', u'消防單位', u'警察單位', u'醫療院所', u'高速鐵路', u'物資存備點', u'海嘯危險區域', u'直升機起降點', u'老人福利機構', u'適用地震災害', u'適用水災災害', u'適用海嘯災害', u'人車轉運集結點', u'室內避難收容所', u'室外避難收容所', u'救援器材放置點', u'通訊設備放置點', u'適用土石流災害', u'海嘯避難收容處所', u'身心障礙福利機構' ]
@@ -103,7 +103,6 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
         return categories
 
     def get_pages_for_cards(self):
-        FrontPageView.invalidate(request)
         categories = self.get_categories_for_cards()
         for category in categories:
             qs = Page.objects.filter(region=self.get_region(), pagetagset__tags=category['tag'])
