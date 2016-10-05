@@ -85,6 +85,11 @@ class CacheMixin(object):
         patch_response_headers(response, self.cache_timeout)
         return response
 
+    @staticmethod
+    def invalidate(request, **kwargs):
+        key = CacheMixin.get_cache_key(request=request, **kwargs)
+        cache.delete(key)
+
     def get(self, request, *args, **kwargs):
         return self._get_from_cache('get', request, *args, **kwargs)
 
