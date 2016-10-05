@@ -103,9 +103,10 @@ class FrontPageView(CacheMixin, Custom404Mixin, TemplateView):
         return categories
 
     def get_pages_for_cards(self):
+        FrontPageView.invalidate(request)
         categories = self.get_categories_for_cards()
         for category in categories:
-            qs = Page.objects.filter(region=self.get_region(), pagetagset__tags__slug=category['tag'].slug)
+            qs = Page.objects.filter(region=self.get_region(), pagetagset__tags=category['tag'])
 
             # Exclude meta stuff
             qs = qs.exclude(slug__startswith='templates/')
