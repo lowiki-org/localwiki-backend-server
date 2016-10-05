@@ -134,7 +134,7 @@ and submit using #cover_form.
                 {% endfor %}
                 </div>
                 <div class="explore_more">
-                  <a class="button" href="{% url 'explore' region=region.slug %}">{% trans "Explore more pages" %}</a>
+                  <p><a class="button" href="{% url 'haystack_search' region=region.slug %}">{% trans "Add a new page" %}</a></p>
                 </div>
               {% else %}
                 <div class="no_pages">
