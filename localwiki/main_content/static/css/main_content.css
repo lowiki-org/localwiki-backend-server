@@ -110,7 +110,7 @@
     padding: 0;
     height: 80vh;
     /*background-image: url('../img/domes_by_refractionless_cc_by_nc_nd.jpg');*/
-    background-image: url('../img/prelinger_lib_editathon.jpg');
+    background-image: url('../img/naihu_disastathon.jpg');
     background-width: 100%;
     background-repeat: no-repeat;
     background-size:cover;
@@ -222,7 +222,7 @@
 @media screen and (max-width: 500px) {
     #splash_page .stats_with_map a,
     #splash_page #stats_map {
-        width: 100%; 
+        width: 100%;
     }
     #splash_page .stats_with_map #stats_map_cover {
         width: 100%;
@@ -310,7 +310,7 @@
     margin-right: 0.3em;
 }
 #splash_page .interesting_cards h2 {
-    text-align: center; 
+    text-align: center;
     margin-bottom: 1em;
 }
 
@@ -453,7 +453,7 @@
     margin-bottom: 1.5em;
     display: table;
 }
-#splash_page #blog_page .info a, 
+#splash_page #blog_page .info a,
 #splash_page #blog_page .info a:link {
     color: #8F8F8F;
 }
@@ -723,8 +723,8 @@
 
 }
 
-/******************************* 
-  Region explore page 
+/*******************************
+  Region explore page
  ******************************/
 #region_explore_page #content_wrapper {
     max-width: none;
@@ -829,7 +829,7 @@
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
     -webkit-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1); 
+    transform: scale(-1, 1);
 }
 
 #region_explore_page #map {
