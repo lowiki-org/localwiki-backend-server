@@ -369,13 +369,15 @@ div.olControlSaveFeaturesItemInactive {
     background-color: transparent;
 }
 
+.olControlLayerSwitcher .layersDiv::before {
+    content: "往下捲動有更多圖層";
+}
+
 .olControlLayerSwitcher .layersDiv {
     padding-top: 5px;
     padding-left: 10px;
     padding-bottom: 5px;
-    padding-right: 75px;
     background-color: darkblue;
-    width: 100%;
     height: 100%;
     overflow-y: scroll;
 }
