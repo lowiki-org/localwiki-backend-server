@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 16:41+0800\n"
+"POT-Creation-Date: 2016-10-12 23:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,29 +32,29 @@ msgstr ""
 msgid "Comments:"
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:290
+#: maps/static/olwidget/js/sapling_utils.js:339
 msgid " for "
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:335
+#: maps/static/olwidget/js/sapling_utils.js:384
 msgid ""
 "You've made changes but haven't saved.  Are you sure you want to leave this "
 "page?"
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:446
+#: maps/static/olwidget/js/sapling_utils.js:495
 msgid "Things on this map:"
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:462
+#: maps/static/olwidget/js/sapling_utils.js:511
 msgid "Things inside "
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:476
+#: maps/static/olwidget/js/sapling_utils.js:525
 msgid "Things near "
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:714
+#: maps/static/olwidget/js/sapling_utils.js:763
 msgid "Add marker for lat, lon \"{{ value }}\""
 msgstr ""
 

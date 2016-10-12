@@ -25,7 +25,7 @@
   <ul>
     {% if page %}
         <li><a href="{% url 'pages:edit' slug=page.pretty_slug region=page.region.slug %}" class="button">{% trans "Edit" %}</a></li>
-        <li><a href="{% url 'pages:history' slug=page.pretty_slug region=page.region.slug %}" class="button active">{% trans "Info" %}</a></li>
+        <li><a href="{% url 'pages:history' slug=page.pretty_slug region=page.region.slug %}" class="button active">{% trans "Page Info" %}</a></li>
     {% endif %}
   </ul>
 {% endblock %}

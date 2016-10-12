@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-19 08:25+0800\n"
+"POT-Creation-Date: 2016-10-12 23:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -526,7 +526,7 @@ msgstr ""
 msgid "Start tour"
 msgstr ""
 
-#: frontpage/views.py:184
+#: frontpage/views.py:201
 msgid "Cover photo updated!"
 msgstr ""
 
@@ -571,7 +571,7 @@ msgid ""
 "          (%(date)s by %(user_link)s)"
 msgstr ""
 
-#: frontpage/templates/frontpage/base.html:122
+#: frontpage/templates/frontpage/base.html:121
 #: maps/templates/maps/nearby_pages.html:44
 #: pages/templates/pages/page_detail.html:62
 #: search/templates/search/global_search.html:17
@@ -582,12 +582,24 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: frontpage/templates/frontpage/base.html:138
-msgid "Explore more pages"
+#: frontpage/templates/frontpage/base.html:137
+#: frontpage/templates/frontpage/base.html:142
+#: themes/sapling/templates/site/add_page_area.html:5
+#: themes/sapling/templates/site/add_page_area.html:9
+msgid "Add a new page"
 msgstr ""
 
-#: frontpage/templates/frontpage/base.html:147
+#: frontpage/templates/frontpage/base.html:141
+msgid "There are no pages yet.  Add some!"
+msgstr ""
+
+#: frontpage/templates/frontpage/base.html:151
 msgid "Explore nearby regions"
+msgstr ""
+
+#: frontpage/templates/frontpage/base.html:163
+#, python-format
+msgid "Or maybe you want to <a href=\"%(url)s\">see all LocalWiki regions</a>?"
 msgstr ""
 
 #: links/models.py:13 pages/models.py:33
@@ -915,24 +927,24 @@ msgstr ""
 msgid "Map error: %s."
 msgstr ""
 
-#: maps/views.py:239
+#: maps/views.py:273
 #, python-format
 msgid ""
 "<a href=\"%(map_url)s\">Map</a> for tag \"<a href=\"%(page_tag_url)s\">"
 "%(tag_name)s</a>\""
 msgstr ""
 
-#: maps/views.py:268
+#: maps/views.py:302
 #, python-format
 msgid "Map for tag \"<a href=\"%(page_tag_url)s\">%(tag_name)s</a>\""
 msgstr ""
 
-#: maps/views.py:387 pages/views.py:239
+#: maps/views.py:421 pages/views.py:239
 #, python-format
 msgid "<p>What do you know about %s?</p>"
 msgstr ""
 
-#: maps/views.py:406
+#: maps/views.py:440
 #, python-format
 msgid ""
 "Map saved! You should probably go <a href=\"%s\">edit the page that was "
@@ -969,8 +981,6 @@ msgstr ""
 
 #: maps/templates/maps/base.html:28 maps/templates/maps/mapdata_form.html:91
 #: maps/templates/maps/mapdata_versions.html:26
-#: pages/templates/pages/base.html:34 pages/templates/pages/page_form.html:100
-#: pages/templates/pages/page_versions.html:28
 msgid "Info"
 msgstr ""
 
@@ -1112,14 +1122,14 @@ msgid ""
 msgstr ""
 
 #: migrate/templates/migrate/region_page_import.html:6
-msgid "LocalWiki - Import"
+msgid "Import pages into"
 msgstr ""
 
 #: migrate/templates/migrate/region_page_import.html:9
 #, python-format
 msgid ""
 "\n"
-"        Import pages to <a href=\"%(url)s\">%(region_slug)s</a>\n"
+"        Import pages into <a href=\"%(url)s\">%(region_full_name)s</a>\n"
 "    "
 msgstr ""
 
@@ -1310,6 +1320,11 @@ msgstr ""
 msgid "Typewriter"
 msgstr ""
 
+#: pages/templates/pages/base.html:34 pages/templates/pages/page_form.html:100
+#: pages/templates/pages/page_versions.html:28
+msgid "Page Info"
+msgstr ""
+
 #: pages/templates/pages/editor_actions.html:6
 msgid "Edit map"
 msgstr ""
@@ -1394,6 +1409,14 @@ msgstr ""
 msgid "Editing page \"%(name)s\" - %(super)s"
 msgstr ""
 
+#: pages/templates/pages/page_form.html:27
+msgid "You must create the page before renaming it."
+msgstr ""
+
+#: pages/templates/pages/page_form.html:30
+msgid "Sorry, you can't rename the 'Front Page' right now."
+msgstr ""
+
 #: pages/templates/pages/page_form.html:77
 msgid "Please describe this change:"
 msgstr ""
@@ -1452,7 +1475,7 @@ msgstr ""
 #: regions/templates/regions/admins_update.html:24
 #: regions/templates/regions/banned_update.html:24
 #: regions/templates/regions/settings.html:78
-#: tags/templates/tags/pagetagset_form_snippet.html:13
+#: tags/templates/tags/pagetagset_form_snippet.html:14
 #: users/templates/users/deactivate.html:17
 #: users/templates/users/settings.html:35
 msgid "Save"
@@ -2148,14 +2171,15 @@ msgid ""
 "\">LocalWiki Guide</a>!</p>"
 msgstr ""
 
-#: regions/initial_data/__init__.py:460
+#: regions/initial_data/__init__.py:459
 #, python-format
 msgid ""
 "<p>\n"
-"    歡迎來到 %(region)s 的首頁！以下為此區域的介紹。</p>\n"
-"    <h2>環境概述</h2>\n"
-"    <h2>災害潛勢</h2>\n"
-"    <h2>歷史災害</h2>\n"
+"    Welcome to the new LocalWiki region for %(region)s!  Here are some "
+"information about this area.\n"
+"    <h2>Environment</h2>\n"
+"    <h2>Disaster Potential</h2>\n"
+"    <h2>Historical Disasters</h2>\n"
 "    "
 msgstr ""
 
@@ -2223,6 +2247,10 @@ msgstr ""
 #: regions/templates/regions/region_form.html:52
 #: regions/templates/regions/settings.html:69
 msgid "Pick an area roughly the size of a city. Don't worry about being exact!"
+msgstr ""
+
+#: regions/templates/regions/region_form.html:60
+msgid "Add region"
 msgstr ""
 
 #: regions/templates/regions/region_form_log_in.html:10
@@ -2425,6 +2453,10 @@ msgstr ""
 msgid "Tags for"
 msgstr ""
 
+#: tags/templates/tags/pagetagset_form_snippet.html:13
+msgid "Suggested tags: "
+msgstr ""
+
 #: tags/templates/tags/pagetagset_version_detail.html:17
 #: tags/templates/tags/pagetagset_versions.html:15
 msgid "Tags for "
@@ -2454,17 +2486,17 @@ msgstr ""
 msgid "There are no tags. Add some!"
 msgstr ""
 
-#: tags/templates/tags/tagged_list_snippet.html:31
+#: tags/templates/tags/tagged_list_snippet.html:35
 #, python-format
 msgid "Add new \"%(tag_name)s\""
 msgstr ""
 
-#: tags/templates/tags/tagged_list_snippet.html:33
+#: tags/templates/tags/tagged_list_snippet.html:37
 #: themes/sapling/templates/site/add_page_area.html:7
 msgid "Name of page"
 msgstr ""
 
-#: tags/templates/tags/tagged_list_snippet.html:41
+#: tags/templates/tags/tagged_list_snippet.html:45
 #, python-format
 msgid "There are no pages with the tag \"%(tag_name)s\"."
 msgstr ""
@@ -2618,9 +2650,8 @@ msgstr ""
 msgid "Item not found"
 msgstr ""
 
-#: themes/sapling/templates/site/add_page_area.html:5
-#: themes/sapling/templates/site/add_page_area.html:9
-msgid "Add a new page"
+#: themes/sapling/templates/site/base.html:157
+msgid "Nearby LocalWiki regions:"
 msgstr ""
 
 #: themes/sapling/templates/site/base.html:168
@@ -2656,7 +2687,6 @@ msgid ""
 msgstr ""
 
 #: themes/sapling/templates/site/common_nav.html:13
-#: themes/sapling/templates/site/nav.html:5
 #: themes/sapling/templates/site/nav.html:21
 msgid "Explore"
 msgstr ""
@@ -2692,6 +2722,10 @@ msgstr ""
 
 #: themes/sapling/templates/site/login_info.html:19
 msgid "or"
+msgstr ""
+
+#: themes/sapling/templates/site/nav.html:5
+msgid "Explore region"
 msgstr ""
 
 #: themes/sapling/templates/site/nav.html:13

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-06 01:41+0800\n"
+"POT-Creation-Date: 2016-10-12 23:49+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -28,27 +28,27 @@ msgstr ""
 #: activity/feeds.py:40 activity/feeds.py:46
 #, python-format
 msgid "Activity on %s"
-msgstr "%s的動態"
+msgstr "%s的版本資訊"
 
 #: activity/feeds.py:81 activity/feeds.py:177
 #, python-format
 msgid "to version %s"
-msgstr ""
+msgstr "到 %s 版本"
 
 #: activity/feeds.py:88 activity/feeds.py:184
 #, python-format
 msgid " with comment \"%s\""
-msgstr ""
+msgstr "註解 \"%s\""
 
 #: activity/feeds.py:89 activity/feeds.py:185
 #, python-format
 msgid "%(title)s was %(change_type)s by %(user)s%(comment)s."
-msgstr ""
+msgstr "%(title)s 被 %(user)s%(comment)s 修改成 %(change_type)s。"
 
 #: activity/feeds.py:148 activity/feeds.py:154
 #, python-format
 msgid "Changes for %(title)s on %(site_name)s"
-msgstr ""
+msgstr "修正 %(title)s 於 %(site_name)s"
 
 #: activity/templates/activity/all_activity_index.html:6
 #: activity/templates/activity/all_activity_index.html:18
@@ -202,13 +202,13 @@ msgstr ""
 #: activity/templates/activity/index_page.html:62
 #: explore/templates/explore/page.html:14
 msgid "More"
-msgstr "更多資訊"
+msgstr "更多"
 
 #: activity/templates/activity/index.html:6
 #: activity/templates/activity/index.html:9
 #: themes/sapling/templates/site/nav.html:9
 msgid "Activity"
-msgstr "動態"
+msgstr "版本資訊"
 
 #: activity/templates/activity/index.html:19
 #, python-format
@@ -611,7 +611,7 @@ msgstr "目前還沒有頁面。新增一個吧！"
 
 #: frontpage/templates/frontpage/base.html:151
 msgid "Explore nearby regions"
-msgstr "探索最近的區域"
+msgstr "附近的其他區域"
 
 #: frontpage/templates/frontpage/base.html:163
 #, python-format
@@ -1003,8 +1003,6 @@ msgstr "編輯"
 
 #: maps/templates/maps/base.html:28 maps/templates/maps/mapdata_form.html:91
 #: maps/templates/maps/mapdata_versions.html:26
-#: pages/templates/pages/base.html:34 pages/templates/pages/page_form.html:100
-#: pages/templates/pages/page_versions.html:28
 msgid "Info"
 msgstr "資訊"
 
@@ -1360,6 +1358,12 @@ msgstr "格式化"
 #: pages/widgets.py:42
 msgid "Typewriter"
 msgstr ""
+
+#: pages/templates/pages/base.html:34 pages/templates/pages/page_form.html:100
+#: pages/templates/pages/page_versions.html:28
+#, fuzzy
+msgid "Page Info"
+msgstr "頁面資訊"
 
 #: pages/templates/pages/editor_actions.html:6
 msgid "Edit map"
@@ -2776,7 +2780,6 @@ msgid ""
 msgstr ""
 
 #: themes/sapling/templates/site/common_nav.html:13
-#: themes/sapling/templates/site/nav.html:5
 #: themes/sapling/templates/site/nav.html:21
 msgid "Explore"
 msgstr "探索"
@@ -2813,6 +2816,11 @@ msgstr "登入"
 #: themes/sapling/templates/site/login_info.html:19
 msgid "or"
 msgstr "或"
+
+#: themes/sapling/templates/site/nav.html:5
+#, fuzzy
+msgid "Explore region"
+msgstr "頁面清單"
 
 #: themes/sapling/templates/site/nav.html:13
 msgid "Settings"

@@ -2,7 +2,7 @@
 {% load phased_tags %}
 
 {% if region %}
-    <li><a href="{% url 'explore' region=region.slug %}"><i class="fa fa-bus"></i> {% trans "Explore" %}</a></li>
+    <li><a href="{% url 'explore' region=region.slug %}"><i class="fa fa-bus"></i> {% trans "Explore region" %}</a></li>
     {% if not region.regionsettings.is_meta_region %}
       <li><a href="{% url 'maps:global' region=region.slug %}"><i class="fa fa-map-marker"></i> {% trans "Map" %}</a></li>
     {% endif %}
