@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-12 23:49+0800\n"
+"POT-Creation-Date: 2016-10-13 00:31+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -1003,8 +1003,8 @@ msgstr "編輯"
 
 #: maps/templates/maps/base.html:28 maps/templates/maps/mapdata_form.html:91
 #: maps/templates/maps/mapdata_versions.html:26
-msgid "Info"
-msgstr "資訊"
+msgid "Map Info"
+msgstr "地圖資訊"
 
 #: maps/templates/maps/editor_actions.html:5
 msgid "Delete map"
@@ -1116,7 +1116,6 @@ msgid "What's here? (Name of page)"
 msgstr "這叫什麼？(頁面的名稱)"
 
 #: maps/templates/maps/mapdata_new.html:6
-#, fuzzy
 msgid "Map for page not found"
 msgstr "頁面不存在"
 
@@ -1361,7 +1360,6 @@ msgstr ""
 
 #: pages/templates/pages/base.html:34 pages/templates/pages/page_form.html:100
 #: pages/templates/pages/page_versions.html:28
-#, fuzzy
 msgid "Page Info"
 msgstr "頁面資訊"
 
@@ -1772,7 +1770,7 @@ msgstr "讓這個世界知道你正在做讓世界更美好的事："
 msgid "Region '%s' was deleted."
 msgstr "'%s' 區域已經被刪除。"
 
-#: regions/views.py:151 utils/views.py:176 utils/views.py:238
+#: regions/views.py:151 utils/views.py:181 utils/views.py:243
 msgid "Sorry, you are not allowed to perform this action."
 msgstr "抱歉，你沒有執行這個動作的權限。"
 
@@ -2315,7 +2313,6 @@ msgid "Pick an area roughly the size of a city. Don't worry about being exact!"
 msgstr "圈選一個區域，有點不準確也沒關係"
 
 #: regions/templates/regions/region_form.html:60
-#, fuzzy
 msgid "Add region"
 msgstr "新增區域"
 
@@ -2739,7 +2736,6 @@ msgid "Item not found"
 msgstr "項目不存在呦"
 
 #: themes/sapling/templates/site/base.html:157
-#, fuzzy
 msgid "Nearby LocalWiki regions:"
 msgstr "附近的區域："
 
@@ -2818,7 +2814,6 @@ msgid "or"
 msgstr "或"
 
 #: themes/sapling/templates/site/nav.html:5
-#, fuzzy
 msgid "Explore region"
 msgstr "頁面清單"
 
@@ -2841,11 +2836,11 @@ msgstr ""
 
 #: users/admin.py:16
 msgid "Personal info"
-msgstr ""
+msgstr "個人資訊"
 
 #: users/admin.py:17
 msgid "Permissions"
-msgstr ""
+msgstr "權限"
 
 #: users/admin.py:19
 msgid "Important dates"
@@ -3011,7 +3006,7 @@ msgstr ""
 msgid "Unknown"
 msgstr "未知"
 
-#: utils/views.py:177
+#: utils/views.py:182
 msgid ""
 "Anonymous users may not perform this action. Please <a href=\"/Users/login/"
 "\">log in</a>."
@@ -3143,6 +3138,9 @@ msgstr "成功刪除!"
 #, python-format
 msgid "Restored version %s."
 msgstr "回復 %s 版本"
+
+#~ msgid "Info"
+#~ msgstr "地圖資訊"
 
 #~ msgid "Explore more pages"
 #~ msgstr "探索更多頁面"

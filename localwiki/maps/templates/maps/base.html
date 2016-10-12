@@ -25,7 +25,7 @@
 <ul>
   {% if mapdata %}
       <li><a href="{% url 'maps:edit' slug=mapdata.page.pretty_slug region=mapdata.region.slug %}" rel="nofollow" class="button">{% trans "Edit" %}</a></li>
-      <li><a href="{% url 'maps:history' slug=mapdata.page.pretty_slug region=mapdata.region.slug %}" rel="nofollow" class="button">{% trans "Info" %}</a></li>
+      <li><a href="{% url 'maps:history' slug=mapdata.page.pretty_slug region=mapdata.region.slug %}" rel="nofollow" class="button">{% trans "Map Info" %}</a></li>
   {% endif %}
 </ul>
 {% endblock %}
