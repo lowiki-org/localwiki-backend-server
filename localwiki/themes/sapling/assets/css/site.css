@@ -1135,7 +1135,7 @@ textarea, input, select {
     margin-left: 90px;
     margin-top: 30px;
 }
-#new_map_form .tt-dropdown-menu {
+#new_map_form .tt-menu {
     min-width: 250px;
 }
 #new_map_form.with_results, #add_map_button.with_results {
@@ -2546,7 +2546,7 @@ input:focus {
     }
 }
 
-.tt-dropdown-menu {
+.tt-menu {
     margin-top: 0em;
     background-color: white;
     min-width: 230px;
