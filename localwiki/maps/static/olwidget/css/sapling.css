@@ -92,6 +92,12 @@
     opacity: 0.8;
     font-size: 11px;
 }
+
+#map_search .osm_hint {
+    padding-right: 0.8em;
+    padding-left: 0.8em;
+}
+
 @media screen and (max-width: 700px) {
     .mapwidget #map_search input {
         padding-left: 5px;

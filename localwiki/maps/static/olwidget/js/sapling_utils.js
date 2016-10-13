@@ -747,7 +747,12 @@ SaplingMap = {
             {
               name: 'address',
               source: mapSearch.ttAdapter(),
-              displayKey: 'display_name'
+              displayKey: 'display_name',
+              templates: {
+                notFound: region_viewboxlbrt
+                  ? Handlebars.compile('<div class="osm_hint">找不到「{{query}}」。要去開放街圖<a href="https://www.openstreetmap.org/#map=16/' + (region_viewboxlbrt.split(',').slice(2).reverse().join('/')) + '" target="_blank">新增這筆資料</a>？</div>')
+                  : Handlebars.compile('<div class="osm_hint">找不到「{{query}}」。要去開放街圖<a href="https://www.openstreetmap.org/" target="_blank">新增這筆資料</a>？</div>')
+              }
             },
             {
               // Footer: see if they typed a lat, lon pair instead of an address.
