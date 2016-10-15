@@ -124,7 +124,6 @@ and submit using #cover_form.
 
         {% render_plugins page.content %}
         <div class="interesting_cards">
-          {% cache 300 int_frnt_pg request.META.HTTP_HOST region.slug %}
             {% for category in pages_for_cards %}
               <h2>{{ category.name }}</h2>
               {% if category.pages %}
@@ -143,7 +142,6 @@ and submit using #cover_form.
                 </div>
               {% endif %}
             {% endfor %}
-          {% endcache %}
          </div>
 
         {% if region.get_nearby_regions %}
