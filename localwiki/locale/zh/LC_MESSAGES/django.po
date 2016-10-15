@@ -930,7 +930,7 @@ msgstr ""
 #: maps/feeds.py:26 maps/feeds.py:45
 #, python-format
 msgid "Map for \"%s\""
-msgstr ""
+msgstr "地圖/\"%s\""
 
 #: maps/fields.py:172
 #, python-format
@@ -1018,7 +1018,7 @@ msgstr "安全"
 
 #: maps/templates/maps/mapdata_detail.html:21
 msgid "Map for"
-msgstr ""
+msgstr "地圖/"
 
 #: maps/templates/maps/mapdata_detail.html:35
 #: maps/templates/maps/mapdata_diff.html:64
@@ -1299,7 +1299,7 @@ msgstr ""
 #: pages/views.py:231 tags/forms.py:118 tags/views.py:424
 #, python-format
 msgid "added %(name)s %(added)s."
-msgstr ""
+msgstr "新增%(name)s %(added)s"
 
 #: pages/views.py:454
 msgid "You must provide a page name when creating a page."
@@ -2472,19 +2472,19 @@ msgstr ""
 #, python-format
 msgid "removed %(name)s %(deleted)s."
 msgid_plural "removed %(name)s %(deleted)s."
-msgstr[0] ""
+msgstr[0] "已刪除%(name)s %(deleted)s"
 
 #: tags/forms.py:107
 #, python-format
 msgid "removed %(count)i %(name)s."
 msgid_plural "removed %(count)i %(name)s."
-msgstr[0] ""
+msgstr[0] "已刪除%(count)i %(name)s"
 
 #: tags/forms.py:127
 #, python-format
 msgid "added %(count)i %(name)s."
 msgid_plural "added %(count)i %(name)s."
-msgstr[0] ""
+msgstr[0] "新增%(count)i %(name)s"
 
 #: tags/forms.py:136
 msgid "no changes made"
@@ -2492,7 +2492,7 @@ msgstr ""
 
 #: tags/forms.py:137 tags/forms.py:140
 msgid " and "
-msgstr " 和 "
+msgstr "和"
 
 #: tags/models.py:35
 msgid "Tag"
@@ -2574,7 +2574,7 @@ msgstr "這頁沒有任何標籤。建立一些吧！"
 #: tags/templates/tags/tagged_list_snippet.html:35
 #, python-format
 msgid "Add new \"%(tag_name)s\""
-msgstr "建立 \"%(tag_name)s\" 在標籤頁"
+msgstr "建立新的標籤 \"%(tag_name)s\""
 
 #: tags/templates/tags/tagged_list_snippet.html:37
 #: themes/sapling/templates/site/add_page_area.html:7
@@ -3030,7 +3030,7 @@ msgstr ""
 
 #: versionutils/diff/diffutils.py:563 versionutils/diff/diffutils.py:575
 msgid "Removed"
-msgstr ""
+msgstr "已刪除"
 
 #: versionutils/diff/diffutils.py:586 versionutils/diff/diffutils.py:598
 #: versionutils/versioning/constants.py:14
@@ -3137,7 +3137,7 @@ msgstr "成功刪除!"
 #: versionutils/versioning/views.py:156
 #, python-format
 msgid "Restored version %s."
-msgstr "回復 %s 版本"
+msgstr "回復版本 %s"
 
 #~ msgid "Info"
 #~ msgstr "地圖資訊"
