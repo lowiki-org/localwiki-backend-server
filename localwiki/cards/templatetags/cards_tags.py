@@ -42,17 +42,17 @@ def show_card(context, obj):
 
 def render_page_card(context, page):
     from maps.widgets import map_options_for_region
-    cache = get_cache('long-living')
+    # cache = get_cache('long-living')
     request = context['request']
 
-    card = cache.get('card:%s,%s' % (get_urlconf() or settings.ROOT_URLCONF, page.id))
-    if card:
-        return card
+    # card = cache.get('card:%s,%s' % (get_urlconf() or settings.ROOT_URLCONF, page.id))
+    # if card:
+        # return card
 
     _file, _map = None, None
 
     # Try and get a useful image
-    _file = page.get_highlight_image() 
+    _file = page.get_highlight_image()
 
     # Otherwise, try and get a map
     if not _file and hasattr(page, 'mapdata'):
@@ -69,7 +69,7 @@ def render_page_card(context, page):
         'title': page.name,
         'content': page.content,
     })
-    cache.set('card:%s,%s' % (get_urlconf() or settings.ROOT_URLCONF, page.id), card)
+    # cache.set('card:%s,%s' % (get_urlconf() or settings.ROOT_URLCONF, page.id), card)
     return card
 
 
@@ -119,7 +119,7 @@ def render_region_card(context, region):
     set_urlconf(urlconf)
     return card
 
-    
+
 def _clear_page_card(sender, instance, *args, **kwargs):
     cache = get_cache('long-living')
     if instance.region.regionsettings.domain:
