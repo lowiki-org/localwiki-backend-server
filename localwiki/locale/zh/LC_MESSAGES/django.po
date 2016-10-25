@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-13 00:31+0800\n"
+"POT-Creation-Date: 2016-10-26 02:43+0800\n"
 "PO-Revision-Date: 2015-01-22 08:06+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -78,7 +78,7 @@ msgstr "需要幫忙嗎？來看看<a href=\"%(guide_url)s\">使用導覽</a>"
 
 #: activity/templates/activity/followed_activity_index.html:15
 #: themes/sapling/templates/site/common_nav.html:11
-#: themes/sapling/templates/site/nav.html:19
+#: themes/sapling/templates/site/nav.html:20
 msgid "News Feed"
 msgstr "最新編輯"
 
@@ -298,7 +298,7 @@ msgstr ""
 
 #: blog/templates/blog/base_blog.html:16
 #: themes/sapling/templates/site/common_nav.html:19
-#: themes/sapling/templates/site/nav.html:23
+#: themes/sapling/templates/site/nav.html:24
 msgid "Blog"
 msgstr "網誌"
 
@@ -537,6 +537,33 @@ msgstr "停止導覽"
 msgid "Start tour"
 msgstr "開始導覽"
 
+#: export/views.py:34 migrate/views.py:64
+msgid "Export success."
+msgstr "匯出成功"
+
+#: export/templates/export/region_page_export.html:5
+#: migrate/templates/migrate/region_page_export.html:5
+msgid "Export region"
+msgstr "匯出區域"
+
+#: export/templates/export/region_page_export.html:8
+#: migrate/templates/migrate/region_page_import.html:9
+#, python-format
+msgid ""
+"\n"
+"        Import pages into <a href=\"%(url)s\">%(region_full_name)s</a>\n"
+"    "
+msgstr ""
+"\n"
+"        匯入頁面到 <a href=\"%(url)s\">%(region_full_name)s</a>\n"
+"    "
+
+#: export/templates/export/region_page_export.html:43
+#: migrate/templates/migrate/region_page_export.html:50
+#: themes/sapling/templates/site/nav.html:15
+msgid "Export"
+msgstr "匯出"
+
 #: frontpage/views.py:201
 msgid "Cover photo updated!"
 msgstr "封面照片更新成功!"
@@ -598,22 +625,22 @@ msgstr ""
 msgid "View"
 msgstr "檢視"
 
-#: frontpage/templates/frontpage/base.html:137
-#: frontpage/templates/frontpage/base.html:142
+#: frontpage/templates/frontpage/base.html:136
+#: frontpage/templates/frontpage/base.html:141
 #: themes/sapling/templates/site/add_page_area.html:5
 #: themes/sapling/templates/site/add_page_area.html:9
 msgid "Add a new page"
 msgstr "建立新頁面"
 
-#: frontpage/templates/frontpage/base.html:141
+#: frontpage/templates/frontpage/base.html:140
 msgid "There are no pages yet.  Add some!"
 msgstr "目前還沒有頁面。新增一個吧！"
 
-#: frontpage/templates/frontpage/base.html:151
+#: frontpage/templates/frontpage/base.html:149
 msgid "Explore nearby regions"
 msgstr "附近的其他區域"
 
-#: frontpage/templates/frontpage/base.html:163
+#: frontpage/templates/frontpage/base.html:161
 #, python-format
 msgid "Or maybe you want to <a href=\"%(url)s\">see all LocalWiki regions</a>?"
 msgstr "或許你想探索<a href=\"%(url)s\">全站的區域</a>？"
@@ -1151,20 +1178,24 @@ msgid ""
 "new records."
 msgstr ""
 
-#: migrate/templates/migrate/region_page_import.html:6
-msgid "Import pages into"
-msgstr "匯入頁面到"
-
-#: migrate/templates/migrate/region_page_import.html:9
+#: migrate/templates/migrate/region_page_export.html:8
 #, python-format
 msgid ""
 "\n"
-"        Import pages into <a href=\"%(url)s\">%(region_full_name)s</a>\n"
+"        Export <a href=\"%(url)s\">%(region_full_name)s</a>\n"
 "    "
 msgstr ""
 "\n"
-"        匯入頁面到 <a href=\"%(url)s\">%(region_full_name)s</a>\n"
+"        匯出 <a href=\"%(url)s\">%(region_full_name)s</a>\n"
 "    "
+
+#: migrate/templates/migrate/region_page_export.html:40
+msgid "Select export type"
+msgstr "選擇匯出的種類"
+
+#: migrate/templates/migrate/region_page_import.html:6
+msgid "Import pages into"
+msgstr "匯入頁面到"
 
 #: migrate/templates/migrate/region_page_import.html:46 tags/models.py:36
 #: tags/templates/tags/global_pagetagset_list.html:5
@@ -2776,24 +2807,24 @@ msgid ""
 msgstr ""
 
 #: themes/sapling/templates/site/common_nav.html:13
-#: themes/sapling/templates/site/nav.html:21
+#: themes/sapling/templates/site/nav.html:22
 msgid "Explore"
 msgstr "探索"
 
 #: themes/sapling/templates/site/common_nav.html:15
 #: themes/sapling/templates/site/common_nav.html:17
-#: themes/sapling/templates/site/nav.html:22
+#: themes/sapling/templates/site/nav.html:23
 msgid "About"
 msgstr "關於"
 
 #: themes/sapling/templates/site/common_nav.html:20
-#: themes/sapling/templates/site/nav.html:24
+#: themes/sapling/templates/site/nav.html:25
 msgid "API"
 msgstr ""
 
 #: themes/sapling/templates/site/common_nav.html:23
 #: themes/sapling/templates/site/common_nav.html:25
-#: themes/sapling/templates/site/nav.html:25
+#: themes/sapling/templates/site/nav.html:26
 msgid "Help"
 msgstr "說明"
 

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: localwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-13 00:31+0800\n"
+"POT-Creation-Date: 2016-10-26 02:43+0800\n"
 "PO-Revision-Date: 2015-01-19 06:27+0000\n"
 "Last-Translator: Philip Neustrom <philip@localwiki.org>\n"
 "Language-Team: Chinese (http://www.transifex.com/projects/p/localwiki/"
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Things near "
 msgstr ""
 
-#: maps/static/olwidget/js/sapling_utils.js:763
+#: maps/static/olwidget/js/sapling_utils.js:768
 msgid "Add marker for lat, lon \"{{ value }}\""
 msgstr ""
 
