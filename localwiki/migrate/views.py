@@ -2,6 +2,8 @@
 from django.views.generic import TemplateView
 from django.contrib import messages
 from django.utils.translation import ugettext as _
+from django.utils.encoding import smart_str
+from django.http import HttpResponse
 from localwiki.utils.urlresolvers import reverse
 
 from localwiki.regions.views import RegionAdminRequired, RegionMixin, FormView
@@ -10,7 +12,7 @@ from localwiki.page_scores.models import PageScore
 from localwiki.tags.models import Tag, PageTagSet
 from localwiki.maps.models import MapData
 from .forms import PageMigrateSourceForm, PageExportSourceForm
-from .unicode_csv import UnicodeDictReader
+from .unicode_csv import UnicodeDictReader, UnicodeWriter
 
 from django.contrib.gis.geos import GEOSGeometry
 
@@ -61,9 +63,23 @@ class RegionPageExportView(RegionAdminRequired, RegionMixin, FormView):
         return reverse('migrate:regions', kwargs={'region': self.get_region().slug})
 
     def form_valid(self, form):
+        rows = []
+        rows.append(['url', 'name', 'slug', 'tags', 'region', 'content'])
+
+        export_file_name = '/tmp/export_file.csv'
+        with open(export_file_name, 'w') as f:
+            writer = UnicodeWriter(f)
+            writer.writerows(rows)
+
         messages.add_message(self.request, messages.SUCCESS, _(u"Export success."))
 
-        return super(RegionPageExportView, self).form_valid(form)
+        # Send file to user
+        response = HttpResponse(mimetype='application/force-download')
+        response['Content-Disposition'] = 'attachment; filename=%s' % smart_str("export_csv.csv")
+        response['X-Sendfile'] = smart_str(export_file_name)
+
+        # return super(RegionPageExportView, self).form_valid(form)
+        return response
 
 
 import mwparserfromhell
