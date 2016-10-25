@@ -1,0 +1,52 @@
+{% extends "pages/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Export region" %} {{ region.full_name }} - {{ block.super }}{% endblock %}
+
+{% block header_title %}
+    {% blocktrans with url=region.get_absolute_url region_full_name=region.full_name %}
+        Export <a href="{{ url }}">{{ region_full_name }}</a>
+    {% endblocktrans %}
+{% endblock %}
+
+{% block body %}
+<body>
+   <div class="content_type region">
+   {% block everything_wrapper %}
+        {{ block.super }}
+   {% endblock %}
+   </div>
+</body>
+{% endblock %}
+
+{% block messages %}
+  {% if form.errors %}
+    <ul class="messages">
+      {% for errors in form.errors.values %}
+        {% for msg in errors %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+    <div class="item">
+      {{ form.type.errors }}
+      {% trans "Select export type" %}
+      <div class="help_text">
+        <select name="export_type" class="export">
+          {% for id, name in form.export_type.field.choices %}
+          <option value="{{ id }}">{{ name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <input type="submit" value="{% trans 'Export' %}" />
+</form>
+{% endblock %}

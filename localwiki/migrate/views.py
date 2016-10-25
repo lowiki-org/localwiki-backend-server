@@ -9,7 +9,7 @@ from localwiki.pages.models import Page
 from localwiki.page_scores.models import PageScore
 from localwiki.tags.models import Tag, PageTagSet
 from localwiki.maps.models import MapData
-from .forms import PageMigrateSourceForm
+from .forms import PageMigrateSourceForm, PageExportSourceForm
 from .unicode_csv import UnicodeDictReader
 
 from django.contrib.gis.geos import GEOSGeometry
@@ -46,6 +46,24 @@ class RegionPageMigrateView(RegionAdminRequired, RegionMixin, FormView):
         messages.add_message(self.request, messages.SUCCESS, _(u"File has been imported.  Total %(total)d records updated, including %(new)d new records.") % migrator.migration_result)
 
         return super(RegionPageMigrateView, self).form_valid(form)
+
+
+class RegionPageExportView(RegionAdminRequired, RegionMixin, FormView):
+    template_name = 'migrate/region_page_export.html'
+    form_class = PageExportSourceForm
+
+    def get_form_kwargs(self):
+        kwargs = super(RegionPageExportView, self).get_form_kwargs()
+        kwargs['region'] = self.get_region()
+        return kwargs
+
+    def get_success_url(self):
+        return reverse('migrate:regions', kwargs={'region': self.get_region().slug})
+
+    def form_valid(self, form):
+        messages.add_message(self.request, messages.SUCCESS, _(u"Export success."))
+
+        return super(RegionPageExportView, self).form_valid(form)
 
 
 import mwparserfromhell
