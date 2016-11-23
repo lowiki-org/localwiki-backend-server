@@ -4,12 +4,16 @@ from django.utils.translation import ugettext_lazy
 
 from .models import PageMigrateSource, PageExport
 
-EXPORT_TYPE_CHOICES = (('csv', 'csv'),
-                       ('json', 'json'),
-                       ('txt', 'txt'))
+EXPORT_TYPE_CHOICES = (
+    ('csv', 'CSV'),
+    # ('json', 'JSON'),
+    ('txt', 'TXT'),
+    ('kml', 'KML'),
+)
 
 
 class PageMigrateSourceForm(forms.ModelForm):
+
     class Meta:
         model = PageMigrateSource
         fields = ('source_file', 'tags')
@@ -23,7 +27,8 @@ class PageMigrateSourceForm(forms.ModelForm):
 
 
 class PageExportSourceForm(forms.Form):
-    export_type = forms.ChoiceField(widget=forms.Select, choices=EXPORT_TYPE_CHOICES)
+    export_type = forms.ChoiceField(
+        widget=forms.Select, choices=EXPORT_TYPE_CHOICES)
 
     def __init__(self, *args, **kwargs):
         region = kwargs.pop('region', None)
