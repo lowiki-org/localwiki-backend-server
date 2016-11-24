@@ -724,6 +724,9 @@ SaplingMap = {
 
         $('.mapwidget').prepend(
             '<form id="map_search" action="." onSubmit="return false;" method="POST"><input type="text" id="address" name="address" placeholder="Find via address.."/></form>');
+        var osm_message = $('<div class="osm_hint" style="position: relative; top: -3em; z-index: 999; background: white; padding: 0.2em 1.1em;">標籤不完整。要去開放街圖<a href="https://www.openstreetmap.org/#map=16/" target="_blank">編輯標籤</a>嗎？</div>')
+        $('.mapwidget').append(osm_message);
+        osm_message.hide();
 
         var geoCodeURL = "//nominatim.openstreetmap.org/search";
         var mapSearch = new Bloodhound({
@@ -793,20 +796,11 @@ SaplingMap = {
                     map.removeLayer(temp);
                     map.zoomToExtent(layer.getDataExtent());
                   if (data.tags['source'] && data.tags['source'] === 'lowiki') {
-                    temp.features.forEach(function(ft) {
-                      ft.data.popupContentHTML = '<div class="osm_hint">標籤不完整。要去開放街圖<a href="https://www.openstreetmap.org/#map=16/' + '' + '" target="_blank">補充標籤資料</a>？</div>'
-                    });
-                    var popup = new OpenLayers.Popup.FramedCloud("Popup",
-                      myLocation.getBounds().getCenterLonLat(), null,
-                      '<a target="_blank" href="http://openlayers.org/">We</a> ' +
-                        'could be here.<br>Or elsewhere.', null,
-                      true // <-- true if we want a close (X) button, false otherwise
-                    );
-                    map.addPopup(popup);
-                    }
+                    osm_message.show();
 
+                  }
+                  $('.mapwidget .loading').remove();
                 }
-                $('.mapwidget .loading').remove();
             });
         });
     },
