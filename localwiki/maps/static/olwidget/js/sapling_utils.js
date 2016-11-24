@@ -780,7 +780,7 @@ SaplingMap = {
             $('.mapwidget').prepend('<div class="loading"></div>');
             $('.mapwidget .loading').height($('.mapwidget').height());
 
-            $.get('//' + home_hostname + '/' + region_slug + '/map/_get_osm/', { 'display_name': datum.display_name, 'osm_id': datum.osm_id, 'osm_type': datum.osm_type }, function(data){
+            $.get('//' + home_hostname + ':8082/' + region_slug + '/map/_get_osm/', { 'display_name': datum.display_name, 'osm_id': datum.osm_id, 'osm_type': datum.osm_type }, function(data){
                 if (data.geom == "GEOMETRYCOLLECTION EMPTY" && datum.lat && datum.lon) {
                     _add_as_point(datum);
                 }
@@ -792,6 +792,19 @@ SaplingMap = {
                     layer.addFeatures(temp.features);
                     map.removeLayer(temp);
                     map.zoomToExtent(layer.getDataExtent());
+                  if (data.tags['source'] && data.tags['source'] === 'lowiki') {
+                    temp.features.forEach(function(ft) {
+                      ft.data.popupContentHTML = '<div class="osm_hint">標籤不完整。要去開放街圖<a href="https://www.openstreetmap.org/#map=16/' + '' + '" target="_blank">補充標籤資料</a>？</div>'
+                    });
+                    var popup = new OpenLayers.Popup.FramedCloud("Popup",
+                      myLocation.getBounds().getCenterLonLat(), null,
+                      '<a target="_blank" href="http://openlayers.org/">We</a> ' +
+                        'could be here.<br>Or elsewhere.', null,
+                      true // <-- true if we want a close (X) button, false otherwise
+                    );
+                    map.addPopup(popup);
+                    }
+
                 }
                 $('.mapwidget .loading').remove();
             });

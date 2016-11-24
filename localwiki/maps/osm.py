@@ -13,8 +13,10 @@ from django.contrib.gis.geos import GEOSGeometry, GeometryCollection
 OSM_OVERPASS_API = 'http://overpass-api.de/api/interpreter'
 OSM_REVERSE_GEOCODE_API = 'http://nominatim.openstreetmap.org/reverse'
 
+
 def approx_km_to_degree(km):
-    return (km / 40000.0) * 360 
+    return (km / 40000.0) * 360
+
 
 def get_item_name(osm_id, osm_type, display_name):
     return display_name.split(',')[0]
@@ -27,11 +29,12 @@ def get_item_name(osm_id, osm_type, display_name):
     #      API is in Germany and is kind of slow.  There may be a simpler
     #      API that's closer / faster.
 
-    #r = requests.post(OSM_OVERPASS_API, data=
+    # r = requests.post(OSM_OVERPASS_API, data=
     #    """<osm-script><id-query ref="%s" type="%s"/><print/></osm-script>""" % (osm_id, osm_type)
     #)
     #root = etree.fromstring(r.text.encode('utf-8'))
-    #return root.find('.//tag[@k="name"]').attrib['v']
+    # return root.find('.//tag[@k="name"]').attrib['v']
+
 
 def get_osm_xml(osm_id, osm_type, display_name, region):
     name = get_item_name(osm_id, osm_type, display_name)
@@ -57,12 +60,15 @@ def get_osm_xml(osm_id, osm_type, display_name, region):
         's': s,
         'w': w,
     }
-    r = requests.post(OSM_OVERPASS_API, data=recursive_find_with_bbox.encode('utf-8'))
+    r = requests.post(OSM_OVERPASS_API,
+                      data=recursive_find_with_bbox.encode('utf-8'))
     return r.text.encode('utf-8')
+
 
 def xml_to_geom(layer, osm_xml):
     os.environ['OSM_USE_CUSTOM_INDEXING'] = 'NO'
-    p = Popen(['ogr2ogr', '-f', 'CSV', '/vsistdout/', '/vsistdin/', layer, '-lco', 'GEOMETRY=AS_WKT' ], stdout=PIPE, stdin=PIPE, stderr=PIPE, env=os.environ)
+    p = Popen(['ogr2ogr', '-f', 'CSV', '/vsistdout/', '/vsistdin/', layer, '-lco',
+               'GEOMETRY=AS_WKT'], stdout=PIPE, stdin=PIPE, stderr=PIPE, env=os.environ)
     output = p.communicate(input=osm_xml)[0]
     reader = csv.reader(StringIO(output))
     try:
@@ -72,8 +78,8 @@ def xml_to_geom(layer, osm_xml):
     except:
         return None
 
-def get_osm_geom(osm_id, osm_type, display_name, region):
-    osm_xml = get_osm_xml(osm_id, osm_type, display_name, region)
+
+def osm_xml_to_geom(osm_xml, osm_type):
     geoms = []
 
     # We don't care about points for ways.
@@ -95,3 +101,12 @@ def get_osm_geom(osm_id, osm_type, display_name, region):
         geoms += other_relations
 
     return GeometryCollection(geoms)
+
+
+def osm_xml_to_tags(osm_xml, osm_type):
+    return {'source': 'lowiki'}
+
+
+def get_osm_geom(osm_id, osm_type, display_name, region):
+    osm_xml = get_osm_xml(osm_id, osm_type, display_name, region)
+    return osm_xml_to_geom(osm_xml, osm_type)
