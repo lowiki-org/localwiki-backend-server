@@ -248,14 +248,24 @@ class RegionExporter:
         rows.append(['id', 'name', 'slug', 'tags',
                      'region', 'region_name', 'content'])
         for page in self._get_export_pages():
-            rows.append([
-                str(page.id),
-                page.name,
-                page.slug,
-                " ".join([t.name for t in page.pagetagset.tags.all()]),
-                self.region.slug,
-                self.region.full_name,
-                page.content])
+            try:
+                rows.append([
+                    str(page.id),
+                    page.name,
+                    page.slug,
+                    " ".join([t.name for t in page.pagetagset.tags.all()]),
+                    self.region.slug,
+                    self.region.full_name,
+                    page.content])
+            except:
+                rows.append([
+                    str(page.id),
+                    page.name,
+                    page.slug,
+                    "",
+                    self.region.slug,
+                    self.region.full_name,
+                    page.content])
 
         self.filename = '/tmp/export_file.csv'
         with open(self.filename, 'w') as f:
