@@ -16,7 +16,7 @@ register = template.Library()
 
 # Remove the PanZoom on normal page views.
 olwidget_options = copy.deepcopy(getattr(settings,
-    'OLWIDGET_DEFAULT_OPTIONS', {}))
+                                         'OLWIDGET_DEFAULT_OPTIONS', {}))
 map_opts = olwidget_options.get('map_options', {})
 map_controls = map_opts.get('controls', [])
 if 'PanZoom' in map_controls:
@@ -47,7 +47,7 @@ def render_page_card(context, page):
 
     # card = cache.get('card:%s,%s' % (get_urlconf() or settings.ROOT_URLCONF, page.id))
     # if card:
-        # return card
+    # return card
 
     _file, _map = None, None
 
@@ -79,17 +79,19 @@ def render_region_card(context, region):
     request = context['request']
 
     card = cache.get('rcard:%s' % region.id)
-    if card:
-        return card
+    # if card:
+    # return card
 
     urlconf = get_urlconf()
     set_urlconf('main.urls')
 
     _file, _map, front_page_content = None, None, None
-    is_meta_region = hasattr(region, 'regionsettings') and region.regionsettings.is_meta_region
+    is_meta_region = hasattr(
+        region, 'regionsettings') and region.regionsettings.is_meta_region
 
     if Page.objects.filter(region=region, slug='front page'):
-        front_page_content = Page.objects.get(region=region, slug='front page').content
+        front_page_content = Page.objects.get(
+            region=region, slug='front page').content
 
     # User the cover photo, if it exists, as the thumbnail
     if FrontPage.objects.filter(region=region).exists():
