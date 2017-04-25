@@ -130,7 +130,7 @@ SaplingMap = {
         }));
 
         var WMSLayers = [
-          { name: '土壤液化潛勢圖', id: '0', options: { minScale: 1/250000 } },
+          { name: '土壤液化潛勢圖', id: '0', options: { minScale: 1/250000, visibility: false } },
           { name: '大規模崩塌災害潛勢地區', id: '13', options: { minScale: 1/250000 } },
           { name: '海嘯潛勢圖', id: '14', options: { minScale: 1/250000 } },
           { name: '土石流潛勢溪流影響範圍', id: '15', options: { minScale: 1/250000 } },
