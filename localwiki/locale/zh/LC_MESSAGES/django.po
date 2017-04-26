@@ -2563,12 +2563,7 @@ msgstr "標籤"
 #: tags/templates/tags/pagetagset_form_snippet.html:13
 msgid "Suggested tags: "
 msgstr ""
-"建議標籤: (圖例) 國道, 省道, 鄉道, 鐵路, 取水點, 快速道路, 指揮中心, 消防單"
-"位, 警察單位, 醫療院所, 高速鐵路, 物資存備點, 海嘯危險區域, 直升機起降點, 老"
-"人福利機構, 適用地震災害, 適用水災災害, 適用海嘯災害, 人車轉運集結點, 室內避"
-"難收容所, 室外避難收容所, 救援器材放置點, 通訊設備放置點, 適用土石流災害, 海"
-"嘯避難收容處所, (模板) 身心障礙福利機構, 避難收容處所, 設備物資集結點, 特殊需"
-"求機構, 重要維生設施, 緊急聯絡網"
+"建議標籤：社區、避難收容處所、設備物資集結點、特殊需求機構、重要維生設施"
 
 #: tags/templates/tags/pagetagset_version_detail.html:17
 #: tags/templates/tags/pagetagset_versions.html:15

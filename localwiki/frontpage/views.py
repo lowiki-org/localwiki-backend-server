@@ -26,14 +26,17 @@ from .models import FrontPage
 class FrontPageView(Custom404Mixin, TemplateView):
     template_name = 'frontpage/base.html'
     cache_timeout = 60 * 60  # 1 hr, and we invalidate after Front Page save
-    layer_names = [ u'國道', u'省道', u'鄉道', u'鐵路', u'取水點', u'快速道路', u'指揮中心', u'消防單位', u'警察單位', u'醫療院所', u'高速鐵路', u'物資存備點', u'海嘯危險區域', u'直升機起降點', u'老人福利機構', u'適用地震災害', u'適用水災災害', u'適用海嘯災害', u'人車轉運集結點', u'室內避難收容所', u'室外避難收容所', u'救援器材放置點', u'通訊設備放置點', u'適用土石流災害', u'海嘯避難收容處所', u'身心障礙福利機構' ]
+    layer_names = [u'國道', u'省道', u'鄉道', u'鐵路', u'取水點', u'快速道路', u'指揮中心', u'消防單位', u'警察單位', u'醫療院所', u'高速鐵路', u'物資存備點', u'海嘯危險區域', u'直升機起降點',
+                   u'老人福利機構', u'適用地震災害', u'適用水災災害', u'適用海嘯災害', u'人車轉運集結點', u'室內避難收容所', u'室外避難收容所', u'救援器材放置點', u'通訊設備放置點', u'適用土石流災害', u'海嘯避難收容處所', u'身心障礙福利機構']
 
     def get(self, *args, **kwargs):
-        # If there's no FrontPage defined, let's send the "Front Page" Page object.
+        # If there's no FrontPage defined, let's send the "Front Page" Page
+        # object.
         region = self.get_region()
         if not FrontPage.objects.filter(region=region).exists() or region.regionsettings.is_meta_region:
             page_view = PageDetailView()
-            page_view.kwargs = {'slug': 'front page', 'region': self.get_region().slug}
+            page_view.kwargs = {'slug': 'front page',
+                                'region': self.get_region().slug}
             page_view.request = self.request
             return page_view.get(*args, **page_view.kwargs)
         return super(FrontPageView, self).get(*args, **kwargs)
@@ -44,12 +47,13 @@ class FrontPageView(Custom404Mixin, TemplateView):
         return [(g['centroid'], '') for g in centroids]
 
     def get_map_objects_by_tag(self, tag_name):
-        centroids = MapData.objects.filter(region=self.get_region()).filter(page__pagetagset__tags__name=tag_name).centroid().values('centroid')
+        centroids = MapData.objects.filter(region=self.get_region()).filter(
+            page__pagetagset__tags__name=tag_name).centroid().values('centroid')
         return [(g['centroid'], '') for g in centroids]
 
     def get_map(self, cover=False):
         olwidget_options = copy.deepcopy(getattr(settings,
-            'OLWIDGET_DEFAULT_OPTIONS', {}))
+                                                 'OLWIDGET_DEFAULT_OPTIONS', {}))
         map_opts = olwidget_options.get('map_options', {})
         olwidget_options.update(map_options_for_region(self.get_region()))
         map_controls = map_opts.get('controls', [])
@@ -87,8 +91,8 @@ class FrontPageView(Custom404Mixin, TemplateView):
                             'graphic_height': 32,
                             'graphic_width': 32,
                             'graphic_opacity': 1.0
-                            }
-                        }))
+                        }
+                    }))
             return Map(map_objects, options=olwidget_options)
 
     def get_categories_for_cards(self):
@@ -98,7 +102,6 @@ class FrontPageView(Custom404Mixin, TemplateView):
             {'id': 'resources', 'name': u'設備物資集結點'},
             {'id': 'special_care', 'name': u'特殊需求機構'},
             {'id': 'life_support', 'name': u'重要維生設施'},
-            {'id': 'communication', 'name': u'緊急聯絡網'},
         ]
         for category in categories:
             if Tag.objects.filter(name=category['name']).exists():
@@ -108,7 +111,8 @@ class FrontPageView(Custom404Mixin, TemplateView):
     def get_pages_for_cards(self):
         categories = self.get_categories_for_cards()
         for category in categories:
-            qs = Page.objects.filter(region=self.get_region(), pagetagset__tags__slug=category['name'])
+            qs = Page.objects.filter(region=self.get_region(
+            ), pagetagset__tags__slug=category['name'])
 
             # Exclude meta stuff
             qs = qs.exclude(slug__startswith='templates/')
@@ -118,7 +122,8 @@ class FrontPageView(Custom404Mixin, TemplateView):
             # Exclude ones with empty scores
             qs = qs.exclude(score=None)
 
-            qs = qs.defer('content').select_related('region').order_by('-score__score', '?')
+            qs = qs.defer('content').select_related(
+                'region').order_by('-score__score', '?')
 
             category['pages'] = qs
         return categories
@@ -132,7 +137,8 @@ class FrontPageView(Custom404Mixin, TemplateView):
         context['cover_map'] = self.get_map(cover=True)
         context['pages_for_cards'] = self.get_pages_for_cards()
         if Page.objects.filter(name="Front Page", region=self.get_region()).exists():
-            context['page'] = Page.objects.get(name="Front Page", region=self.get_region())
+            context['page'] = Page.objects.get(
+                name="Front Page", region=self.get_region())
         else:
             context['page'] = Page(name="Front Page", region=self.get_region())
         return context
@@ -150,14 +156,17 @@ class FrontPageView(Custom404Mixin, TemplateView):
 
 
 class CoverUploadView(RegionMixin, RegionAdminRequired, View):
+
     def post(self, *args, **kwargs):
 
         photo = self.request.FILES.get('file')
 
         client_cover_w = int(float(self.request.POST.get('client_w')))
         client_cover_h = int(float(self.request.POST.get('client_h')))
-        client_position_x = abs(int(float(self.request.POST.get('position_x'))))
-        client_position_y = abs(int(float(self.request.POST.get('position_y'))))
+        client_position_x = abs(
+            int(float(self.request.POST.get('position_x'))))
+        client_position_y = abs(
+            int(float(self.request.POST.get('position_y'))))
         axis = self.request.POST.get('cover_position_axis')
 
         if client_cover_w <= 0 or client_cover_h <= 0:
@@ -167,7 +176,7 @@ class CoverUploadView(RegionMixin, RegionAdminRequired, View):
         exact_w, exact_h = im.size
 
         if axis == 'y':
-            scale = (exact_w * 1.0)/ client_cover_w
+            scale = (exact_w * 1.0) / client_cover_w
             position_y = scale * client_position_y
             exact_cover_h = client_cover_h * scale
 
@@ -177,7 +186,7 @@ class CoverUploadView(RegionMixin, RegionAdminRequired, View):
             lower = int(position_y + exact_cover_h)
             bbox = (left, upper, right, lower)
         else:
-            scale = (exact_h * 1.0)/ client_cover_h
+            scale = (exact_h * 1.0) / client_cover_h
             position_x = scale * client_position_x
             exact_cover_w = client_cover_w * scale
 
@@ -201,7 +210,8 @@ class CoverUploadView(RegionMixin, RegionAdminRequired, View):
         frontpage.cover_photo_crop_bbox_lower = lower
         frontpage.save()
 
-        messages.add_message(self.request, messages.SUCCESS, _("Cover photo updated!"))
+        messages.add_message(self.request, messages.SUCCESS,
+                             _("Cover photo updated!"))
 
         return HttpResponseRedirect(
             reverse('frontpage', kwargs={'region': self.get_region().slug}))
