@@ -21,33 +21,33 @@ $(function() {
         match: add_login_info_actions,
         unmatch: hide_login_info_actions,
     });
-    enquire.listen(); 
+    enquire.listen();
 });
 
 /* hide-address-bar.js. inlined for speed */
 /*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
 (function( win ){
 	var doc = win.document;
-	
+
 	// If there's a hash, or addEventListener is undefined, stop here
 	if( !location.hash && win.addEventListener ){
-		
+
 		//scroll to 1
 		win.scrollTo( 0, 1 );
 		var scrollTop = 1,
 			getScrollTop = function(){
 				return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
 			},
-		
+
 			//reset to 0 on bodyready, if needed
 			bodycheck = setInterval(function(){
 				if( doc.body ){
 					clearInterval( bodycheck );
 					scrollTop = getScrollTop();
 					win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
-				}	
+				}
 			}, 15 );
-		
+
 		win.addEventListener( "load", function(){
 			setTimeout(function(){
 				//at load, if user hasn't scrolled more than 20 or so...
@@ -61,21 +61,21 @@ $(function() {
 })( this );
 
 /* For our little responsive menu toggler */
-$(function() {  
-    var pull = $('#pull');  
-    menu = $('#nav ul');  
-    menuHeight = menu.height();  
-  
-    $(pull).on('click', function(e) {  
-        e.preventDefault();  
-        menu.slideToggle(300);
-    });  
+$(function() {
+    var pull = $('#pull');
+    menu = $('#nav ul');
+    menuHeight = menu.height();
 
-    $(window).resize(function(){  
-        var w = $(window).width();  
-        if(w > 320 && menu.is(':hidden')) {  
-            menu.removeAttr('style');  
-        }  
+    $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle(300);
+    });
+
+    $(window).resize(function(){
+        var w = $(window).width();
+        if(w > 320 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+        }
     });
 });
 
@@ -90,12 +90,18 @@ $(document).ready(function() {
     var autoRegions = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace('value'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        remote: '/_api/regions/suggest?term=%QUERY'
+        remote: {
+          url: '/_api/regions/suggest?term=%QUERY',
+          wildcard: '%QUERY',
+        },
     });
     var autoPages = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace('value'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        remote: pages_remote_url
+        remote: {
+          url: pages_remote_url,
+          wildcard: '%QUERY',
+        },
     });
     autoRegions.initialize();
     autoPages.initialize();
@@ -146,7 +152,7 @@ $(document).ready(function() {
         });
     }
     else {
-        
+
         $('#id_q').typeahead(null,
             {
               name: 'regions',
@@ -214,7 +220,7 @@ $(document).ready(function() {
             document.location = datum.url;
         });
     }
-    
+
 });
 
 var setup_lazy_csrf = function(selector) {
@@ -249,7 +255,10 @@ $(document).ready(function() {
     var autoPages = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace('value'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        remote: pages_remote_url
+        remote: {
+          url: pages_remote_url,
+          wildcard: '%QUERY',
+        },
     });
     autoPages.initialize();
 
@@ -286,11 +295,11 @@ $(document).ready(function () {
                 $.post(
                     follow_url,
                     followData
-            
+
                 ).done(function() {
                     var item = $(follow_item.find('.unfollow')[0]);
-                    item.addClass('follow'); 
-                    item.removeClass('unfollow'); 
+                    item.addClass('follow');
+                    item.removeClass('unfollow');
                     item.unbind();
                     item.click(follow);
                 })
@@ -301,8 +310,8 @@ $(document).ready(function () {
                     followData
                 ).done(function() {
                     var item = $(follow_item.find('.follow')[0]);
-                    item.addClass('unfollow'); 
-                    item.removeClass('follow'); 
+                    item.addClass('unfollow');
+                    item.removeClass('follow');
                     item.unbind();
                     item.click(unfollow);
                 });
@@ -334,14 +343,14 @@ function set_django_tokens(form, cb) {
     if (!cb) {
         var cb = function() {};
     }
-    
+
     var _setup_tokens = function(csrf_cookie) {
         csrf = form.ownerDocument.createElement('input');
         csrf.setAttribute('name', 'csrfmiddlewaretoken');
         csrf.setAttribute('type', 'hidden');
         csrf.setAttribute('value', csrf_cookie);
         form.appendChild(csrf);
-        
+
         /* TODO: make this automatic, this is hardcoded to the django-honeypot settings */
         honeypot = form.ownerDocument.createElement('input');
         honeypot.setAttribute('name', 'main_content');
