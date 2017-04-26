@@ -129,7 +129,7 @@ and submit using #cover_form.
               {% if category.pages %}
                 <div class="cards">
                 {% for page in category.pages %}
-                  {% show_card page %}
+                  {% show_card page category.id %}
                 {% endfor %}
                 </div>
                 <div class="explore_more">

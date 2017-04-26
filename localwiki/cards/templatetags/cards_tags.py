@@ -33,14 +33,14 @@ olwidget_options['map_div_class'] = 'mapwidget'
 
 
 @register.simple_tag(takes_context=True)
-def show_card(context, obj):
+def show_card(context, obj, key=False):
     if isinstance(obj, Page):
-        return render_page_card(context, obj)
+        return render_page_card(context, obj, key)
     elif isinstance(obj, Region):
-        return render_region_card(context, obj)
+        return render_region_card(context, obj, key)
 
 
-def render_page_card(context, page):
+def render_page_card(context, page, key=False):
     from maps.widgets import map_options_for_region
     # cache = get_cache('long-living')
     request = context['request']
@@ -56,11 +56,12 @@ def render_page_card(context, page):
 
     # Otherwise, try and get a map
     if not _file and hasattr(page, 'mapdata'):
+        id = (key if key != False else 'map') + '_page_id_%s' % page.id
         olwidget_options.update(map_options_for_region(page.region))
         _map = InfoMap(
             [(page.mapdata.geom, '')],
             options=olwidget_options
-        ).render(None, None, {'id': 'map_page_id_%s' % page.id})
+        ).render(None, None, {'id': id})
 
     card = render_to_string('cards/base.html', {
         'obj': page,
@@ -73,7 +74,7 @@ def render_page_card(context, page):
     return card
 
 
-def render_region_card(context, region):
+def render_region_card(context, region, key=False):
     from maps.widgets import map_options_for_region
     cache = get_cache('long-living')
     request = context['request']
@@ -101,13 +102,14 @@ def render_region_card(context, region):
 
     # Otherwise, try and get a map
     if not _file and not is_meta_region and region.geom:
+        id = (key if key != False else 'map') + '_region_id_%s' % region.id
         map_opts = map_options_for_region(region)
         map_opts['default_zoom'] -= 1
         olwidget_options.update(map_opts)
         _map = InfoMap(
             [(None, '')],
             options=olwidget_options
-        ).render(None, None, {'id': 'map_region_id_%s' % region.id})
+        ).render(None, None, {'id': id})
 
     card = render_to_string('cards/base.html', {
         'obj': region,

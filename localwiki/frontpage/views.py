@@ -92,14 +92,17 @@ class FrontPageView(Custom404Mixin, TemplateView):
             return Map(map_objects, options=olwidget_options)
 
     def get_categories_for_cards(self):
-        names = [u'社區', u'避難收容處所', u'設備物資集結點', u'特殊需求機構', u'重要維生設施', u'緊急聯絡網']
-        categories = []
-        for name in names:
-            if Tag.objects.filter(name=name).exists():
-                categories.append({
-                    'name': name,
-                    'tag': Tag.objects.filter(name=name)[0]
-                })
+        categories = [
+            {'id': 'community', 'name': u'社區'},
+            {'id': 'shelter', 'name': u'避難收容處所'},
+            {'id': 'resources', 'name': u'設備物資集結點'},
+            {'id': 'special_care', 'name': u'特殊需求機構'},
+            {'id': 'life_support', 'name': u'重要維生設施'},
+            {'id': 'communication', 'name': u'緊急聯絡網'},
+        ]
+        for category in categories:
+            if Tag.objects.filter(name=category['name']).exists():
+                category['tag'] = Tag.objects.filter(name=category['name'])[0]
         return categories
 
     def get_pages_for_cards(self):
