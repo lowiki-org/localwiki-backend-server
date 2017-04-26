@@ -121,8 +121,9 @@ $(document).ready(function() {
                     suggestion: Handlebars.compile("<p>" +
                         gettext('Search for "{{ value }}"') +
                         "</p>"
-                    )
-                }
+                    ),
+                },
+                display: 'value',
             },
             {
                 // Footer: search all of LocalWiki
@@ -135,8 +136,9 @@ $(document).ready(function() {
                         "<p>" +
                         gettext("Search all of LocalWiki") +
                         "</p>"
-                    )
-                }
+                    ),
+                },
+                display: 'value',
             }
         )
         .on('typeahead:selected', function(e, datum) {
@@ -158,8 +160,9 @@ $(document).ready(function() {
               source: autoPages.ttAdapter(),
               templates: {
                 header: Handlebars.compile('<div class="autocomplete_divider"></div>'),
-                suggestion: Handlebars.compile("<p><strong>{{ value }}</strong> &mdash; {{ region }}</p>")
-              }
+                suggestion: Handlebars.compile("<p><strong>{{ value }}</strong> &mdash; {{ region }}</p>"),
+              },
+              display: 'value',
             },
             {
                 // Footer: Do search as usual
@@ -172,8 +175,9 @@ $(document).ready(function() {
                         "<p>" +
                         gettext("Search all of LocalWiki") +
                         "</p>"
-                    )
-                }
+                    ),
+                },
+                display: 'value',
             }
         )
         .on('typeahead:selected', function(e, datum) {
