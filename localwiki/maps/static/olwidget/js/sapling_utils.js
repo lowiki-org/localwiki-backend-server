@@ -105,6 +105,7 @@ SaplingMap = {
           matrixSet: 'default028mm',
           format: 'image/png',
           isBaseLayer: false,
+          visibility: false,
         }));
 
         map.addLayer(new OpenLayers.Layer.WMTS({
@@ -116,6 +117,7 @@ SaplingMap = {
           matrixSet: 'default028mm',
           format: 'image/png',
           isBaseLayer: false,
+          visibility: false,
         }));
 
         map.addLayer(new OpenLayers.Layer.WMTS({
@@ -127,10 +129,11 @@ SaplingMap = {
           matrixSet: 'default028mm',
           format: 'image/png',
           isBaseLayer: false,
+          visibility: false,
         }));
 
         var WMSLayers = [
-          { name: '土壤液化潛勢圖', id: '0', options: { minScale: 1/250000, visibility: false } },
+          { name: '土壤液化潛勢圖', id: '0', options: { minScale: 1/250000 } },
           { name: '大規模崩塌災害潛勢地區', id: '13', options: { minScale: 1/250000 } },
           { name: '海嘯潛勢圖', id: '14', options: { minScale: 1/250000 } },
           { name: '土石流潛勢溪流影響範圍', id: '15', options: { minScale: 1/250000 } },
@@ -140,7 +143,7 @@ SaplingMap = {
           { name: '活動斷層', id: '21', options: { minScale: 1/250000 } },
         ];
         WMSLayers.forEach(function (layer) {
-          var options = { isBaseLayer: false, minScale: 1/500000, opacity: 0.4 };
+          var options = { isBaseLayer: false, minScale: 1/500000, opacity: 0.4, visibility: false };
           if (layer.options) {
             Object.keys(layer.options).forEach(function (key) {
               options[key] = layer.options[key];
